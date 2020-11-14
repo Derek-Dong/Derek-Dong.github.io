@@ -82,44 +82,44 @@
 <meta name="description" content="【JavaScript】typeof和instanceof的区别   数据类型可以分为基本数据类型和引用数据类型 基本数据类型 ：String、Number、Boolean 、Null、Undefined、Symbol、BigInt ; 引用数据类型：Object; typeof 一般被用于判断一个变量的类型，我们可以利用 typeof 来判断number, string, object, boo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Javascript面试题">
-<meta property="og:url" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
+<meta property="og:url" content="http://example.com/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
 <meta property="og:site_name" content="听阳光的猫">
 <meta property="og:description" content="【JavaScript】typeof和instanceof的区别   数据类型可以分为基本数据类型和引用数据类型 基本数据类型 ：String、Number、Boolean 、Null、Undefined、Symbol、BigInt ; 引用数据类型：Object; typeof 一般被用于判断一个变量的类型，我们可以利用 typeof 来判断number, string, object, boo">
 <meta property="og:locale">
-<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201002224535001.png">
-<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003103146569.png">
-<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003104428828.png">
-<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003153250461.png">
-<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003153928081.png">
-<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161356373.png">
-<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161430785.png">
-<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161508961.png">
-<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161550987.png">
-<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161637385.png">
-<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161729153.png">
-<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161758967.png">
-<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201004082942150.png">
-<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201004085141784.png">
-<meta property="og:image" content="http://example.com/2020/11/font-end/笔记/Typora笔记/assets/image-20201004091418745.png">
-<meta property="og:image" content="http://example.com/2020/11/font-end/笔记/Typora笔记/assets/image-20201004095312070.png">
-<meta property="og:image" content="http://example.com/2020/11/font-end/笔记/Typora笔记/assets/image-20201004155345884.png">
-<meta property="og:image" content="http://example.com/2020/11/font-end/笔记/Typora笔记/assets/image-20201004155722209.png">
-<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201004175311734.png">
-<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006181930036.png">
-<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006183311035.png">
-<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006182306149.png">
-<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006183421421.png">
-<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006182452734.png">
-<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006190436863.png">
-<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006221425265.png">
-<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006222209212.png">
-<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006224101456.png">
-<meta property="article:published_time" content="2020-11-14T10:33:42.298Z">
-<meta property="article:modified_time" content="2020-11-14T08:32:08.098Z">
+<meta property="og:image" content="http://example.com/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201002224535001.png">
+<meta property="og:image" content="http://example.com/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003103146569.png">
+<meta property="og:image" content="http://example.com/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003104428828.png">
+<meta property="og:image" content="http://example.com/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003153250461.png">
+<meta property="og:image" content="http://example.com/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003153928081.png">
+<meta property="og:image" content="http://example.com/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161356373.png">
+<meta property="og:image" content="http://example.com/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161430785.png">
+<meta property="og:image" content="http://example.com/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161508961.png">
+<meta property="og:image" content="http://example.com/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161550987.png">
+<meta property="og:image" content="http://example.com/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161637385.png">
+<meta property="og:image" content="http://example.com/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161729153.png">
+<meta property="og:image" content="http://example.com/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161758967.png">
+<meta property="og:image" content="http://example.com/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201004082942150.png">
+<meta property="og:image" content="http://example.com/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201004085141784.png">
+<meta property="og:image" content="http://example.com/2020/10/font-end/笔记/Typora笔记/assets/image-20201004091418745.png">
+<meta property="og:image" content="http://example.com/2020/10/font-end/笔记/Typora笔记/assets/image-20201004095312070.png">
+<meta property="og:image" content="http://example.com/2020/10/font-end/笔记/Typora笔记/assets/image-20201004155345884.png">
+<meta property="og:image" content="http://example.com/2020/10/font-end/笔记/Typora笔记/assets/image-20201004155722209.png">
+<meta property="og:image" content="http://example.com/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201004175311734.png">
+<meta property="og:image" content="http://example.com/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006181930036.png">
+<meta property="og:image" content="http://example.com/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006183311035.png">
+<meta property="og:image" content="http://example.com/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006182306149.png">
+<meta property="og:image" content="http://example.com/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006183421421.png">
+<meta property="og:image" content="http://example.com/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006182452734.png">
+<meta property="og:image" content="http://example.com/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006190436863.png">
+<meta property="og:image" content="http://example.com/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006221425265.png">
+<meta property="og:image" content="http://example.com/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006222209212.png">
+<meta property="og:image" content="http://example.com/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006224101456.png">
+<meta property="article:published_time" content="2020-10-20T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-11-14T11:41:21.935Z">
 <meta property="article:author" content="Derek Dong">
 <meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201002224535001.png">
+<meta name="twitter:image" content="http://example.com/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201002224535001.png">
 
 
 
@@ -149,7 +149,7 @@
 
 
 
-  <link rel="canonical" href="http://example.com/2020/11/14/Javascript面试题/"/>
+  <link rel="canonical" href="http://example.com/2020/10/21/Javascript面试题/"/>
 
 
 
@@ -249,16 +249,6 @@
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
 
       
         <li class="menu-item menu-item-search">
@@ -326,7 +316,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -355,8 +345,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-11-14T18:33:42+08:00">
-                2020-11-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-10-21T00:00:00+08:00">
+                2020-10-21
               </time>
             
 
@@ -420,7 +410,7 @@
       
 
       
-        <h3 id="【JavaScript】typeof和instanceof的区别"><a href="#【JavaScript】typeof和instanceof的区别" class="headerlink" title="【JavaScript】typeof和instanceof的区别"></a>【JavaScript】typeof和instanceof的区别</h3><p><img src="/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201002224535001.png" alt="image-20201002224535001">  </p>
+        <h3 id="【JavaScript】typeof和instanceof的区别"><a href="#【JavaScript】typeof和instanceof的区别" class="headerlink" title="【JavaScript】typeof和instanceof的区别"></a>【JavaScript】typeof和instanceof的区别</h3><p><img src="/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201002224535001.png" alt="image-20201002224535001">  </p>
 <p>数据类型可以分为<code>基本数据类型</code>和<code>引用数据类型</code></p>
 <p>基本数据类型 ：<code>String</code>、<code>Number</code>、<code>Boolean</code> 、<code>Null</code>、<code>Undefined</code>、<code>Symbol</code>、<code>BigInt</code> ;</p>
 <p>引用数据类型：<code>Object</code>;</p>
@@ -458,12 +448,12 @@
 
 </li>
 </ol>
-<h3 id="【CSS】如何让超宽文本替换为省略号"><a href="#【CSS】如何让超宽文本替换为省略号" class="headerlink" title="【CSS】如何让超宽文本替换为省略号"></a>【CSS】如何让超宽文本替换为省略号</h3><p><img src="/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003103146569.png" alt="image-20201003103146569"> </p>
+<h3 id="【CSS】如何让超宽文本替换为省略号"><a href="#【CSS】如何让超宽文本替换为省略号" class="headerlink" title="【CSS】如何让超宽文本替换为省略号"></a>【CSS】如何让超宽文本替换为省略号</h3><p><img src="/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003103146569.png" alt="image-20201003103146569"> </p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">width</span><span class="selector-pseudo">:100px</span>;</span><br><span class="line"><span class="selector-tag">white-space</span><span class="selector-pseudo">:nowrap</span>;</span><br><span class="line"><span class="selector-tag">overflow</span><span class="selector-pseudo">:hidden</span>;</span><br><span class="line"><span class="selector-tag">text-overflow</span><span class="selector-pseudo">:ellipsis</span>;</span><br></pre></td></tr></table></figure>
 
 
 
-<h3 id="【JavaScript】document-write-和innerHTML的区别"><a href="#【JavaScript】document-write-和innerHTML的区别" class="headerlink" title="【JavaScript】document.write()和innerHTML的区别"></a>【JavaScript】document.write()和innerHTML的区别</h3><p><img src="/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003104428828.png" alt="image-20201003104428828"> </p>
+<h3 id="【JavaScript】document-write-和innerHTML的区别"><a href="#【JavaScript】document-write-和innerHTML的区别" class="headerlink" title="【JavaScript】document.write()和innerHTML的区别"></a>【JavaScript】document.write()和innerHTML的区别</h3><p><img src="/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003104428828.png" alt="image-20201003104428828"> </p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">document</span>.write(<span class="string">&quot;大家好，我是蛋老师！&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> two = <span class="built_in">document</span>.getElementById(<span class="string">&quot;two&quot;</span>);</span><br><span class="line">two.innerHTML = <span class="string">&quot;鸡蛋&quot;</span>；</span><br><span class="line">two.innerHTML += <span class="string">&quot;蛋老师666&quot;</span></span><br></pre></td></tr></table></figure>
@@ -511,40 +501,40 @@
 
 </li>
 </ol>
-<h3 id="【JavaScript】函数作用域"><a href="#【JavaScript】函数作用域" class="headerlink" title="【JavaScript】函数作用域"></a>【JavaScript】函数作用域</h3><p><img src="/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003153250461.png" alt="image-20201003153250461"></p>
-<p><img src="/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003153928081.png" alt="image-20201003153928081"> </p>
-<h3 id="【JavaScript】加法运算"><a href="#【JavaScript】加法运算" class="headerlink" title="【JavaScript】加法运算"></a>【JavaScript】加法运算</h3><p><img src="/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161356373.png" alt="image-20201003161356373"> </p>
-<p><img src="/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161430785.png" alt="image-20201003161430785"> </p>
-<p><img src="/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161508961.png" alt="image-20201003161508961"> </p>
-<p><img src="/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161550987.png" alt="image-20201003161550987"> </p>
-<p><img src="/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161637385.png" alt="image-20201003161637385"> </p>
-<p><img src="/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161729153.png" alt="image-20201003161729153">  </p>
-<p><img src="/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161758967.png" alt="image-20201003161758967"> </p>
+<h3 id="【JavaScript】函数作用域"><a href="#【JavaScript】函数作用域" class="headerlink" title="【JavaScript】函数作用域"></a>【JavaScript】函数作用域</h3><p><img src="/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003153250461.png" alt="image-20201003153250461"></p>
+<p><img src="/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003153928081.png" alt="image-20201003153928081"> </p>
+<h3 id="【JavaScript】加法运算"><a href="#【JavaScript】加法运算" class="headerlink" title="【JavaScript】加法运算"></a>【JavaScript】加法运算</h3><p><img src="/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161356373.png" alt="image-20201003161356373"> </p>
+<p><img src="/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161430785.png" alt="image-20201003161430785"> </p>
+<p><img src="/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161508961.png" alt="image-20201003161508961"> </p>
+<p><img src="/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161550987.png" alt="image-20201003161550987"> </p>
+<p><img src="/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161637385.png" alt="image-20201003161637385"> </p>
+<p><img src="/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161729153.png" alt="image-20201003161729153">  </p>
+<p><img src="/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161758967.png" alt="image-20201003161758967"> </p>
 <p> 第二个空对象在前面会被忽略。后面的空数组转化为数字。</p>
-<h3 id="【JavaScript】九九乘法表"><a href="#【JavaScript】九九乘法表" class="headerlink" title="【JavaScript】九九乘法表"></a>【JavaScript】九九乘法表</h3><p><img src="/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201004082942150.png" alt="image-20201004082942150">  </p>
+<h3 id="【JavaScript】九九乘法表"><a href="#【JavaScript】九九乘法表" class="headerlink" title="【JavaScript】九九乘法表"></a>【JavaScript】九九乘法表</h3><p><img src="/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201004082942150.png" alt="image-20201004082942150">  </p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.write(<span class="string">&quot;&lt;table&gt;&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> row = <span class="number">1</span>; row &lt; <span class="number">10</span>; row++)&#123;</span><br><span class="line">        <span class="built_in">document</span>.write(<span class="string">&quot;&lt;tr&gt;&quot;</span>)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> column = <span class="number">1</span>; column &lt;= row; column++)&#123;</span><br><span class="line">            <span class="built_in">document</span>.write(<span class="string">&quot;&lt;td&gt;&quot;</span> + column + <span class="string">&quot;×&quot;</span> + row + <span class="string">&quot;=&quot;</span> + row*column + <span class="string">&quot;&lt;/td&gt;&quot;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">document</span>.write(<span class="string">&quot;&lt;/tr&gt;&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">&quot;&lt;/table&gt;&quot;</span>);</span><br></pre></td></tr></table></figure>
 
 
 
-<p><img src="/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201004085141784.png" alt="image-20201004085141784"> </p>
+<p><img src="/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201004085141784.png" alt="image-20201004085141784"> </p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.write(<span class="string">&quot;&lt;table&gt;&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> row = <span class="number">1</span>; row &lt; <span class="number">10</span>; row++)&#123;</span><br><span class="line">        <span class="built_in">document</span>.write(<span class="string">&quot;&lt;tr&gt;&quot;</span>)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> blank = <span class="number">9</span> - row; blank &gt; <span class="number">0</span>; blank--)&#123;</span><br><span class="line">            <span class="built_in">document</span>.write(<span class="string">&quot;&lt;td&gt;&lt;/td&gt;&quot;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> column = row; column &gt; <span class="number">0</span>; column--)&#123;</span><br><span class="line">            <span class="built_in">document</span>.write(<span class="string">&quot;&lt;td&gt;&quot;</span> + row + <span class="string">&quot;×&quot;</span> + column + <span class="string">&quot;=&quot;</span> + row*column + <span class="string">&quot;&lt;/td&gt;&quot;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">document</span>.write(<span class="string">&quot;&lt;/tr&gt;&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">&quot;&lt;/table&gt;&quot;</span>);</span><br></pre></td></tr></table></figure>
 
 
 
 <h3 id="【JavaScript】this关键字"><a href="#【JavaScript】this关键字" class="headerlink" title="【JavaScript】this关键字"></a>【JavaScript】this关键字</h3><p><code>this</code>指向的是谁(对象)最后调用了它</p>
-<img src="/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/../../font-end/笔记/Typora笔记/assets/image-20201004091418745.png" alt="image-20201004091418745" style="zoom:80%;"> 
+<img src="/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/../../font-end/笔记/Typora笔记/assets/image-20201004091418745.png" alt="image-20201004091418745" style="zoom:80%;"> 
 
 <p><code> this</code>未明确指明对象，因此会使用默认绑定<code>window全局对象</code>。</p>
 <p>严格模式下，输出的<code>this</code>值会变成<code>undefined</code></p>
-<img src="/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/../../font-end/笔记/Typora笔记/assets/image-20201004095312070.png" alt="image-20201004095312070" style="zoom:67%;"> 
+<img src="/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/../../font-end/笔记/Typora笔记/assets/image-20201004095312070.png" alt="image-20201004095312070" style="zoom:67%;"> 
 
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">&#x27;小红&#x27;</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name = <span class="string">&#x27;小白&#x27;</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">d</span>(<span class="params">i</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> i();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> b = &#123;</span><br><span class="line">    name: <span class="string">&#x27;小黄&#x27;</span>,</span><br><span class="line">    detail:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="built_in">this</span>.name);</span><br><span class="line">    &#125;,</span><br><span class="line">    bibi:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="built_in">this</span>.name);</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> c = b.detail;</span><br><span class="line">b.a = a;</span><br><span class="line"><span class="keyword">var</span> e = b.bibi();</span><br><span class="line">a();</span><br><span class="line">c();</span><br><span class="line">b.a();</span><br><span class="line">d(b.detail);</span><br><span class="line">e();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 
-<h3 id="【JavaScript】闭包"><a href="#【JavaScript】闭包" class="headerlink" title="【JavaScript】闭包"></a>【JavaScript】闭包</h3><img src="/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/../../font-end/笔记/Typora笔记/assets/image-20201004155345884.png" alt="image-20201004155345884" style="zoom:67%;"> 
+<h3 id="【JavaScript】闭包"><a href="#【JavaScript】闭包" class="headerlink" title="【JavaScript】闭包"></a>【JavaScript】闭包</h3><img src="/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/../../font-end/笔记/Typora笔记/assets/image-20201004155345884.png" alt="image-20201004155345884" style="zoom:67%;"> 
 
-<img src="/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/../../font-end/笔记/Typora笔记/assets/image-20201004155722209.png" alt="image-20201004155722209" style="zoom:67%;">  
+<img src="/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/../../font-end/笔记/Typora笔记/assets/image-20201004155722209.png" alt="image-20201004155722209" style="zoom:67%;">  
 
 
 
@@ -552,7 +542,7 @@
 
 
 
-<h3 id="【JavaScript】伪类和伪元素的区别"><a href="#【JavaScript】伪类和伪元素的区别" class="headerlink" title="【JavaScript】伪类和伪元素的区别"></a>【JavaScript】伪类和伪元素的区别</h3><p><img src="/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201004175311734.png" alt="image-20201004175311734"> </p>
+<h3 id="【JavaScript】伪类和伪元素的区别"><a href="#【JavaScript】伪类和伪元素的区别" class="headerlink" title="【JavaScript】伪类和伪元素的区别"></a>【JavaScript】伪类和伪元素的区别</h3><p><img src="/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201004175311734.png" alt="image-20201004175311734"> </p>
 <h3 id="【CSS】垂直居中"><a href="#【CSS】垂直居中" class="headerlink" title="【CSS】垂直居中"></a>【CSS】垂直居中</h3><ol>
 <li><p>padding 缺点：父元素不能设置固定高度</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">50px</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -576,12 +566,12 @@
 
 </li>
 </ol>
-<h3 id="【JavaScript】小数精度问题"><a href="#【JavaScript】小数精度问题" class="headerlink" title="【JavaScript】小数精度问题"></a>【JavaScript】小数精度问题</h3><p><img src="/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006181930036.png" alt="image-20201006181930036"> </p>
-<h3 id="【JavaScript】-‘1’-’2’-’3’-map-parseInt"><a href="#【JavaScript】-‘1’-’2’-’3’-map-parseInt" class="headerlink" title="【JavaScript】[‘1’,’2’,’3’].map(parseInt)"></a>【JavaScript】[‘1’,’2’,’3’].map(parseInt)</h3><p><img src="/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006183311035.png" alt="image-20201006183311035">  </p>
-<p><img src="/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006182306149.png" alt="image-20201006182306149">  </p>
+<h3 id="【JavaScript】小数精度问题"><a href="#【JavaScript】小数精度问题" class="headerlink" title="【JavaScript】小数精度问题"></a>【JavaScript】小数精度问题</h3><p><img src="/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006181930036.png" alt="image-20201006181930036"> </p>
+<h3 id="【JavaScript】-‘1’-’2’-’3’-map-parseInt"><a href="#【JavaScript】-‘1’-’2’-’3’-map-parseInt" class="headerlink" title="【JavaScript】[‘1’,’2’,’3’].map(parseInt)"></a>【JavaScript】[‘1’,’2’,’3’].map(parseInt)</h3><p><img src="/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006183311035.png" alt="image-20201006183311035">  </p>
+<p><img src="/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006182306149.png" alt="image-20201006182306149">  </p>
 <p><strong>parseInt(*string*, *radix*)</strong>  解析一个字符串并返回指定基数的十进制整数， <code>radix</code> 是2-36之间的整数，表示被解析字符串的基数。</p>
-<p><img src="/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006183421421.png" alt="image-20201006183421421"> </p>
-<p><img src="/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006182452734.png" alt="image-20201006182452734"> </p>
+<p><img src="/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006183421421.png" alt="image-20201006183421421"> </p>
+<p><img src="/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006182452734.png" alt="image-20201006182452734"> </p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">&#x27;1&#x27;</span>,<span class="string">&#x27;2&#x27;</span>,<span class="string">&#x27;3&#x27;</span>].map(<span class="built_in">parseInt</span>); <span class="comment">// [1,NaN,NaN]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 刨析</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// map有三个参数:数组元素，元素索引，原数组本身</span></span><br><span class="line"><span class="comment">// parseInt有两个参数,元素本身以及进制</span></span><br><span class="line"><span class="comment">// 理清了这两个就好办了,</span></span><br><span class="line"><span class="comment">// [&#x27;1&#x27;,&#x27;2&#x27;,&#x27;3&#x27;].map(parseInt); 等于如下</span></span><br><span class="line">[<span class="string">&#x27;1&#x27;</span>,<span class="string">&#x27;2&#x27;</span>,<span class="string">&#x27;3&#x27;</span>].map(<span class="function"><span class="keyword">function</span>(<span class="params">item,index,array</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">parseInt</span>(item,index); <span class="comment">// 是不是一目了然</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// parseInt(&quot;1&quot;,0); =&gt; 1</span></span><br><span class="line"><span class="comment">// parseInt(&quot;2&quot;,1); =&gt; NaN</span></span><br><span class="line"><span class="comment">// parseInt(&quot;3&quot;,2); =&gt; NaN</span></span><br></pre></td></tr></table></figure>
 
 
@@ -592,7 +582,7 @@
 <li><code>overflow:auto/hidden/scroll;</code></li>
 <li><code>display:inline-block/flex;</code></li>
 </ol>
-<h3 id="【JavaScript】var、let、const的区别"><a href="#【JavaScript】var、let、const的区别" class="headerlink" title="【JavaScript】var、let、const的区别"></a>【JavaScript】var、let、const的区别</h3><p><img src="/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006190436863.png" alt="image-20201006190436863"> </p>
+<h3 id="【JavaScript】var、let、const的区别"><a href="#【JavaScript】var、let、const的区别" class="headerlink" title="【JavaScript】var、let、const的区别"></a>【JavaScript】var、let、const的区别</h3><p><img src="/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006190436863.png" alt="image-20201006190436863"> </p>
 <h3 id="【JavaScript】多行省略"><a href="#【JavaScript】多行省略" class="headerlink" title="【JavaScript】多行省略"></a>【JavaScript】多行省略</h3><ol>
 <li><p>-webkit-box 缺点：私有属性</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    <span class="attribute">display</span>: -webkit-box;</span><br><span class="line">    <span class="attribute">-webkit-box-orient</span>: vertical;</span><br><span class="line">    <span class="attribute">-webkit-line-clamp</span>: <span class="number">4</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -613,9 +603,9 @@
 
 
 
-<h3 id="【JavaScript】display-none-visibility-hidden-opacity-0"><a href="#【JavaScript】display-none-visibility-hidden-opacity-0" class="headerlink" title="【JavaScript】display:none/visibility:hidden/opacity:0"></a>【JavaScript】display:none/visibility:hidden/opacity:0</h3><p><img src="/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006221425265.png" alt="image-20201006221425265">  </p>
-<h3 id="【JavaScript】箭头函数与普通函数的区别"><a href="#【JavaScript】箭头函数与普通函数的区别" class="headerlink" title="【JavaScript】箭头函数与普通函数的区别"></a>【JavaScript】箭头函数与普通函数的区别</h3><p><img src="/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006222209212.png" alt="image-20201006222209212"> </p>
-<h3 id="【CSS-】不使用border创建边框"><a href="#【CSS-】不使用border创建边框" class="headerlink" title="【CSS 】不使用border创建边框"></a>【CSS 】不使用border创建边框</h3><p><img src="/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006224101456.png" alt="image-20201006224101456"> </p>
+<h3 id="【JavaScript】display-none-visibility-hidden-opacity-0"><a href="#【JavaScript】display-none-visibility-hidden-opacity-0" class="headerlink" title="【JavaScript】display:none/visibility:hidden/opacity:0"></a>【JavaScript】display:none/visibility:hidden/opacity:0</h3><p><img src="/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006221425265.png" alt="image-20201006221425265">  </p>
+<h3 id="【JavaScript】箭头函数与普通函数的区别"><a href="#【JavaScript】箭头函数与普通函数的区别" class="headerlink" title="【JavaScript】箭头函数与普通函数的区别"></a>【JavaScript】箭头函数与普通函数的区别</h3><p><img src="/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006222209212.png" alt="image-20201006222209212"> </p>
+<h3 id="【CSS-】不使用border创建边框"><a href="#【CSS-】不使用border创建边框" class="headerlink" title="【CSS 】不使用border创建边框"></a>【CSS 】不使用border创建边框</h3><p><img src="/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006224101456.png" alt="image-20201006224101456"> </p>
 <p><code>**box-shadow**</code> 属性用于在元素的框架上添加阴影效果。你可以在同一个元素上设置多个阴影效果，并用逗号将他们分隔开。该属性可设置的值包括阴影的X轴偏移量、Y轴偏移量、模糊半径、扩散半径和颜色。</p>
 <ol>
 <li><p>边框</p>
@@ -665,8 +655,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/11/14/JavaScript/" rel="next" title="JavaScript">
-                <i class="fa fa-chevron-left"></i> JavaScript
+              <a href="/2020/09/20/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/" rel="next" title="推荐软件">
+                <i class="fa fa-chevron-left"></i> 推荐软件
               </a>
             
           </div>
@@ -675,8 +665,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/11/14/vscode/" rel="prev" title="vscode">
-                vscode <i class="fa fa-chevron-right"></i>
+              <a href="/2020/11/11/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" rel="prev" title="使用Hugo搭建个人博客">
+                使用Hugo搭建个人博客 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
