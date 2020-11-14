@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="javascript," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="【JavaScript】typeof和instanceof的区别   数据类型可以分为基本数据类型和引用数据类型 基本数据类型 ：String、Number、Boolean 、Null、Undefined、Symbol、BigInt ; 引用数据类型：Object; typeof 一般被用于判断一个变量的类型，我们可以利用 typeof 来判断number, string, object, boo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript面试题">
+<meta property="og:url" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
+<meta property="og:site_name" content="听阳光的猫">
+<meta property="og:description" content="【JavaScript】typeof和instanceof的区别   数据类型可以分为基本数据类型和引用数据类型 基本数据类型 ：String、Number、Boolean 、Null、Undefined、Symbol、BigInt ; 引用数据类型：Object; typeof 一般被用于判断一个变量的类型，我们可以利用 typeof 来判断number, string, object, boo">
+<meta property="og:locale">
+<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201002224535001.png">
+<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003103146569.png">
+<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003104428828.png">
+<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003153250461.png">
+<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003153928081.png">
+<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161356373.png">
+<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161430785.png">
+<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161508961.png">
+<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161550987.png">
+<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161637385.png">
+<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161729153.png">
+<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161758967.png">
+<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201004082942150.png">
+<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201004085141784.png">
+<meta property="og:image" content="http://example.com/2020/font-end/笔记/Typora笔记/assets/image-20201004091418745.png">
+<meta property="og:image" content="http://example.com/2020/font-end/笔记/Typora笔记/assets/image-20201004095312070.png">
+<meta property="og:image" content="http://example.com/2020/font-end/笔记/Typora笔记/assets/image-20201004155345884.png">
+<meta property="og:image" content="http://example.com/2020/font-end/笔记/Typora笔记/assets/image-20201004155722209.png">
+<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201004175311734.png">
+<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006181930036.png">
+<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006183311035.png">
+<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006182306149.png">
+<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006183421421.png">
+<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006182452734.png">
+<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006190436863.png">
+<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006221425265.png">
+<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006222209212.png">
+<meta property="og:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006224101456.png">
+<meta property="article:published_time" content="2020-11-14T10:33:42.298Z">
+<meta property="article:modified_time" content="2020-11-14T08:32:08.098Z">
+<meta property="article:author" content="Derek Dong">
+<meta property="article:tag" content="javascript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201002224535001.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://example.com/2020/11/14/Javascript面试题/"/>
+
+
+
+
+
+  <title>Javascript面试题 | 听阳光的猫</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">听阳光的猫</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">道阻且长、望你如一</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/14/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="听阳光的猫">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Javascript面试题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-11-14T18:33:42+08:00">
+                2020-11-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/" itemprop="url" rel="index">
+                    <span itemprop="name">面试题</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="【JavaScript】typeof和instanceof的区别"><a href="#【JavaScript】typeof和instanceof的区别" class="headerlink" title="【JavaScript】typeof和instanceof的区别"></a>【JavaScript】typeof和instanceof的区别</h3><p><img src="Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201002224535001.png" alt="image-20201002224535001">  </p>
+<p>数据类型可以分为<code>基本数据类型</code>和<code>引用数据类型</code></p>
+<p>基本数据类型 ：<code>String</code>、<code>Number</code>、<code>Boolean</code> 、<code>Null</code>、<code>Undefined</code>、<code>Symbol</code>、<code>BigInt</code> ;</p>
+<p>引用数据类型：<code>Object</code>;</p>
+<p><code>typeof</code> 一般被用于判断一个变量的类型，我们可以利用 <code>typeof</code> 来判断<code>number</code>, <code>string</code>, <code>object</code>, <code>boolean</code>,</p>
+<p> <code>function</code>, <code>undefined</code>, <code>symbol</code> 这七种类型。</p>
+<p><code>Object.prototype.toString.call()</code> 我们可以利用这个方法来对一个变量的类型来进行比较准确的判断</p>
+<p><code>instanceof</code> 检测的左边必须是引用类型：数组、对象、用new()创建的对象；右边必须是函数</p>
+<a id="more"></a>
+
+<h3 id="【JavaScript】相等-和全等-运算符的区别"><a href="#【JavaScript】相等-和全等-运算符的区别" class="headerlink" title="【JavaScript】相等(==)和全等(===)运算符的区别"></a>【JavaScript】相等(==)和全等(===)运算符的区别</h3><p><code>null == undefined</code> true</p>
+<p><code>&#39;false&#39; == false 这个会转换为0</code> false</p>
+<h3 id="【JavaScript】对调两个变量的多种方法"><a href="#【JavaScript】对调两个变量的多种方法" class="headerlink" title="【JavaScript】对调两个变量的多种方法"></a>【JavaScript】对调两个变量的多种方法</h3><ol>
+<li><p>临时变量法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">3</span>,</span><br><span class="line">    b = <span class="number">5</span>,</span><br><span class="line">    c = b;</span><br><span class="line">b = a;</span><br><span class="line">a = c;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>加减法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">3</span>,</span><br><span class="line">    b = <span class="number">5</span>;</span><br><span class="line">a = a + b;</span><br><span class="line">b = a - b;</span><br><span class="line">a = a - b;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数组法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">3</span>,</span><br><span class="line">    b = <span class="number">5</span>;</span><br><span class="line">a = [a, b];</span><br><span class="line">b = a[<span class="number">0</span>];</span><br><span class="line">a = a[<span class="number">1</span>];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对象法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">3</span>,</span><br><span class="line">    b = <span class="number">5</span>;</span><br><span class="line">a =&#123; <span class="attr">a</span>:b, <span class="attr">b</span>:a&#125;;</span><br><span class="line">b = a.b;</span><br><span class="line">a = a.a;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数组运算法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">3</span>,</span><br><span class="line">    b = <span class="number">5</span>;</span><br><span class="line">a = [b, b = a][<span class="number">0</span>];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>按位异或法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">3</span>,</span><br><span class="line">    b = <span class="number">5</span>;</span><br><span class="line">a = a ^ b;</span><br><span class="line">b = b ^ a;</span><br><span class="line">a = a ^ b;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解构赋值法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">3</span>,</span><br><span class="line">    b = <span class="number">5</span>;</span><br><span class="line">[a, b] = [b ,a]</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<h3 id="【CSS】如何让超宽文本替换为省略号"><a href="#【CSS】如何让超宽文本替换为省略号" class="headerlink" title="【CSS】如何让超宽文本替换为省略号"></a>【CSS】如何让超宽文本替换为省略号</h3><p><img src="Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003103146569.png" alt="image-20201003103146569"> </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">width</span><span class="selector-pseudo">:100px</span>;</span><br><span class="line"><span class="selector-tag">white-space</span><span class="selector-pseudo">:nowrap</span>;</span><br><span class="line"><span class="selector-tag">overflow</span><span class="selector-pseudo">:hidden</span>;</span><br><span class="line"><span class="selector-tag">text-overflow</span><span class="selector-pseudo">:ellipsis</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="【JavaScript】document-write-和innerHTML的区别"><a href="#【JavaScript】document-write-和innerHTML的区别" class="headerlink" title="【JavaScript】document.write()和innerHTML的区别"></a>【JavaScript】document.write()和innerHTML的区别</h3><p><img src="Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003104428828.png" alt="image-20201003104428828"> </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">document</span>.write(<span class="string">&quot;大家好，我是蛋老师！&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> two = <span class="built_in">document</span>.getElementById(<span class="string">&quot;two&quot;</span>);</span><br><span class="line">two.innerHTML = <span class="string">&quot;鸡蛋&quot;</span>；</span><br><span class="line">two.innerHTML += <span class="string">&quot;蛋老师666&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="【JavaScript】删除排序数组中的重复项"><a href="#【JavaScript】删除排序数组中的重复项" class="headerlink" title="【JavaScript】删除排序数组中的重复项"></a>【JavaScript】删除排序数组中的重复项</h3><ol>
+<li><p>遍历移除法 <code>array.splice(index,howmany)</code>  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> nums = [<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">    <span class="keyword">if</span> (nums[i] === nums[i+<span class="number">1</span>]) &#123;</span><br><span class="line">        nums.splice(i,<span class="number">1</span>);</span><br><span class="line">        i--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(nums);</span><br><span class="line"><span class="built_in">console</span>.log(nums.length);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>双指针法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> nums = [<span class="number">2</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="number">6</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> father = <span class="number">0</span>, child = <span class="number">0</span>; father &lt; nums.length; father++)&#123;</span><br><span class="line">    <span class="function"><span class="title">if</span>(<span class="params">nums[child] !== nums[father]</span>)</span>&#123;</span><br><span class="line">        child++;</span><br><span class="line">        nums[child] = nums[father];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(child + <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<h3 id="【JavaScript】打乱数组内元素顺序"><a href="#【JavaScript】打乱数组内元素顺序" class="headerlink" title="【JavaScript】打乱数组内元素顺序"></a>【JavaScript】打乱数组内元素顺序</h3><p>Fisher-Yates shuffle</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> students = [<span class="string">&quot;学生1&quot;</span>, <span class="string">&quot;学生2&quot;</span>, <span class="string">&quot;学生3&quot;</span>, <span class="string">&quot;学生4&quot;</span>, <span class="string">&quot;调皮学生&quot;</span>]; </span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> length = students.length, index, temp;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> point = length - <span class="number">1</span>; point &gt;= <span class="number">0</span>; point--)&#123;</span><br><span class="line">    index = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * point);</span><br><span class="line">    temp = students[index]; </span><br><span class="line">    students[index] = students[point];</span><br><span class="line">    students[point] = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(students);</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="【JavaScript】二分法寻找数组元素"><a href="#【JavaScript】二分法寻找数组元素" class="headerlink" title="【JavaScript】二分法寻找数组元素"></a>【JavaScript】二分法寻找数组元素</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">3</span>, <span class="number">48</span>, <span class="number">66</span>, <span class="number">71</span>, <span class="number">99</span>, <span class="number">101</span>, <span class="number">120</span>, <span class="number">151</span>, <span class="number">188</span>, <span class="number">209</span>]</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">searching</span>(<span class="params">target</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> start = <span class="number">0</span>, end = arr.length - <span class="number">1</span>, middle, element;</span><br><span class="line">    <span class="function"><span class="title">while</span>(<span class="params">start &lt;= end</span>)</span>&#123;</span><br><span class="line">        middle = <span class="built_in">Math</span>.floor((start + end) / <span class="number">2</span>);</span><br><span class="line">        element = arr[middle];</span><br><span class="line">        <span class="function"><span class="title">if</span>(<span class="params">element === target</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> middle;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="function"><span class="title">if</span>(<span class="params">target &lt; element</span>)</span>&#123;</span><br><span class="line">            end =middle - <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            start = middle + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="【HTML】元素属性href和src的区别"><a href="#【HTML】元素属性href和src的区别" class="headerlink" title="【HTML】元素属性href和src的区别"></a>【HTML】元素属性href和src的区别</h3><p><code>href:Hypertext Reference</code> 超文本 应用或者参照—— <code>link</code>和<code>a</code>使用</p>
+<p>建立通道，让当前元素或文档和引用资源进行联系，需要引用资源的时候可以通过通道进行引用。</p>
+<p><code>src:source</code> 资源  ——–<code>img</code>、<code>style</code> 、<code>script</code> 、<code>input</code> 、<code>iframe</code> 使用</p>
+<p>会把资源下载下来，代替当前元素，然后嵌入到文档中。</p>
+<h3 id="【CSS】如何水平居中元素"><a href="#【CSS】如何水平居中元素" class="headerlink" title="【CSS】如何水平居中元素"></a>【CSS】如何水平居中元素</h3><ol>
+<li><p>行内元素设置水平居中</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*设置其父元素*/</span></span><br><span class="line"><span class="selector-tag">text-align</span><span class="selector-pseudo">:center</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>块级元素设置水平居中</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 设置宽度(块级元素不设置宽度的话默认占满一栏，这样居中就没效果) */</span></span><br><span class="line"><span class="selector-tag">width</span><span class="selector-pseudo">:100px</span>;</span><br><span class="line"><span class="selector-tag">margin</span><span class="selector-pseudo">:0</span> <span class="selector-tag">auto</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>浮动元素</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">float</span><span class="selector-pseudo">:left</span>;</span><br><span class="line"><span class="selector-tag">position</span><span class="selector-pseudo">:relative</span>;</span><br><span class="line"><span class="selector-tag">left</span><span class="selector-pseudo">:50</span>%;</span><br><span class="line"><span class="selector-tag">transform</span><span class="selector-pseudo">:translateX(-50</span>%);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>绝对定位</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">position</span><span class="selector-pseudo">:absolute</span>;</span><br><span class="line"><span class="selector-tag">left</span><span class="selector-pseudo">:50</span>%;</span><br><span class="line"><span class="selector-tag">transform</span><span class="selector-pseudo">:translateX(-50</span>%);</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<h3 id="【JavaScript】函数作用域"><a href="#【JavaScript】函数作用域" class="headerlink" title="【JavaScript】函数作用域"></a>【JavaScript】函数作用域</h3><p><img src="Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003153250461.png" alt="image-20201003153250461"></p>
+<p><img src="Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003153928081.png" alt="image-20201003153928081"> </p>
+<h3 id="【JavaScript】加法运算"><a href="#【JavaScript】加法运算" class="headerlink" title="【JavaScript】加法运算"></a>【JavaScript】加法运算</h3><p><img src="Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161356373.png" alt="image-20201003161356373"> </p>
+<p><img src="Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161430785.png" alt="image-20201003161430785"> </p>
+<p><img src="Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161508961.png" alt="image-20201003161508961"> </p>
+<p><img src="Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161550987.png" alt="image-20201003161550987"> </p>
+<p><img src="Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161637385.png" alt="image-20201003161637385"> </p>
+<p><img src="Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161729153.png" alt="image-20201003161729153">  </p>
+<p><img src="Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161758967.png" alt="image-20201003161758967"> </p>
+<p> 第二个空对象在前面会被忽略。后面的空数组转化为数字。</p>
+<h3 id="【JavaScript】九九乘法表"><a href="#【JavaScript】九九乘法表" class="headerlink" title="【JavaScript】九九乘法表"></a>【JavaScript】九九乘法表</h3><p><img src="Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201004082942150.png" alt="image-20201004082942150">  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.write(<span class="string">&quot;&lt;table&gt;&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> row = <span class="number">1</span>; row &lt; <span class="number">10</span>; row++)&#123;</span><br><span class="line">        <span class="built_in">document</span>.write(<span class="string">&quot;&lt;tr&gt;&quot;</span>)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> column = <span class="number">1</span>; column &lt;= row; column++)&#123;</span><br><span class="line">            <span class="built_in">document</span>.write(<span class="string">&quot;&lt;td&gt;&quot;</span> + column + <span class="string">&quot;×&quot;</span> + row + <span class="string">&quot;=&quot;</span> + row*column + <span class="string">&quot;&lt;/td&gt;&quot;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">document</span>.write(<span class="string">&quot;&lt;/tr&gt;&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">&quot;&lt;/table&gt;&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201004085141784.png" alt="image-20201004085141784"> </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.write(<span class="string">&quot;&lt;table&gt;&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> row = <span class="number">1</span>; row &lt; <span class="number">10</span>; row++)&#123;</span><br><span class="line">        <span class="built_in">document</span>.write(<span class="string">&quot;&lt;tr&gt;&quot;</span>)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> blank = <span class="number">9</span> - row; blank &gt; <span class="number">0</span>; blank--)&#123;</span><br><span class="line">            <span class="built_in">document</span>.write(<span class="string">&quot;&lt;td&gt;&lt;/td&gt;&quot;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> column = row; column &gt; <span class="number">0</span>; column--)&#123;</span><br><span class="line">            <span class="built_in">document</span>.write(<span class="string">&quot;&lt;td&gt;&quot;</span> + row + <span class="string">&quot;×&quot;</span> + column + <span class="string">&quot;=&quot;</span> + row*column + <span class="string">&quot;&lt;/td&gt;&quot;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">document</span>.write(<span class="string">&quot;&lt;/tr&gt;&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">&quot;&lt;/table&gt;&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="【JavaScript】this关键字"><a href="#【JavaScript】this关键字" class="headerlink" title="【JavaScript】this关键字"></a>【JavaScript】this关键字</h3><p><code>this</code>指向的是谁(对象)最后调用了它</p>
+<img src="../../../font-end/笔记/Typora笔记/assets/image-20201004091418745.png" alt="image-20201004091418745" style="zoom:80%;" /> 
+
+<p><code> this</code>未明确指明对象，因此会使用默认绑定<code>window全局对象</code>。</p>
+<p>严格模式下，输出的<code>this</code>值会变成<code>undefined</code></p>
+<img src="../../../font-end/笔记/Typora笔记/assets/image-20201004095312070.png" alt="image-20201004095312070" style="zoom:67%;" /> 
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">&#x27;小红&#x27;</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name = <span class="string">&#x27;小白&#x27;</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">d</span>(<span class="params">i</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> i();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> b = &#123;</span><br><span class="line">    name: <span class="string">&#x27;小黄&#x27;</span>,</span><br><span class="line">    detail:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="built_in">this</span>.name);</span><br><span class="line">    &#125;,</span><br><span class="line">    bibi:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="built_in">this</span>.name);</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> c = b.detail;</span><br><span class="line">b.a = a;</span><br><span class="line"><span class="keyword">var</span> e = b.bibi();</span><br><span class="line">a();</span><br><span class="line">c();</span><br><span class="line">b.a();</span><br><span class="line">d(b.detail);</span><br><span class="line">e();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="【JavaScript】闭包"><a href="#【JavaScript】闭包" class="headerlink" title="【JavaScript】闭包"></a>【JavaScript】闭包</h3><img src="../../../font-end/笔记/Typora笔记/assets/image-20201004155345884.png" alt="image-20201004155345884" style="zoom:67%;" /> 
+
+<img src="../../../font-end/笔记/Typora笔记/assets/image-20201004155722209.png" alt="image-20201004155722209" style="zoom:67%;" />  
+
+
+
+<h3 id="【JavaScript】两数之和-Two-Sum"><a href="#【JavaScript】两数之和-Two-Sum" class="headerlink" title="【JavaScript】两数之和 Two Sum"></a>【JavaScript】两数之和 Two Sum</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> nums = [<span class="number">2</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>];</span><br><span class="line"><span class="keyword">var</span> target = <span class="number">26</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> twoSum = <span class="function"><span class="keyword">function</span>(<span class="params">nums, target</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> box = &#123;&#125;;</span><br><span class="line">    <span class="comment">// 或者换为var box = new Map()</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt;nums.length; i++)&#123;</span><br><span class="line">        <span class="function"><span class="title">if</span>(<span class="params">box[target-nums[i]] &gt;= <span class="number">0</span></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> [box[target - nums[<span class="number">1</span>], i]];</span><br><span class="line">        &#125;;</span><br><span class="line">        box[num[i]] = i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="【JavaScript】伪类和伪元素的区别"><a href="#【JavaScript】伪类和伪元素的区别" class="headerlink" title="【JavaScript】伪类和伪元素的区别"></a>【JavaScript】伪类和伪元素的区别</h3><p><img src="Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201004175311734.png" alt="image-20201004175311734"> </p>
+<h3 id="【CSS】垂直居中"><a href="#【CSS】垂直居中" class="headerlink" title="【CSS】垂直居中"></a>【CSS】垂直居中</h3><ol>
+<li><p>padding 缺点：父元素不能设置固定高度</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">50px</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>inline-height 优点：父元素可以设置固定高度</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>flex布局 缺点：兼容性</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">170px</span>;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">flex-direction</span>: column;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>absolute 缺点：脱离文档流</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">    &lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">        <span class="selector-tag">div</span> &#123;</span><br><span class="line">            <span class="attribute">position</span>: relative;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">170px</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="selector-tag">i</span> &#123;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">50px</span>;</span><br><span class="line">            <span class="attribute">position</span>: absolute;</span><br><span class="line">            <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">            <span class="comment">/* margin-top: -25px; */</span></span><br><span class="line">            <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-<span class="number">50%</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line"></span><br><span class="line">    &lt;<span class="selector-tag">div</span>&gt;</span><br><span class="line">        &lt;i&gt;&lt;/i&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>grid布局 缺点：兼容性</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">6</span>, <span class="number">1</span>fr);</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>伪元素 优点：兼容性好</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">    &lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">        <span class="selector-tag">div</span><span class="selector-class">.search</span> &#123;</span><br><span class="line">            <span class="attribute">display</span>: inline-block;</span><br><span class="line">            <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="selector-tag">div</span><span class="selector-class">.main</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">            <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">            <span class="attribute">display</span>: inline-block;</span><br><span class="line">            <span class="attribute">background-color</span>: gold;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">            <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">    &lt;div class=&quot;main&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;search&quot;&gt;</span><br><span class="line">            &lt;form action=&quot;&quot;&gt;</span><br><span class="line">                &lt;input type=&quot;text&quot; placeholder=&quot;技术蛋老师...&quot;&gt;</span><br><span class="line">                &lt;div class=&quot;button&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/div&gt;</span><br><span class="line">            &lt;/form&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<h3 id="【JavaScript】小数精度问题"><a href="#【JavaScript】小数精度问题" class="headerlink" title="【JavaScript】小数精度问题"></a>【JavaScript】小数精度问题</h3><p><img src="Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006181930036.png" alt="image-20201006181930036"> </p>
+<h3 id="【JavaScript】-‘1’-’2’-’3’-map-parseInt"><a href="#【JavaScript】-‘1’-’2’-’3’-map-parseInt" class="headerlink" title="【JavaScript】[‘1’,’2’,’3’].map(parseInt)"></a>【JavaScript】[‘1’,’2’,’3’].map(parseInt)</h3><p><img src="Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006183311035.png" alt="image-20201006183311035">  </p>
+<p><img src="Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006182306149.png" alt="image-20201006182306149">  </p>
+<p><strong>parseInt(*string*, *radix*)</strong>  解析一个字符串并返回指定基数的十进制整数， <code>radix</code> 是2-36之间的整数，表示被解析字符串的基数。</p>
+<p><img src="Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006183421421.png" alt="image-20201006183421421"> </p>
+<p><img src="Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006182452734.png" alt="image-20201006182452734"> </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">&#x27;1&#x27;</span>,<span class="string">&#x27;2&#x27;</span>,<span class="string">&#x27;3&#x27;</span>].map(<span class="built_in">parseInt</span>); <span class="comment">// [1,NaN,NaN]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 刨析</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// map有三个参数:数组元素，元素索引，原数组本身</span></span><br><span class="line"><span class="comment">// parseInt有两个参数,元素本身以及进制</span></span><br><span class="line"><span class="comment">// 理清了这两个就好办了,</span></span><br><span class="line"><span class="comment">// [&#x27;1&#x27;,&#x27;2&#x27;,&#x27;3&#x27;].map(parseInt); 等于如下</span></span><br><span class="line">[<span class="string">&#x27;1&#x27;</span>,<span class="string">&#x27;2&#x27;</span>,<span class="string">&#x27;3&#x27;</span>].map(<span class="function"><span class="keyword">function</span>(<span class="params">item,index,array</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">parseInt</span>(item,index); <span class="comment">// 是不是一目了然</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// parseInt(&quot;1&quot;,0); =&gt; 1</span></span><br><span class="line"><span class="comment">// parseInt(&quot;2&quot;,1); =&gt; NaN</span></span><br><span class="line"><span class="comment">// parseInt(&quot;3&quot;,2); =&gt; NaN</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="【CSS】触发BFC"><a href="#【CSS】触发BFC" class="headerlink" title="【CSS】触发BFC"></a>【CSS】触发BFC</h3><ol>
+<li><code>position:absolute/fixed;</code></li>
+<li><code>float:left/right;</code></li>
+<li><code>overflow:auto/hidden/scroll;</code></li>
+<li><code>display:inline-block/flex;</code></li>
+</ol>
+<h3 id="【JavaScript】var、let、const的区别"><a href="#【JavaScript】var、let、const的区别" class="headerlink" title="【JavaScript】var、let、const的区别"></a>【JavaScript】var、let、const的区别</h3><p><img src="Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006190436863.png" alt="image-20201006190436863"> </p>
+<h3 id="【JavaScript】多行省略"><a href="#【JavaScript】多行省略" class="headerlink" title="【JavaScript】多行省略"></a>【JavaScript】多行省略</h3><ol>
+<li><p>-webkit-box 缺点：私有属性</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    <span class="attribute">display</span>: -webkit-box;</span><br><span class="line">    <span class="attribute">-webkit-box-orient</span>: vertical;</span><br><span class="line">    <span class="attribute">-webkit-line-clamp</span>: <span class="number">4</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>双重伪元素</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">padding-right</span>: <span class="number">1em</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: justify;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;...&quot;</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">1em</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">1em</span>;</span><br><span class="line">    <span class="attribute">display</span>: inline;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">0.5em</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#f0f</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>linear-gradient</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">210px</span>;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    <span class="attribute">text-align</span>: justify;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">1.2em</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">20%</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(to right, rgba(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0</span>), <span class="number">#f6acc8</span> <span class="number">80%</span>);</span><br><span class="line">    <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">margin-bottom</span>: <span class="number">0.2em</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<h3 id="【JavaScript】倒计时"><a href="#【JavaScript】倒计时" class="headerlink" title="【JavaScript】倒计时"></a>【JavaScript】倒计时</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>请在以下时间对视频点赞<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;daySpan&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;hourSpan&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;minuteSpan&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;secondSpan&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>感谢观看<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./index.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> daySpan = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.daySpan&#x27;</span>),</span><br><span class="line">    hourSpan = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.hourSpan&#x27;</span>),</span><br><span class="line">    minuteSpan = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.minuteSpan&#x27;</span>),</span><br><span class="line">    secondSpan = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.secondSpan&#x27;</span>),</span><br><span class="line">    deadline = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">&#x27;2020-10-15 00:00&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">countdown</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>(),</span><br><span class="line">        timeRemaining = deadline - now;</span><br><span class="line">    <span class="keyword">let</span> day, hour, minute, second;</span><br><span class="line">    <span class="keyword">if</span> (timeRemaining &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    second = <span class="built_in">Math</span>.floor(timeRemaining / <span class="number">1000</span> % <span class="number">60</span>);</span><br><span class="line">    minute = <span class="built_in">Math</span>.floor(timeRemaining / <span class="number">1000</span> / <span class="number">60</span> % <span class="number">60</span>);</span><br><span class="line">    hour = <span class="built_in">Math</span>.floor(timeRemaining / <span class="number">1000</span> / <span class="number">60</span> / <span class="number">60</span> % <span class="number">24</span>);</span><br><span class="line">    day = <span class="built_in">Math</span>.floor(timeRemaining / <span class="number">1000</span> / <span class="number">60</span> / <span class="number">60</span> / <span class="number">24</span>);</span><br><span class="line"></span><br><span class="line">    daySpan.innerHTML = day + <span class="string">&#x27;天&#x27;</span>;</span><br><span class="line">    hourSpan.innerHTML = hour + <span class="string">&#x27;时&#x27;</span>;</span><br><span class="line">    minuteSpan.innerHTML = minute + <span class="string">&#x27;分&#x27;</span>;</span><br><span class="line">    secondSpan.innerHTML = second + <span class="string">&#x27;秒&#x27;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">setTimeout</span>(countdown, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">countdown();</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="【JavaScript】display-none-visibility-hidden-opacity-0"><a href="#【JavaScript】display-none-visibility-hidden-opacity-0" class="headerlink" title="【JavaScript】display:none/visibility:hidden/opacity:0"></a>【JavaScript】display:none/visibility:hidden/opacity:0</h3><p><img src="Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006221425265.png" alt="image-20201006221425265">  </p>
+<h3 id="【JavaScript】箭头函数与普通函数的区别"><a href="#【JavaScript】箭头函数与普通函数的区别" class="headerlink" title="【JavaScript】箭头函数与普通函数的区别"></a>【JavaScript】箭头函数与普通函数的区别</h3><p><img src="Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006222209212.png" alt="image-20201006222209212"> </p>
+<h3 id="【CSS-】不使用border创建边框"><a href="#【CSS-】不使用border创建边框" class="headerlink" title="【CSS 】不使用border创建边框"></a>【CSS 】不使用border创建边框</h3><p><img src="Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006224101456.png" alt="image-20201006224101456"> </p>
+<p><code>**box-shadow**</code> 属性用于在元素的框架上添加阴影效果。你可以在同一个元素上设置多个阴影效果，并用逗号将他们分隔开。该属性可设置的值包括阴影的X轴偏移量、Y轴偏移量、模糊半径、扩散半径和颜色。</p>
+<ol>
+<li><p>边框</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">	<span class="selector-tag">input</span> &#123;</span><br><span class="line">    	<span class="attribute">border</span>: none;</span><br><span class="line">    	<span class="attribute">outline</span>: none;</span><br><span class="line">    	<span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#3797a4</span>;</span><br><span class="line">    	<span class="attribute">padding-bottom</span>: <span class="number">10px</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="selector-tag">input</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">    	<span class="attribute">border</span>: none;</span><br><span class="line">    	<span class="attribute">padding-bottom</span>: <span class="number">0</span>;</span><br><span class="line">    	<span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> <span class="number">#fcf876</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">    &lt;form action=&quot;&quot;&gt;</span><br><span class="line">        &lt;input type=&quot;text&quot; placeholder=&quot;你好呀&quot;&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>内边框</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">    <span class="selector-tag">img</span> &#123;</span><br><span class="line">        <span class="attribute">position</span>: relative;</span><br><span class="line">        <span class="attribute">z-index</span>: -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="selector-tag">div</span> &#123;</span><br><span class="line">        <span class="attribute">height</span>: <span class="number">500px</span>;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">320px</span>;</span><br><span class="line">        <span class="attribute">box-shadow</span>: insert <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">50px</span> <span class="built_in">rgba</span>(<span class="number">123</span>, <span class="number">104</span>, <span class="number">255</span>, <span class="number">0.2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&lt;<span class="selector-tag">section</span>&gt;</span><br><span class="line">    &lt;<span class="selector-tag">div</span>&gt;</span><br><span class="line">        &lt;img src=&quot;./icons.png&quot; alt=&quot;&quot;&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/section&gt;</span><br><span class="line">   </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>双边框</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">       img &#123;</span><br><span class="line">           margin: 50px;</span><br><span class="line">           width: 500px;</span><br><span class="line">           box-shadow: 0 0 0 10px #32e0c4, </span><br><span class="line">                       0 0 0 30px white, </span><br><span class="line">                       -40px -40px #ff9595, </span><br><span class="line">                       40px 40px #ff9595;</span><br><span class="line">       &#125;</span><br><span class="line">   </span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;./icons.png&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<h3 id="箭头函数中的this的使用"><a href="#箭头函数中的this的使用" class="headerlink" title="箭头函数中的this的使用"></a>箭头函数中的this的使用</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="comment">// 什么时候使用箭头</span></span></span><br><span class="line"><span class="javascript">  <span class="comment">// setTimeout(function () &#123;</span></span></span><br><span class="line"><span class="javascript">  <span class="comment">//   console.log(this);</span></span></span><br><span class="line"><span class="javascript">  <span class="comment">// &#125;, 1000)</span></span></span><br><span class="line"><span class="javascript">  <span class="comment">//</span></span></span><br><span class="line"><span class="javascript">  <span class="comment">// setTimeout(() =&gt; &#123;</span></span></span><br><span class="line"><span class="javascript">  <span class="comment">//   console.log(this);</span></span></span><br><span class="line"><span class="javascript">  <span class="comment">// &#125;, 1000)</span></span></span><br><span class="line"></span><br><span class="line"><span class="javascript">  <span class="comment">// 问题: 箭头函数中的this是如何查找的了?</span></span></span><br><span class="line"><span class="javascript">  <span class="comment">// 答案: 向外层作用域中, 一层层查找this, 直到有this的定义.</span></span></span><br><span class="line"><span class="javascript">  <span class="comment">// const obj = &#123;</span></span></span><br><span class="line"><span class="javascript">  <span class="comment">//   aaa() &#123;</span></span></span><br><span class="line"><span class="javascript">  <span class="comment">//     setTimeout(function () &#123;</span></span></span><br><span class="line"><span class="javascript">  <span class="comment">//       console.log(this); // window</span></span></span><br><span class="line"><span class="javascript">  <span class="comment">//     &#125;)</span></span></span><br><span class="line"><span class="javascript">  <span class="comment">//</span></span></span><br><span class="line"><span class="javascript">  <span class="comment">//     setTimeout(() =&gt; &#123;</span></span></span><br><span class="line"><span class="javascript">  <span class="comment">//       console.log(this); // obj对象</span></span></span><br><span class="line"><span class="javascript">  <span class="comment">//     &#125;)</span></span></span><br><span class="line"><span class="javascript">  <span class="comment">//   &#125;</span></span></span><br><span class="line"><span class="javascript">  <span class="comment">// &#125;</span></span></span><br><span class="line"><span class="javascript">  <span class="comment">//</span></span></span><br><span class="line"><span class="javascript">  <span class="comment">// obj.aaa()</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> obj = &#123;</span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="title">aaa</span>(<span class="params"></span>)</span> &#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="built_in">this</span>); <span class="comment">// window</span></span></span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="built_in">this</span>); <span class="comment">// window</span></span></span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;)</span><br><span class="line"></span><br><span class="line"><span class="javascript">      <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="built_in">this</span>); <span class="comment">// window</span></span></span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="built_in">this</span>); <span class="comment">// obj</span></span></span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  obj.aaa()</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/11/14/JavaScript/" rel="next" title="JavaScript">
+                <i class="fa fa-chevron-left"></i> JavaScript
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/11/14/vscode/" rel="prev" title="vscode">
+                vscode <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Derek-Dong" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:derek-dong@foxmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90JavaScript%E3%80%91typeof%E5%92%8Cinstanceof%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.</span> <span class="nav-text">【JavaScript】typeof和instanceof的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90JavaScript%E3%80%91%E7%9B%B8%E7%AD%89-%E5%92%8C%E5%85%A8%E7%AD%89-%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">2.</span> <span class="nav-text">【JavaScript】相等(&#x3D;&#x3D;)和全等(&#x3D;&#x3D;&#x3D;)运算符的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90JavaScript%E3%80%91%E5%AF%B9%E8%B0%83%E4%B8%A4%E4%B8%AA%E5%8F%98%E9%87%8F%E7%9A%84%E5%A4%9A%E7%A7%8D%E6%96%B9%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">【JavaScript】对调两个变量的多种方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90CSS%E3%80%91%E5%A6%82%E4%BD%95%E8%AE%A9%E8%B6%85%E5%AE%BD%E6%96%87%E6%9C%AC%E6%9B%BF%E6%8D%A2%E4%B8%BA%E7%9C%81%E7%95%A5%E5%8F%B7"><span class="nav-number">4.</span> <span class="nav-text">【CSS】如何让超宽文本替换为省略号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90JavaScript%E3%80%91document-write-%E5%92%8CinnerHTML%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">5.</span> <span class="nav-text">【JavaScript】document.write()和innerHTML的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90JavaScript%E3%80%91%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9"><span class="nav-number">6.</span> <span class="nav-text">【JavaScript】删除排序数组中的重复项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90JavaScript%E3%80%91%E6%89%93%E4%B9%B1%E6%95%B0%E7%BB%84%E5%86%85%E5%85%83%E7%B4%A0%E9%A1%BA%E5%BA%8F"><span class="nav-number">7.</span> <span class="nav-text">【JavaScript】打乱数组内元素顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90JavaScript%E3%80%91%E4%BA%8C%E5%88%86%E6%B3%95%E5%AF%BB%E6%89%BE%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0"><span class="nav-number">8.</span> <span class="nav-text">【JavaScript】二分法寻找数组元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90HTML%E3%80%91%E5%85%83%E7%B4%A0%E5%B1%9E%E6%80%A7href%E5%92%8Csrc%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">9.</span> <span class="nav-text">【HTML】元素属性href和src的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90CSS%E3%80%91%E5%A6%82%E4%BD%95%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E5%85%83%E7%B4%A0"><span class="nav-number">10.</span> <span class="nav-text">【CSS】如何水平居中元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90JavaScript%E3%80%91%E5%87%BD%E6%95%B0%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-number">11.</span> <span class="nav-text">【JavaScript】函数作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90JavaScript%E3%80%91%E5%8A%A0%E6%B3%95%E8%BF%90%E7%AE%97"><span class="nav-number">12.</span> <span class="nav-text">【JavaScript】加法运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90JavaScript%E3%80%91%E4%B9%9D%E4%B9%9D%E4%B9%98%E6%B3%95%E8%A1%A8"><span class="nav-number">13.</span> <span class="nav-text">【JavaScript】九九乘法表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90JavaScript%E3%80%91this%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">14.</span> <span class="nav-text">【JavaScript】this关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90JavaScript%E3%80%91%E9%97%AD%E5%8C%85"><span class="nav-number">15.</span> <span class="nav-text">【JavaScript】闭包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90JavaScript%E3%80%91%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C-Two-Sum"><span class="nav-number">16.</span> <span class="nav-text">【JavaScript】两数之和 Two Sum</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90JavaScript%E3%80%91%E4%BC%AA%E7%B1%BB%E5%92%8C%E4%BC%AA%E5%85%83%E7%B4%A0%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">17.</span> <span class="nav-text">【JavaScript】伪类和伪元素的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90CSS%E3%80%91%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD"><span class="nav-number">18.</span> <span class="nav-text">【CSS】垂直居中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90JavaScript%E3%80%91%E5%B0%8F%E6%95%B0%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98"><span class="nav-number">19.</span> <span class="nav-text">【JavaScript】小数精度问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90JavaScript%E3%80%91-%E2%80%981%E2%80%99-%E2%80%992%E2%80%99-%E2%80%993%E2%80%99-map-parseInt"><span class="nav-number">20.</span> <span class="nav-text">【JavaScript】[‘1’,’2’,’3’].map(parseInt)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90CSS%E3%80%91%E8%A7%A6%E5%8F%91BFC"><span class="nav-number">21.</span> <span class="nav-text">【CSS】触发BFC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90JavaScript%E3%80%91var%E3%80%81let%E3%80%81const%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">22.</span> <span class="nav-text">【JavaScript】var、let、const的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90JavaScript%E3%80%91%E5%A4%9A%E8%A1%8C%E7%9C%81%E7%95%A5"><span class="nav-number">23.</span> <span class="nav-text">【JavaScript】多行省略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90JavaScript%E3%80%91%E5%80%92%E8%AE%A1%E6%97%B6"><span class="nav-number">24.</span> <span class="nav-text">【JavaScript】倒计时</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90JavaScript%E3%80%91display-none-visibility-hidden-opacity-0"><span class="nav-number">25.</span> <span class="nav-text">【JavaScript】display:none&#x2F;visibility:hidden&#x2F;opacity:0</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90JavaScript%E3%80%91%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E4%B8%8E%E6%99%AE%E9%80%9A%E5%87%BD%E6%95%B0%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">26.</span> <span class="nav-text">【JavaScript】箭头函数与普通函数的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90CSS-%E3%80%91%E4%B8%8D%E4%BD%BF%E7%94%A8border%E5%88%9B%E5%BB%BA%E8%BE%B9%E6%A1%86"><span class="nav-number">27.</span> <span class="nav-text">【CSS 】不使用border创建边框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E4%B8%AD%E7%9A%84this%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">28.</span> <span class="nav-text">箭头函数中的this的使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number"></span> <span class="nav-text"></span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Derek Dong</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
