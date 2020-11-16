@@ -2,7 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://derek-dong.github.io/2020/11/16/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E5%BB%BA%E8%AE%AE/</loc>
+    
+    <lastmod>2020-11-16</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://derek-dong.github.io/2020/11/16/%E5%9B%BE%E8%A7%A3/</loc>
+    
+    <lastmod>2020-11-16</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://derek-dong.github.io/2020/11/11/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
+    
+    <lastmod>2020-11-16</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://derek-dong.github.io/2020/11/16/%E5%89%8D%E7%AB%AF%E5%A4%A7%E5%B1%80%E8%A7%82/</loc>
+    
+    <lastmod>2020-11-16</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://derek-dong.github.io/2020/11/15/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/</loc>
     
     <lastmod>2020-11-16</lastmod>
     
@@ -12,13 +40,6 @@
     <loc>https://derek-dong.github.io/2020/11/14/HTML%E5%92%8CCSS%E7%9F%A5%E8%AF%86%E7%82%B9/</loc>
     
     <lastmod>2020-11-16</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://derek-dong.github.io/2020/11/15/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/</loc>
-    
-    <lastmod>2020-11-15</lastmod>
     
   </url>
   
@@ -137,14 +158,14 @@
   </url>
   
   <url>
-    <loc>https://derek-dong.github.io/tags/hexo/</loc>
+    <loc>https://derek-dong.github.io/tags/hugo/</loc>
     <lastmod>2020-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://derek-dong.github.io/tags/hugo/</loc>
+    <loc>https://derek-dong.github.io/tags/%E6%96%B9%E5%90%91/</loc>
     <lastmod>2020-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -166,6 +187,13 @@
   
   <url>
     <loc>https://derek-dong.github.io/tags/javascript/</loc>
+    <lastmod>2020-11-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://derek-dong.github.io/tags/hexo/</loc>
     <lastmod>2020-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
