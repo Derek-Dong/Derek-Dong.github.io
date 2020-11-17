@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"derek-dong.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"derek-dong.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta property="og:type" content="website">
@@ -187,7 +187,7 @@
     <link itemprop="mainEntityOfPage" href="https://derek-dong.github.io/2020/11/17/%E4%BB%8E%20NexT%20v5.1.x%20%E6%9B%B4%E6%96%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="Derek Dong">
       <meta itemprop="description" content="">
     </span>
@@ -209,7 +209,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-11-17 13:27:56 / 修改时间：13:49:22" itemprop="dateCreated datePublished" datetime="2020-11-17T13:27:56+08:00">2020-11-17</time>
+              <time title="创建时间：2020-11-17 13:27:56 / 修改时间：15:55:09" itemprop="dateCreated datePublished" datetime="2020-11-17T13:27:56+08:00">2020-11-17</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -227,7 +227,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.1k</span>
+              <span>3.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -257,7 +257,7 @@
 </ol>
 </li>
 <li><p>克隆新的仓库到任一异于 <code>next</code> 的目录（如 <code>next-reloaded</code>）：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next-reloaded</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next-reloaded</span><br></pre></td></tr></table></figure>
 
 <p>如此，你可以在不修改原有的 NexT v5.1.x 目录的同时使用 <code>next-reloaded</code> 目录中的新版本主题。</p>
 </li>
@@ -274,50 +274,14 @@
 <p>如果完成了以上步骤后，执行 <code>hexo s</code> 或 <code>hexo g</code> 出现错误，这意味着可能是旧版的 Hexo 和 Hexo 插件与新版的 NexT 主题产生了冲突。我们建议将 Hexo 升级至 4.0 以上的版本，将 Hexo 插件升级到最新版本。你可以执行 <code>npm outdated</code> 查看所有可以升级的插件。</p>
 </li>
 </ol>
-<h2 id="添加字数统计及阅读时长"><a href="#添加字数统计及阅读时长" class="headerlink" title="添加字数统计及阅读时长"></a>添加字数统计及阅读时长</h2><h3 id="安装hexo-symbols-count-time"><a href="#安装hexo-symbols-count-time" class="headerlink" title="安装hexo-symbols-count-time"></a>安装hexo-symbols-count-time</h3><p>在博客文件夹里执行命令：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> hexo-symbols-<span class="keyword">count</span>-<span class="built_in">time</span> <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="修改相关配置文件"><a href="#修改相关配置文件" class="headerlink" title="修改相关配置文件"></a>修改相关配置文件</h3><ul>
-<li>在<strong>站点</strong>配置文件添加：</li>
-</ul>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line"> <span class="comment">#文章内是否显示</span></span><br><span class="line">  <span class="attr">symbols:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">time:</span> <span class="literal">true</span></span><br><span class="line"> <span class="comment"># 网页底部是否显示</span></span><br><span class="line">  <span class="attr">total_symbols:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_time:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>在Next<strong>主题</strong>配置文件修改</p>
-<p>搜索<strong>symbols_count_time</strong></p>
-</li>
-</ul>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">separated_meta:</span> <span class="literal">true</span>  <span class="comment"># 是否换行显示 字数统计 及 阅读时长</span></span><br><span class="line">  <span class="attr">item_text_post:</span> <span class="literal">true</span>  <span class="comment"># 文章 字数统计 阅读时长 使用图标 还是 文本表示</span></span><br><span class="line">  <span class="attr">item_text_total:</span> <span class="literal">true</span> <span class="comment"># 博客底部统计 字数统计 阅读时长 使用图标 还是 文本表示</span></span><br><span class="line">  <span class="attr">awl:</span> <span class="number">4</span></span><br><span class="line">  <span class="attr">wpm:</span> <span class="number">275</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h2 id="Hexo之NexT主题代码块MacPanel特效配置"><a href="#Hexo之NexT主题代码块MacPanel特效配置" class="headerlink" title="Hexo之NexT主题代码块MacPanel特效配置"></a>Hexo之NexT主题代码块MacPanel特效配置</h2><h3 id="设置主题风格"><a href="#设置主题风格" class="headerlink" title="设置主题风格"></a>设置主题风格</h3><ul>
-<li>打开themes/next/下的_config.yml，查找Schemes，根据个人爱好选择不同的主题风格，将前面的注释“#”删除即可应用该风格。</li>
-</ul>
-<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Schemes</span></span><br><span class="line"><span class="meta">#scheme: Muse</span></span><br><span class="line"><span class="meta">#scheme: Mist</span></span><br><span class="line"><span class="meta">#scheme: Pisces</span></span><br><span class="line">scheme: Gemini</span><br></pre></td></tr></table></figure>
-
-<h3 id="设置代码高亮主题"><a href="#设置代码高亮主题" class="headerlink" title="设置代码高亮主题"></a>设置代码高亮主题</h3><ol>
-<li>在站点配置文件中的highlight字段可以设置代码格式：</li>
-</ol>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">highlight:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># 是否显示行号</span></span><br><span class="line">  <span class="attr">line_number:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># 自动识别，不同类型的标识符显示不同颜色，设置为false时代码只有一种颜色</span></span><br><span class="line">  <span class="attr">auto_detect:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">tab_replace:</span> <span class="string">&#x27;&#x27;</span> </span><br></pre></td></tr></table></figure>
-
-<p>NexT 默认使用的是 白色的 normal 主题，可选的值有 normal，night， night blue， night bright， night eighties，</p>
-<ul>
-<li>更改主题配置文件中的 highlight_theme 字段，将其值设定成你所喜爱的高亮主题，copy_button.style字段可以设置代码块复制按钮的风格，例如：</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">codeblock:</span><br><span class="line">  # Code Highlight theme</span><br><span class="line">  # Available value: normal | night | night eighties | night blue | night bright</span><br><span class="line">  # https://github.com/chriskempson/tomorrow-theme</span><br><span class="line">  highlight_theme: night eighties</span><br><span class="line">  # Add copy button on codeblock</span><br><span class="line">  copy_button:</span><br><span class="line">    enable: true                 # 在每个代码块显示复制按钮</span><br><span class="line">    # Show text copy result.</span><br><span class="line">    show_result: true            # 复制成功后，显示提示信息</span><br><span class="line">    # Available values: default | flat | mac</span><br><span class="line">    style: mac                   # 复制按钮风格</span><br></pre></td></tr></table></figure>
-
-<h3 id="代码块Mac-Panel特效"><a href="#代码块Mac-Panel特效" class="headerlink" title="代码块Mac Panel特效"></a>代码块Mac Panel特效</h3><ol>
-<li>在上述设置代码高亮主题中将copy_button设为 true，并将style设置为 mac；</li>
-<li>打开F:\themes\next\source\css_common\scaffolding\highlight\copy-code.styl文件，做如下修改，具体值可自行设定：</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (hexo-config(<span class="string">&#x27;codeblock.copy_button.style&#x27;</span>) == <span class="string">&#x27;mac&#x27;</span>) &#123;</span><br><span class="line">  .highlight-wrap &#123;</span><br><span class="line">    background: #21252b;</span><br><span class="line">    border-radius: <span class="number">5</span>px;</span><br><span class="line">    padding-top: <span class="number">33</span>px;</span><br><span class="line">    position: relative;</span><br><span class="line">    box-shadow: <span class="number">18</span>px <span class="number">18</span>px <span class="number">15</span>px <span class="number">0</span>px rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.4</span>);</span><br><span class="line">    margin: <span class="number">35</span>px <span class="number">0</span>;</span><br><span class="line">    margin-top: <span class="number">10</span>px;</span><br><span class="line">    margin-bottom: <span class="number">28</span>px;</span><br><span class="line"></span><br><span class="line">    ::-webkit-scrollbar &#123;</span><br><span class="line">      height: <span class="number">10</span>px;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ::-webkit-scrollbar-track &#123;  <span class="comment">/*滚动条框*/</span></span><br><span class="line">      -webkit-box-shadow: inset <span class="number">0</span> <span class="number">0</span> <span class="number">10</span>px rgba(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0.3</span>);</span><br><span class="line">      border-radius: <span class="number">10</span>px;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ::-webkit-scrollbar-thumb &#123;  <span class="comment">/*滚动条里面小方块*/</span></span><br><span class="line">      border-radius: <span class="number">10</span>px;</span><br><span class="line">      -webkit-box-shadow: inset <span class="number">0</span> <span class="number">0</span> <span class="number">10</span>px rgba(<span class="number">150</span>, <span class="number">150</span>, <span class="number">150</span>, <span class="number">0.5</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &amp;::before &#123;</span><br><span class="line">      background: #fc625d;</span><br><span class="line">      border-radius: <span class="number">50</span>%;</span><br><span class="line">      box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;</span><br><span class="line">      content: <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">      height: <span class="number">12</span>px;</span><br><span class="line">      left: <span class="number">16</span>px;</span><br><span class="line">      margin-top: -<span class="number">22</span>px;</span><br><span class="line">      position: absolute;</span><br><span class="line">      width: <span class="number">12</span>px;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*代码块圆角边框设置*/</span></span><br><span class="line">  .highlight &#123;</span><br><span class="line">    border-radius: <span class="number">5</span>px;</span><br><span class="line">  &#125;</span><br><span class="line">  .table-container &#123;</span><br><span class="line">    border-bottom-left-radius: <span class="number">5</span>px;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/11/17/%E4%BB%8E%20NexT%20v5.1.x%20%E6%9B%B4%E6%96%B0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -339,7 +303,7 @@
     <link itemprop="mainEntityOfPage" href="https://derek-dong.github.io/2020/11/16/%E5%89%8D%E7%AB%AF%E5%A4%A7%E5%B1%80%E8%A7%82/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="Derek Dong">
       <meta itemprop="description" content="">
     </span>
@@ -398,7 +362,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <div class="pdfobject-container" data-target="/pdf/前端大局观.pdf" data-height="500px"></div> 
+          <div class="pdfobject-container" data-target="/pdf/前端大局观.pdf" data-height="800px"></div> 
 
 
 
@@ -424,7 +388,7 @@
     <link itemprop="mainEntityOfPage" href="https://derek-dong.github.io/2020/11/16/%E5%9B%BE%E8%A7%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="Derek Dong">
       <meta itemprop="description" content="">
     </span>
@@ -483,7 +447,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <div class="pdfobject-container" data-target="/pdf/图解.pdf" data-height="500px"></div>
+          <div class="pdfobject-container" data-target="/pdf/图解.pdf" data-height="800px"></div>
 
 
       
@@ -507,7 +471,7 @@
     <link itemprop="mainEntityOfPage" href="https://derek-dong.github.io/2020/11/16/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E5%BB%BA%E8%AE%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="Derek Dong">
       <meta itemprop="description" content="">
     </span>
@@ -600,7 +564,7 @@
     <link itemprop="mainEntityOfPage" href="https://derek-dong.github.io/2020/11/15/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="Derek Dong">
       <meta itemprop="description" content="">
     </span>
@@ -737,7 +701,7 @@
     <link itemprop="mainEntityOfPage" href="https://derek-dong.github.io/2020/11/14/HTML%E5%92%8CCSS%E7%9F%A5%E8%AF%86%E7%82%B9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="Derek Dong">
       <meta itemprop="description" content="">
     </span>
@@ -835,7 +799,7 @@
     <link itemprop="mainEntityOfPage" href="https://derek-dong.github.io/2020/11/11/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="Derek Dong">
       <meta itemprop="description" content="">
     </span>
@@ -935,7 +899,7 @@
     <link itemprop="mainEntityOfPage" href="https://derek-dong.github.io/2020/11/11/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="Derek Dong">
       <meta itemprop="description" content="">
     </span>
@@ -963,7 +927,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-17 13:28:37" itemprop="dateModified" datetime="2020-11-17T13:28:37+08:00">2020-11-17</time>
+                <time title="修改时间：2020-11-17 15:42:32" itemprop="dateModified" datetime="2020-11-17T15:42:32+08:00">2020-11-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1001,11 +965,11 @@
 
       
           <p>使用之前需要先安装好git</p>
-<h2 id="一、安装node"><a href="#一、安装node" class="headerlink" title="一、安装node"></a>一、安装node</h2><p>​    <code>node -v</code>    查看node版本</p>
+<h2 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h2><p>​    <code>node -v</code>    查看node版本</p>
 <p>​    <code>npm -v</code>    查看npm版本</p>
 <p>​    <code>npm install -g cnpm --registry=http://registry.npm.taobao.org</code>    安装淘宝的cnpm 管理器</p>
 <p>​    <code>cnpm -v</code>    查看cnpm版本</p>
-<h2 id="二、安装hexo框架"><a href="#二、安装hexo框架" class="headerlink" title="二、安装hexo框架"></a>二、安装hexo框架</h2><p>​    <code>cnpm install -g hexo-cli</code>    安装hexo框架</p>
+<h2 id="安装hexo框架"><a href="#安装hexo框架" class="headerlink" title="安装hexo框架"></a>安装hexo框架</h2><p>​    <code>cnpm install -g hexo-cli</code>    安装hexo框架</p>
 <p>​    <code>hexo -v</code>    查看hexo版本</p>
 <p>​    <code>mkdir blog</code>    创建blog目录</p>
 <p>​    <code>cd blog</code>     进入blog目录</p>
@@ -1038,7 +1002,7 @@
     <link itemprop="mainEntityOfPage" href="https://derek-dong.github.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="Derek Dong">
       <meta itemprop="description" content="">
     </span>
@@ -1140,7 +1104,7 @@
     <link itemprop="mainEntityOfPage" href="https://derek-dong.github.io/2020/09/20/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="Derek Dong">
       <meta itemprop="description" content="">
     </span>
@@ -1289,6 +1253,8 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Derek Dong"
+      src="/images/avatar.png">
   <p class="site-author-name" itemprop="name">Derek Dong</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -1317,10 +1283,10 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/yourname" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/Derek-Dong" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Derek-Dong" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="mailto:yourname@gmail.com" title="E-Mail → mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+        <a href="mailto:derek-dong@foxmail.com" title="E-Mail → mailto:derek-dong@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
   </div>
 
@@ -1488,6 +1454,7 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
   
 
   
+
 
 </body>
 </html>

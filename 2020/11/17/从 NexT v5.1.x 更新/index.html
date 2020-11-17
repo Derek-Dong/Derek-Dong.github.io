@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"derek-dong.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"derek-dong.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="从 NexT v5.1.x 更新我们推荐通过如下步骤从 v5 升级到 v7：  并不修改原有的 next 目录，而只是复制部分 NexT 文件：  _config.yml 或 next.yml（如果你使用了数据文件）。 自定义的 CSS 配置，它们应在 next&#x2F;source&#x2F;css&#x2F;_custom&#x2F;* 和 next&#x2F;source&#x2F;css&#x2F;_variables&#x2F;* 中。 自定义的排布配置，它们应在">
@@ -28,7 +28,7 @@
 <meta property="og:description" content="从 NexT v5.1.x 更新我们推荐通过如下步骤从 v5 升级到 v7：  并不修改原有的 next 目录，而只是复制部分 NexT 文件：  _config.yml 或 next.yml（如果你使用了数据文件）。 自定义的 CSS 配置，它们应在 next&#x2F;source&#x2F;css&#x2F;_custom&#x2F;* 和 next&#x2F;source&#x2F;css&#x2F;_variables&#x2F;* 中。 自定义的排布配置，它们应在">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-17T05:27:56.485Z">
-<meta property="article:modified_time" content="2020-11-17T05:49:22.155Z">
+<meta property="article:modified_time" content="2020-11-17T07:55:09.444Z">
 <meta property="article:author" content="Derek Dong">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
@@ -193,7 +193,7 @@
     <link itemprop="mainEntityOfPage" href="https://derek-dong.github.io/2020/11/17/%E4%BB%8E%20NexT%20v5.1.x%20%E6%9B%B4%E6%96%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="Derek Dong">
       <meta itemprop="description" content="">
     </span>
@@ -214,7 +214,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-11-17 13:27:56 / 修改时间：13:49:22" itemprop="dateCreated datePublished" datetime="2020-11-17T13:27:56+08:00">2020-11-17</time>
+              <time title="创建时间：2020-11-17 13:27:56 / 修改时间：15:55:09" itemprop="dateCreated datePublished" datetime="2020-11-17T13:27:56+08:00">2020-11-17</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -239,7 +239,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.1k</span>
+              <span>3.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -269,7 +269,7 @@
 </ol>
 </li>
 <li><p>克隆新的仓库到任一异于 <code>next</code> 的目录（如 <code>next-reloaded</code>）：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next-reloaded</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next-reloaded</span><br></pre></td></tr></table></figure>
 
 <p>如此，你可以在不修改原有的 NexT v5.1.x 目录的同时使用 <code>next-reloaded</code> 目录中的新版本主题。</p>
 </li>
@@ -286,48 +286,66 @@
 <p>如果完成了以上步骤后，执行 <code>hexo s</code> 或 <code>hexo g</code> 出现错误，这意味着可能是旧版的 Hexo 和 Hexo 插件与新版的 NexT 主题产生了冲突。我们建议将 Hexo 升级至 4.0 以上的版本，将 Hexo 插件升级到最新版本。你可以执行 <code>npm outdated</code> 查看所有可以升级的插件。</p>
 </li>
 </ol>
+<a id="more"></a>
+
+
+
+<h2 id="生成about、tags、categories页面"><a href="#生成about、tags、categories页面" class="headerlink" title="生成about、tags、categories页面"></a>生成<strong>about</strong>、<strong>tags</strong>、<strong>categories</strong>页面</h2><p>在博客根目录下输入命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo new page about</span><br><span class="line">hexo new page tags</span><br><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
+
+<p>会在<code>/source</code>下对应生成页面文件夹和里面的<code>index.md</code>。对于tags和categories需要修改<code>index.md</code></p>
+<p>内容如下：</p>
+<ul>
+<li>tags：</li>
+</ul>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">title: 标签 #页面的头部显示</span><br><span class="line">type: tags</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>categories：</li>
+</ul>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">title: 分类 #页面的头部显示</span><br><span class="line">type: categories</span><br></pre></td></tr></table></figure>
+
+
+
 <h2 id="添加字数统计及阅读时长"><a href="#添加字数统计及阅读时长" class="headerlink" title="添加字数统计及阅读时长"></a>添加字数统计及阅读时长</h2><h3 id="安装hexo-symbols-count-time"><a href="#安装hexo-symbols-count-time" class="headerlink" title="安装hexo-symbols-count-time"></a>安装hexo-symbols-count-time</h3><p>在博客文件夹里执行命令：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> hexo-symbols-<span class="keyword">count</span>-<span class="built_in">time</span> <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-symbols-count-time --save</span><br></pre></td></tr></table></figure>
 
 <h3 id="修改相关配置文件"><a href="#修改相关配置文件" class="headerlink" title="修改相关配置文件"></a>修改相关配置文件</h3><ul>
 <li>在<strong>站点</strong>配置文件添加：</li>
 </ul>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line"> <span class="comment">#文章内是否显示</span></span><br><span class="line">  <span class="attr">symbols:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">time:</span> <span class="literal">true</span></span><br><span class="line"> <span class="comment"># 网页底部是否显示</span></span><br><span class="line">  <span class="attr">total_symbols:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_time:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line"> <span class="comment">#文章内是否显示</span></span><br><span class="line">  <span class="attr">symbols:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">time:</span> <span class="literal">true</span></span><br><span class="line"> <span class="comment"># 网页底部是否显示</span></span><br><span class="line">  <span class="attr">total_symbols:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_time:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>在Next<strong>主题</strong>配置文件修改</p>
 <p>搜索<strong>symbols_count_time</strong></p>
 </li>
 </ul>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">separated_meta:</span> <span class="literal">true</span>  <span class="comment"># 是否换行显示 字数统计 及 阅读时长</span></span><br><span class="line">  <span class="attr">item_text_post:</span> <span class="literal">true</span>  <span class="comment"># 文章 字数统计 阅读时长 使用图标 还是 文本表示</span></span><br><span class="line">  <span class="attr">item_text_total:</span> <span class="literal">true</span> <span class="comment"># 博客底部统计 字数统计 阅读时长 使用图标 还是 文本表示</span></span><br><span class="line">  <span class="attr">awl:</span> <span class="number">4</span></span><br><span class="line">  <span class="attr">wpm:</span> <span class="number">275</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">separated_meta:</span> <span class="literal">true</span>  <span class="comment"># 是否换行显示 字数统计 及 阅读时长</span></span><br><span class="line">  <span class="attr">item_text_post:</span> <span class="literal">true</span>  <span class="comment"># 文章 字数统计 阅读时长 使用图标 还是 文本表示</span></span><br><span class="line">  <span class="attr">item_text_total:</span> <span class="literal">true</span> <span class="comment"># 博客底部统计 字数统计 阅读时长 使用图标 还是 文本表示</span></span><br><span class="line">  <span class="attr">awl:</span> <span class="number">4</span></span><br><span class="line">  <span class="attr">wpm:</span> <span class="number">275</span></span><br></pre></td></tr></table></figure>
 
 
 
+<h2 id="Next的其他小功能"><a href="#Next的其他小功能" class="headerlink" title="Next的其他小功能"></a>Next的其他小功能</h2><h3 id="复制模式mac主题"><a href="#复制模式mac主题" class="headerlink" title="复制模式mac主题"></a>复制模式mac主题</h3><p>就在上面一件复制代码的下面</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">codeblock:</span></span><br><span class="line">  <span class="comment"># Code Highlight theme</span></span><br><span class="line">  <span class="comment"># Available values: normal | night | night eighties | night blue | night bright | solarized | solarized dark | galactic</span></span><br><span class="line">  <span class="comment"># See: https://github.com/chriskempson/tomorrow-theme</span></span><br><span class="line">  <span class="attr">highlight_theme:</span> <span class="string">night</span> <span class="string">eighties</span></span><br><span class="line">  <span class="comment"># Add copy button on codeblock</span></span><br><span class="line">  <span class="attr">copy_button:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span> <span class="comment">#是否开启复制功能</span></span><br><span class="line">    <span class="comment"># Show text copy result. #是否显示提示的复制结果</span></span><br><span class="line">    <span class="attr">show_result:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Available values: default | flat | mac</span></span><br><span class="line">    <span class="attr">style:</span> <span class="string">mac</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="增加打赏功能"><a href="#增加打赏功能" class="headerlink" title="增加打赏功能"></a>增加打赏功能</h3><p>这个也是next具备了。先把需要的收款码放到/themes/next/source/images里面。</p>
+<p>搜索<strong>reward_settings</strong>修改：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">reward_settings:</span></span><br><span class="line">  <span class="comment"># If true, reward will be displayed in every article by default.</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">animation:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment">#comment: Donate comment here.</span></span><br><span class="line"></span><br><span class="line"><span class="attr">reward:</span></span><br><span class="line">  <span class="attr">wechatpay:</span> <span class="string">/images/wechatpay.png</span></span><br><span class="line">  <span class="attr">alipay:</span> <span class="string">/images/alipay.png</span></span><br><span class="line">  <span class="comment">#bitcoin: /images/bitcoin.png</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="增加版权信息"><a href="#增加版权信息" class="headerlink" title="增加版权信息"></a>增加版权信息</h3><p>搜索<strong>creative_commons</strong>：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">creative_commons:</span></span><br><span class="line">  <span class="attr">license:</span> <span class="string">by-nc-sa</span></span><br><span class="line">  <span class="attr">sidebar:</span> <span class="literal">false</span> <span class="comment">#首页边栏是否显示</span></span><br><span class="line">  <span class="attr">post:</span> <span class="literal">true</span> <span class="comment">#文章底部是否显示</span></span><br><span class="line">  <span class="attr">language:</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="添加评论"><a href="#添加评论" class="headerlink" title="添加评论"></a>添加评论</h3><p>用的是next主题自带gitalk评论的配置，打开主题配置文件，搜索<code>comments</code>，在gitalk位置添加相关的内容：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">gitalk:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">github_id:</span> <span class="comment"># GitHub repo owner</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="comment"># Repository name to store issues</span></span><br><span class="line">  <span class="attr">client_id:</span> <span class="comment"># GitHub Application Client ID</span></span><br><span class="line">  <span class="attr">client_secret:</span> <span class="comment"># GitHub Application Client Secret</span></span><br><span class="line">  <span class="attr">admin_user:</span> <span class="comment"># GitHub repo owner and collaborators, only these guys can initialize gitHub issues</span></span><br><span class="line">  <span class="attr">distraction_free_mode:</span> <span class="literal">true</span> <span class="comment"># Facebook-like distraction free mode</span></span><br><span class="line">  <span class="comment"># Gitalk&#x27;s display language depends on user&#x27;s browser or system environment</span></span><br><span class="line">  <span class="comment"># If you want everyone visiting your site to see a uniform language, you can set a force language value</span></span><br><span class="line">  <span class="comment"># Available values: en | es-ES | fr | ru | zh-CN | zh-TW</span></span><br><span class="line">  <span class="attr">language:</span> <span class="string">zh-CN</span></span><br></pre></td></tr></table></figure>
 
 
 
+<h2 id="修改标签样式"><a href="#修改标签样式" class="headerlink" title="修改标签样式"></a>修改标签样式</h2><p>默认的标签前面是一个#号，我们把它改成标签的符号并删除下划线：</p>
+<p>打开<code>/themes/next/layout/_macro/post.swig</code>，搜索<code>post-footer</code></p>
+<p>找到：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;%- set tag_indicate &#x3D; &#39;#&#39; %&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="Hexo之NexT主题代码块MacPanel特效配置"><a href="#Hexo之NexT主题代码块MacPanel特效配置" class="headerlink" title="Hexo之NexT主题代码块MacPanel特效配置"></a>Hexo之NexT主题代码块MacPanel特效配置</h2><h3 id="设置主题风格"><a href="#设置主题风格" class="headerlink" title="设置主题风格"></a>设置主题风格</h3><ul>
-<li>打开themes/next/下的_config.yml，查找Schemes，根据个人爱好选择不同的主题风格，将前面的注释“#”删除即可应用该风格。</li>
-</ul>
-<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Schemes</span></span><br><span class="line"><span class="meta">#scheme: Muse</span></span><br><span class="line"><span class="meta">#scheme: Mist</span></span><br><span class="line"><span class="meta">#scheme: Pisces</span></span><br><span class="line">scheme: Gemini</span><br></pre></td></tr></table></figure>
-
-<h3 id="设置代码高亮主题"><a href="#设置代码高亮主题" class="headerlink" title="设置代码高亮主题"></a>设置代码高亮主题</h3><ol>
-<li>在站点配置文件中的highlight字段可以设置代码格式：</li>
-</ol>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">highlight:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># 是否显示行号</span></span><br><span class="line">  <span class="attr">line_number:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># 自动识别，不同类型的标识符显示不同颜色，设置为false时代码只有一种颜色</span></span><br><span class="line">  <span class="attr">auto_detect:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">tab_replace:</span> <span class="string">&#x27;&#x27;</span> </span><br></pre></td></tr></table></figure>
-
-<p>NexT 默认使用的是 白色的 normal 主题，可选的值有 normal，night， night blue， night bright， night eighties，</p>
-<ul>
-<li>更改主题配置文件中的 highlight_theme 字段，将其值设定成你所喜爱的高亮主题，copy_button.style字段可以设置代码块复制按钮的风格，例如：</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">codeblock:</span><br><span class="line">  # Code Highlight theme</span><br><span class="line">  # Available value: normal | night | night eighties | night blue | night bright</span><br><span class="line">  # https://github.com/chriskempson/tomorrow-theme</span><br><span class="line">  highlight_theme: night eighties</span><br><span class="line">  # Add copy button on codeblock</span><br><span class="line">  copy_button:</span><br><span class="line">    enable: true                 # 在每个代码块显示复制按钮</span><br><span class="line">    # Show text copy result.</span><br><span class="line">    show_result: true            # 复制成功后，显示提示信息</span><br><span class="line">    # Available values: default | flat | mac</span><br><span class="line">    style: mac                   # 复制按钮风格</span><br></pre></td></tr></table></figure>
-
-<h3 id="代码块Mac-Panel特效"><a href="#代码块Mac-Panel特效" class="headerlink" title="代码块Mac Panel特效"></a>代码块Mac Panel特效</h3><ol>
-<li>在上述设置代码高亮主题中将copy_button设为 true，并将style设置为 mac；</li>
-<li>打开F:\themes\next\source\css_common\scaffolding\highlight\copy-code.styl文件，做如下修改，具体值可自行设定：</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (hexo-config(<span class="string">&#x27;codeblock.copy_button.style&#x27;</span>) == <span class="string">&#x27;mac&#x27;</span>) &#123;</span><br><span class="line">  .highlight-wrap &#123;</span><br><span class="line">    background: #21252b;</span><br><span class="line">    border-radius: <span class="number">5</span>px;</span><br><span class="line">    padding-top: <span class="number">33</span>px;</span><br><span class="line">    position: relative;</span><br><span class="line">    box-shadow: <span class="number">18</span>px <span class="number">18</span>px <span class="number">15</span>px <span class="number">0</span>px rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.4</span>);</span><br><span class="line">    margin: <span class="number">35</span>px <span class="number">0</span>;</span><br><span class="line">    margin-top: <span class="number">10</span>px;</span><br><span class="line">    margin-bottom: <span class="number">28</span>px;</span><br><span class="line"></span><br><span class="line">    ::-webkit-scrollbar &#123;</span><br><span class="line">      height: <span class="number">10</span>px;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ::-webkit-scrollbar-track &#123;  <span class="comment">/*滚动条框*/</span></span><br><span class="line">      -webkit-box-shadow: inset <span class="number">0</span> <span class="number">0</span> <span class="number">10</span>px rgba(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0.3</span>);</span><br><span class="line">      border-radius: <span class="number">10</span>px;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ::-webkit-scrollbar-thumb &#123;  <span class="comment">/*滚动条里面小方块*/</span></span><br><span class="line">      border-radius: <span class="number">10</span>px;</span><br><span class="line">      -webkit-box-shadow: inset <span class="number">0</span> <span class="number">0</span> <span class="number">10</span>px rgba(<span class="number">150</span>, <span class="number">150</span>, <span class="number">150</span>, <span class="number">0.5</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &amp;::before &#123;</span><br><span class="line">      background: #fc625d;</span><br><span class="line">      border-radius: <span class="number">50</span>%;</span><br><span class="line">      box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;</span><br><span class="line">      content: <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">      height: <span class="number">12</span>px;</span><br><span class="line">      left: <span class="number">16</span>px;</span><br><span class="line">      margin-top: -<span class="number">22</span>px;</span><br><span class="line">      position: absolute;</span><br><span class="line">      width: <span class="number">12</span>px;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*代码块圆角边框设置*/</span></span><br><span class="line">  .highlight &#123;</span><br><span class="line">    border-radius: <span class="number">5</span>px;</span><br><span class="line">  &#125;</span><br><span class="line">  .table-container &#123;</span><br><span class="line">    border-bottom-left-radius: <span class="number">5</span>px;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>把**#**修改为：<code>&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt;</code>，这个样子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;footer class&#x3D;&quot;post-footer&quot;&gt;</span><br><span class="line">  &#123;%- if post.tags and post.tags.length %&#125;</span><br><span class="line">    &#123;%- if theme.tag_icon %&#125;</span><br><span class="line">      &#123;%- set tag_indicate &#x3D; &#39;&lt;i class&#x3D;&quot;fa fa-tag&quot;&gt;&lt;&#x2F;i&gt;&#39; %&#125;</span><br><span class="line">    &#123;% else %&#125;</span><br><span class="line">      &#123;%- set tag_indicate &#x3D; &#39;&lt;i class&#x3D;&quot;fa fa-tag&quot;&gt;&lt;&#x2F;i&gt;&#39; %&#125;</span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -338,7 +356,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/hexo/" rel="tag"># hexo</a>
+              <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
           </div>
 
         
@@ -363,6 +381,7 @@
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -409,12 +428,14 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E-NexT-v5-1-x-%E6%9B%B4%E6%96%B0"><span class="nav-number">1.</span> <span class="nav-text">从 NexT v5.1.x 更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%AD%97%E6%95%B0%E7%BB%9F%E8%AE%A1%E5%8F%8A%E9%98%85%E8%AF%BB%E6%97%B6%E9%95%BF"><span class="nav-number">2.</span> <span class="nav-text">添加字数统计及阅读时长</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85hexo-symbols-count-time"><span class="nav-number">2.1.</span> <span class="nav-text">安装hexo-symbols-count-time</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">2.2.</span> <span class="nav-text">修改相关配置文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo%E4%B9%8BNexT%E4%B8%BB%E9%A2%98%E4%BB%A3%E7%A0%81%E5%9D%97MacPanel%E7%89%B9%E6%95%88%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">Hexo之NexT主题代码块MacPanel特效配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%B8%BB%E9%A2%98%E9%A3%8E%E6%A0%BC"><span class="nav-number">3.1.</span> <span class="nav-text">设置主题风格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE%E4%B8%BB%E9%A2%98"><span class="nav-number">3.2.</span> <span class="nav-text">设置代码高亮主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97Mac-Panel%E7%89%B9%E6%95%88"><span class="nav-number">3.3.</span> <span class="nav-text">代码块Mac Panel特效</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E-NexT-v5-1-x-%E6%9B%B4%E6%96%B0"><span class="nav-number">1.</span> <span class="nav-text">从 NexT v5.1.x 更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90about%E3%80%81tags%E3%80%81categories%E9%A1%B5%E9%9D%A2"><span class="nav-number">2.</span> <span class="nav-text">生成about、tags、categories页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%AD%97%E6%95%B0%E7%BB%9F%E8%AE%A1%E5%8F%8A%E9%98%85%E8%AF%BB%E6%97%B6%E9%95%BF"><span class="nav-number">3.</span> <span class="nav-text">添加字数统计及阅读时长</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85hexo-symbols-count-time"><span class="nav-number">3.1.</span> <span class="nav-text">安装hexo-symbols-count-time</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">3.2.</span> <span class="nav-text">修改相关配置文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Next%E7%9A%84%E5%85%B6%E4%BB%96%E5%B0%8F%E5%8A%9F%E8%83%BD"><span class="nav-number">4.</span> <span class="nav-text">Next的其他小功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E5%88%B6%E6%A8%A1%E5%BC%8Fmac%E4%B8%BB%E9%A2%98"><span class="nav-number">4.1.</span> <span class="nav-text">复制模式mac主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0%E6%89%93%E8%B5%8F%E5%8A%9F%E8%83%BD"><span class="nav-number">4.2.</span> <span class="nav-text">增加打赏功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0%E7%89%88%E6%9D%83%E4%BF%A1%E6%81%AF"><span class="nav-number">4.3.</span> <span class="nav-text">增加版权信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA"><span class="nav-number">4.4.</span> <span class="nav-text">添加评论</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E6%A0%87%E7%AD%BE%E6%A0%B7%E5%BC%8F"><span class="nav-number">5.</span> <span class="nav-text">修改标签样式</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Derek Dong"
+      src="/images/avatar.png">
   <p class="site-author-name" itemprop="name">Derek Dong</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -443,10 +464,10 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/yourname" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/Derek-Dong" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Derek-Dong" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="mailto:yourname@gmail.com" title="E-Mail → mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+        <a href="mailto:derek-dong@foxmail.com" title="E-Mail → mailto:derek-dong@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
   </div>
 
@@ -614,6 +635,26 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
   
 
   
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '6522c847dfb4b8231f15',
+      clientSecret: 'cf85938c58fc97f19bb551739ee26eb42e239c2f',
+      repo        : 'Derek-Dong.github.io',
+      owner       : 'Derek-Dong',
+      admin       : ['Derek-Dong'],
+      id          : '4fd52ae8e9aff6e6c431299afb69acba',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
 </body>
 </html>
