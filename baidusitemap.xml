@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://derek-dong.github.io/2020/10/20/vue-shop/</loc>
+    <lastmod>2020-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://derek-dong.github.io/2020/10/20/Todo-app/</loc>
+    <lastmod>2020-11-17</lastmod>
+  </url>
+  <url>
     <loc>https://derek-dong.github.io/2020/11/17/%E4%BB%8E%20NexT%20v5.1.x%20%E6%9B%B4%E6%96%B0/</loc>
     <lastmod>2020-11-17</lastmod>
   </url>

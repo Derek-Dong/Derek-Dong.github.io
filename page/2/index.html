@@ -184,6 +184,837 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://derek-dong.github.io/2020/10/20/vue-shop/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Derek Dong">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="听阳光的猫">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/20/vue-shop/" class="post-title-link" itemprop="url">电商后台管理系统</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-10-20 00:00:00" itemprop="dateCreated datePublished" datetime="2020-10-20T00:00:00+08:00">2020-10-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-17 17:29:17" itemprop="dateModified" datetime="2020-11-17T17:29:17+08:00">2020-11-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index"><span itemprop="name">项目</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>16k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>14 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="项目初始化"><a href="#项目初始化" class="headerlink" title="项目初始化"></a>项目初始化</h2><h3 id="前端项目初始化"><a href="#前端项目初始化" class="headerlink" title="前端项目初始化"></a>前端项目初始化</h3><p>首先安装node</p>
+<ol>
+<li><p>安装vue脚手架</p>
+<p>控制面板执行 <code>npm install -g @vue/cli</code></p>
+<p>查看版本是否正确 <code>vue --version</code> </p>
+</li>
+<li><p>通过vue脚手架创建项目</p>
+<p><code>vue create vue-shop</code> 也可以创建</p>
+<p><code>vue ui</code>进入vue管理页面</p>
+<p>手动创建项目选择功能</p>
+<ul>
+<li><code>Babel</code> </li>
+<li><code>Router</code> </li>
+<li>使用配置文件</li>
+</ul>
+</li>
+<li><p>配置vue路由</p>
+</li>
+<li><p>插件Element-UI组件库</p>
+<p><strong><span style="color:#f00;">此组件暂时不支持vue3.0</span></strong> </p>
+<p>添加插件 <code>vue-cli-plugin-element</code> </p>
+<p>配置 <code>Import on demand</code> </p>
+</li>
+<li><p>依赖axios库</p>
+<p>安装依赖 <code>axios</code> </p>
+</li>
+<li><p>初始化git远程仓库</p>
+</li>
+<li><p>将本地项目托管到github</p>
+</li>
+</ol>
+<h3 id="后台项目初始化"><a href="#后台项目初始化" class="headerlink" title="后台项目初始化"></a>后台项目初始化</h3><ol>
+<li><p>安装MySQL</p>
+<p><img src="/2020/10/20/vue-shop/1602942192075.png" alt="1602942192075">   </p>
+<p><img src="/2020/10/20/vue-shop/1602942422366.png" alt="1602942422366">   </p>
+<p><img src="/2020/10/20/vue-shop/1602942354100.png" alt="1602942354100">  </p>
+</li>
+<li><p>安装Node.js环境</p>
+<p><img src="/2020/10/20/vue-shop/1602942493161.png" alt="1602942493161">  </p>
+</li>
+<li><p>配置相关信息</p>
+</li>
+<li><p>启动项目</p>
+</li>
+<li><p>使用postman测试后台接口是否正常 </p>
+<ul>
+<li>接口地址 <a target="_blank" rel="noopener" href="http://timemeetyou.com:8889/api/private/v1/">http://timemeetyou.com:8889/api/private/v1/</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.ysqorz.top:8888/api/private/v1/">http://www.ysqorz.top:8888/api/private/v1/</a></li>
+</ul>
+<p><img src="/2020/10/20/vue-shop/1602944933697.png" alt="1602944933697"> </p>
+</li>
+</ol>
+<h3 id="使用Git开发项目"><a href="#使用Git开发项目" class="headerlink" title="使用Git开发项目"></a>使用Git开发项目</h3><p><code>git status</code>  先查看当前目录下是否干净</p>
+<p><code>git checkout -b login</code>  创建分支</p>
+<p><code>git branch</code> 查看分支</p>
+<p>创建vue_shop之后可以将无用的文件删除</p>
+<ol>
+<li><p><code>HelloWorld.vue</code></p>
+</li>
+<li><p><code>About.vue</code></p>
+</li>
+<li><p><code>Home</code></p>
+</li>
+<li><p>App.vue中的框架</p>
+<p><img src="/2020/10/20/vue-shop/image-20201016205142333.png" alt="image-20201016205142333"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201016205057108.png" alt="image-20201016205057108">  </p>
+</li>
+</ol>
+<h2 id="登录-退出功能"><a href="#登录-退出功能" class="headerlink" title="登录/退出功能"></a>登录/退出功能</h2><h3 id="创建登陆组件"><a href="#创建登陆组件" class="headerlink" title="创建登陆组件"></a>创建登陆组件</h3><p><img src="/2020/10/20/vue-shop/image-20201016210414934.png" alt="image-20201016210414934">  </p>
+<p><img src="/2020/10/20/vue-shop/image-20201016210436922.png" alt="image-20201016210436922"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201016210342257.png" alt="image-20201016210342257">  </p>
+<p>安装 开发依赖<code>less</code> 和 <code>less-loader</code> 这样才能够使用</p>
+<p>或者使用命令行<code>npm install -g less </code></p>
+<h3 id="全局样式表"><a href="#全局样式表" class="headerlink" title="全局样式表"></a>全局样式表</h3><p> <img src="/2020/10/20/vue-shop/image-20201016215852488.png" alt="image-20201016215852488"> </p>
+<h3 id="入口js导入"><a href="#入口js导入" class="headerlink" title="入口js导入"></a>入口js导入</h3><p><img src="/2020/10/20/vue-shop/image-20201016215944320.png" alt="image-20201016215944320"> </p>
+<h3 id="绘制头像"><a href="#绘制头像" class="headerlink" title="绘制头像"></a>绘制头像</h3><p><img src="/2020/10/20/vue-shop/image-20201016220104486.png" alt="image-20201016220104486"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201016220140754.png" alt="image-20201016220140754">  </p>
+<h3 id="表单区域"><a href="#表单区域" class="headerlink" title="表单区域"></a>表单区域</h3><p><img src="/2020/10/20/vue-shop/image-20201016222950885.png" alt="image-20201016222950885"> </p>
+<h3 id="带icon的input输入框"><a href="#带icon的input输入框" class="headerlink" title="带icon的input输入框"></a>带icon的input输入框</h3><p><img src="/2020/10/20/vue-shop/1602946003097.png" alt="1602946003097"> </p>
+<p><img src="/2020/10/20/vue-shop/1602946216501.png" alt="1602946216501"> </p>
+<h3 id="实现表单的数据绑定"><a href="#实现表单的数据绑定" class="headerlink" title="实现表单的数据绑定"></a>实现表单的数据绑定</h3><p><img src="/2020/10/20/vue-shop/image-20201017160958316.png" alt="image-20201017160958316">  </p>
+<p><img src="/2020/10/20/vue-shop/image-20201017161026444.png" alt="image-20201017161026444"> </p>
+<h3 id="表单数据验证"><a href="#表单数据验证" class="headerlink" title="表单数据验证"></a>表单数据验证</h3><p> <img src="/2020/10/20/vue-shop/image-20201017162503259.png" alt="image-20201017162503259"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201017162624623.png" alt="image-20201017162624623"> </p>
+<h3 id="表单的重置功能"><a href="#表单的重置功能" class="headerlink" title="表单的重置功能"></a>表单的重置功能</h3><p><img src="/2020/10/20/vue-shop/image-20201017164337886.png" alt="image-20201017164337886"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201017164408600.png" alt="image-20201017164408600"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201017164436901.png" alt="image-20201017164436901">  </p>
+<h3 id="表单预验证"><a href="#表单预验证" class="headerlink" title="表单预验证"></a>表单预验证</h3><p><img src="/2020/10/20/vue-shop/image-20201017165432379.png" alt="image-20201017165432379"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201017165504825.png" alt="image-20201017165504825"> </p>
+<h3 id="配置axios发出登录请求"><a href="#配置axios发出登录请求" class="headerlink" title="配置axios发出登录请求"></a>配置axios发出登录请求</h3><p><img src="/2020/10/20/vue-shop/1602990769593.png" alt="1602990769593">  </p>
+<p><img src="/2020/10/20/vue-shop/1602991269071.png" alt="1602991269071"> </p>
+<p><img src="/2020/10/20/vue-shop/1602991831386.png" alt="1602991831386"> </p>
+<h3 id="配置message全局弹窗组件"><a href="#配置message全局弹窗组件" class="headerlink" title="配置message全局弹窗组件"></a>配置message全局弹窗组件</h3><p><img src="/2020/10/20/vue-shop/1602992044075.png" alt="1602992044075"> </p>
+<p><img src="/2020/10/20/vue-shop/1602992276683.png" alt="1602992276683"> </p>
+<h3 id="登录之后的操作"><a href="#登录之后的操作" class="headerlink" title="登录之后的操作"></a>登录之后的操作</h3><p><img src="/2020/10/20/vue-shop/1602993253177.png" alt="1602993253177"> </p>
+<p><img src="/2020/10/20/vue-shop/1602993331962.png" alt="1602993331962"> </p>
+<p><img src="/2020/10/20/vue-shop/1602993377617.png" alt="1602993377617"> </p>
+<h3 id="路由导航守卫控制页面访问权限"><a href="#路由导航守卫控制页面访问权限" class="headerlink" title="路由导航守卫控制页面访问权限"></a>路由导航守卫控制页面访问权限</h3><p>只有在登录状态下才能够访问home对应页面 </p>
+<p><img src="/2020/10/20/vue-shop/1602995592589.png" alt="1602995592589"> </p>
+<p>若出现了**<span style="color:#f00;"><code>Uncaught TypeError: Cannot read property &#39;beforeEach&#39; of undefined</code></span>** </p>
+<p>则参照上面方式修改</p>
+<h3 id="实现退出功能"><a href="#实现退出功能" class="headerlink" title="实现退出功能"></a>实现退出功能</h3><p><img src="/2020/10/20/vue-shop/1602997552236.png" alt="1602997552236">  </p>
+<h3 id="修改element组件按需导入形式"><a href="#修改element组件按需导入形式" class="headerlink" title="修改element组件按需导入形式"></a>修改element组件按需导入形式</h3><p> <img src="/2020/10/20/vue-shop/1603003349546.png" alt="1603003349546"> </p>
+<h3 id="将本地代码提交"><a href="#将本地代码提交" class="headerlink" title="将本地代码提交"></a>将本地代码提交</h3><ol>
+<li><code>git status</code>  查看修改状态</li>
+<li><code>git add .</code> 添加</li>
+<li><code>git status</code>  查看提交状态</li>
+<li><code>git commit -m &quot;完成了登录功能&quot;</code> 提交的本地仓库</li>
+<li><code>git branch</code> 查看分支</li>
+<li><code>git checkout master</code> 切换分支</li>
+<li><code>git branch</code> 查看分支</li>
+<li><code>git merge login</code> 合并分支</li>
+<li><code>git push</code> 上传master到云端</li>
+<li><code>git checkout login</code> 切回login分支</li>
+<li><code>git branch</code> 查看分支</li>
+<li><code>git push -u origin login</code> 上传login到云端</li>
+</ol>
+<h2 id="主页布局"><a href="#主页布局" class="headerlink" title="主页布局"></a>主页布局</h2><h3 id="实现基本主页布局"><a href="#实现基本主页布局" class="headerlink" title="实现基本主页布局"></a>实现基本主页布局</h3><p><img src="/2020/10/20/vue-shop/1603006204646.png" alt="1603006204646"> </p>
+<p><img src="/2020/10/20/vue-shop/1603006780002.png" alt="1603006780002">  </p>
+<p><img src="/2020/10/20/vue-shop/1603006819100.png" alt="1603006819100"> </p>
+<h3 id="设置主页header区域"><a href="#设置主页header区域" class="headerlink" title="设置主页header区域"></a>设置主页header区域</h3><p><img src="/2020/10/20/vue-shop/1603007470078.png" alt="1603007470078"> </p>
+<p><img src="/2020/10/20/vue-shop/1603007504287.png" alt="1603007504287"> </p>
+<h3 id="导航菜单基本结构"><a href="#导航菜单基本结构" class="headerlink" title="导航菜单基本结构"></a>导航菜单基本结构</h3><p><img src="/2020/10/20/vue-shop/1603008861333.png" alt="1603008861333"> </p>
+<p><img src="/2020/10/20/vue-shop/1603009153974.png" alt="1603009153974"> </p>
+<h3 id="通过axios拦截器添加token验证"><a href="#通过axios拦截器添加token验证" class="headerlink" title="通过axios拦截器添加token验证"></a>通过axios拦截器添加token验证</h3><p><img src="/2020/10/20/vue-shop/1603009921871.png" alt="1603009921871">  </p>
+<h3 id="获取左侧菜单"><a href="#获取左侧菜单" class="headerlink" title="获取左侧菜单"></a>获取左侧菜单</h3><p><img src="/2020/10/20/vue-shop/1603011145158.png" alt="1603011145158"> </p>
+<h3 id="通过双层for循环渲染左侧菜单"><a href="#通过双层for循环渲染左侧菜单" class="headerlink" title="通过双层for循环渲染左侧菜单"></a>通过双层for循环渲染左侧菜单</h3><p><img src="/2020/10/20/vue-shop/1603012068850.png" alt="1603012068850"> </p>
+<h3 id="为选中的项设置字体颜色并添加分类图标"><a href="#为选中的项设置字体颜色并添加分类图标" class="headerlink" title="为选中的项设置字体颜色并添加分类图标"></a>为选中的项设置字体颜色并添加分类图标</h3><p><img src="/2020/10/20/vue-shop/image-20201019111121958.png" alt="image-20201019111121958"> </p>
+<p><img src="/2020/10/20/vue-shop/1603012874423.png" alt="1603012874423"> </p>
+<p><img src="/2020/10/20/vue-shop/1603012921735.png" alt="1603012921735"> </p>
+<p><img src="/2020/10/20/vue-shop/1603012951242.png" alt="1603012951242"> </p>
+<p><img src="/2020/10/20/vue-shop/1603015784245.png" alt="1603015784245"> </p>
+<h3 id="每次只能打开一个菜单项及边框问题"><a href="#每次只能打开一个菜单项及边框问题" class="headerlink" title="每次只能打开一个菜单项及边框问题"></a>每次只能打开一个菜单项及边框问题</h3><p><img src="/2020/10/20/vue-shop/image-20201019111151560.png" alt="image-20201019111151560"> </p>
+<p><img src="/2020/10/20/vue-shop/1603013377395.png" alt="1603013377395"> </p>
+<p><img src="/2020/10/20/vue-shop/1603015637205.png" alt="1603015637205"> </p>
+<h3 id="侧边栏的折叠与展开效果"><a href="#侧边栏的折叠与展开效果" class="headerlink" title="侧边栏的折叠与展开效果"></a>侧边栏的折叠与展开效果</h3><p><img src="/2020/10/20/vue-shop/image-20201019111050760.png" alt="image-20201019111050760"> </p>
+<p><img src="/2020/10/20/vue-shop/1603015427522.png" alt="1603015427522"> </p>
+<p><img src="/2020/10/20/vue-shop/1603015475719.png" alt="1603015475719"> </p>
+<p><img src="/2020/10/20/vue-shop/1603015523484.png" alt="1603015523484"> </p>
+<p><img src="/2020/10/20/vue-shop/1603015573389.png" alt="1603015573389"> </p>
+<h3 id="实现首页路由的重定向"><a href="#实现首页路由的重定向" class="headerlink" title="实现首页路由的重定向"></a>实现首页路由的重定向</h3><p><img src="/2020/10/20/vue-shop/1603016380869.png" alt="1603016380869"> </p>
+<p><img src="/2020/10/20/vue-shop/1603016465823.png" alt="1603016465823"> </p>
+<p><img src="/2020/10/20/vue-shop/1603016502972.png" alt="1603016502972"> </p>
+<h3 id="实现侧边栏路由由链接的改造"><a href="#实现侧边栏路由由链接的改造" class="headerlink" title="实现侧边栏路由由链接的改造"></a>实现侧边栏路由由链接的改造</h3><p><img src="/2020/10/20/vue-shop/1603017131647.png" alt="1603017131647"> </p>
+<p><img src="/2020/10/20/vue-shop/1603017363275.png" alt="1603017363275"> </p>
+<h2 id="用户列表"><a href="#用户列表" class="headerlink" title="用户列表"></a>用户列表</h2><h3 id="用户列表-1"><a href="#用户列表-1" class="headerlink" title="用户列表"></a>用户列表</h3><h4 id="通过路由的形式展示用户列表组件"><a href="#通过路由的形式展示用户列表组件" class="headerlink" title="通过路由的形式展示用户列表组件"></a>通过路由的形式展示用户列表组件</h4><p> <img src="/2020/10/20/vue-shop/image-20201019110653380.png" alt="image-20201019110653380"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019110827352.png" alt="image-20201019110827352"> </p>
+<h4 id="在sessionStorage中保存左侧菜单的激活状态"><a href="#在sessionStorage中保存左侧菜单的激活状态" class="headerlink" title="在sessionStorage中保存左侧菜单的激活状态"></a>在sessionStorage中保存左侧菜单的激活状态</h4><p><img src="/2020/10/20/vue-shop/image-20201019111316374.png" alt="image-20201019111316374"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019114343527.png" alt="image-20201019114343527"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019114951094.png" alt="image-20201019114951094"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019115256860.png" alt="image-20201019115256860"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019115421075.png" alt="image-20201019115421075"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019115720137.png" alt="image-20201019115720137"> </p>
+<h4 id="绘制用户列表组件的基础布局结构"><a href="#绘制用户列表组件的基础布局结构" class="headerlink" title="绘制用户列表组件的基础布局结构"></a>绘制用户列表组件的基础布局结构</h4><p><img src="/2020/10/20/vue-shop/image-20201019120942631.png" alt="image-20201019120942631"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019123211721.png" alt="image-20201019123211721"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019123302722.png" alt="image-20201019123302722"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019123528909.png" alt="image-20201019123528909"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019123610193.png" alt="image-20201019123610193"> </p>
+<h4 id="获取用户列表数据"><a href="#获取用户列表数据" class="headerlink" title="获取用户列表数据"></a>获取用户列表数据</h4><p><img src="/2020/10/20/vue-shop/image-20201019125017168.png" alt="image-20201019125017168"> </p>
+<h4 id="使用el-table组件渲染基本的用户列表"><a href="#使用el-table组件渲染基本的用户列表" class="headerlink" title="使用el-table组件渲染基本的用户列表"></a>使用el-table组件渲染基本的用户列表</h4><p><img src="/2020/10/20/vue-shop/image-20201019125629478.png" alt="image-20201019125629478"></p>
+<p><img src="/2020/10/20/vue-shop/image-20201019125633148.png" alt="image-20201019125633148"></p>
+<p><img src="/2020/10/20/vue-shop/image-20201019125637400.png" alt="image-20201019125637400"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019130651526.png" alt="image-20201019130651526"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019130806519.png" alt="image-20201019130806519"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019130855044.png" alt="image-20201019130855044"> </p>
+<h4 id="为表格添加索引列"><a href="#为表格添加索引列" class="headerlink" title="为表格添加索引列"></a>为表格添加索引列</h4><p><img src="/2020/10/20/vue-shop/image-20201019153153039.png" alt="image-20201019153153039"> </p>
+<h4 id="自定义状态列的显示效果"><a href="#自定义状态列的显示效果" class="headerlink" title="自定义状态列的显示效果"></a>自定义状态列的显示效果</h4><p><img src="/2020/10/20/vue-shop/image-20201019154709564.png" alt="image-20201019154709564"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019154927072.png" alt="image-20201019154927072">  </p>
+<h4 id="作用域插槽渲染操作列"><a href="#作用域插槽渲染操作列" class="headerlink" title="作用域插槽渲染操作列"></a>作用域插槽渲染操作列</h4><p><img src="/2020/10/20/vue-shop/image-20201019155536107.png" alt="image-20201019155536107"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019161002393.png" alt="image-20201019161002393"> </p>
+<h4 id="实现分页效果"><a href="#实现分页效果" class="headerlink" title="实现分页效果"></a>实现分页效果</h4><p><img src="/2020/10/20/vue-shop/image-20201019162929917.png" alt="image-20201019162929917"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019163022816.png" alt="image-20201019163022816">  </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019163106979.png" alt="image-20201019163106979"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019163203752.png" alt="image-20201019163203752"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019163229430.png" alt="image-20201019163229430">  </p>
+<h4 id="修改用户状态"><a href="#修改用户状态" class="headerlink" title="修改用户状态"></a>修改用户状态</h4><p><img src="/2020/10/20/vue-shop/image-20201019165701176.png" alt="image-20201019165701176"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019165828035.png" alt="image-20201019165828035"> </p>
+<h4 id="实现搜索功能"><a href="#实现搜索功能" class="headerlink" title="实现搜索功能"></a>实现搜索功能</h4><p><img src="/2020/10/20/vue-shop/image-20201019171113396.png" alt="image-20201019171113396"> </p>
+<h3 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h3><h4 id="渲染添加用户对话框"><a href="#渲染添加用户对话框" class="headerlink" title="渲染添加用户对话框"></a>渲染添加用户对话框</h4><p><img src="/2020/10/20/vue-shop/image-20201019190545648.png" alt="image-20201019190545648"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019191427279.png" alt="image-20201019191427279"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019191543381.png" alt="image-20201019191543381"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019191617183.png" alt="image-20201019191617183"> </p>
+<h4 id="渲染添加用户的表单"><a href="#渲染添加用户的表单" class="headerlink" title="渲染添加用户的表单"></a>渲染添加用户的表单</h4><p><img src="/2020/10/20/vue-shop/image-20201019193401296.png" alt="image-20201019193401296"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019204135650.png" alt="image-20201019204135650">  </p>
+<h4 id="自定义邮箱和手机号的校验规则"><a href="#自定义邮箱和手机号的校验规则" class="headerlink" title="自定义邮箱和手机号的校验规则"></a>自定义邮箱和手机号的校验规则</h4><p><img src="/2020/10/20/vue-shop/image-20201019211331083.png" alt="image-20201019211331083"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019211501807.png" alt="image-20201019211501807">  </p>
+<h4 id="添加变得的重置操作"><a href="#添加变得的重置操作" class="headerlink" title="添加变得的重置操作"></a>添加变得的重置操作</h4><p><img src="/2020/10/20/vue-shop/image-20201019212420252.png" alt="image-20201019212420252"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019212535789.png" alt="image-20201019212535789"> </p>
+<h4 id="添加用户前的表单预验证"><a href="#添加用户前的表单预验证" class="headerlink" title="添加用户前的表单预验证"></a>添加用户前的表单预验证</h4><p><img src="/2020/10/20/vue-shop/image-20201019213005837.png" alt="image-20201019213005837"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019213615676.png" alt="image-20201019213615676"> </p>
+<h4 id="调用API接口完成添加用户的操作"><a href="#调用API接口完成添加用户的操作" class="headerlink" title="调用API接口完成添加用户的操作"></a>调用API接口完成添加用户的操作</h4><p><img src="/2020/10/20/vue-shop/image-20201019214748565.png" alt="image-20201019214748565"> </p>
+<h3 id="修改用户"><a href="#修改用户" class="headerlink" title="修改用户"></a>修改用户</h3><h4 id="展示修改用户对话框"><a href="#展示修改用户对话框" class="headerlink" title="展示修改用户对话框"></a>展示修改用户对话框</h4><p><img src="/2020/10/20/vue-shop/image-20201019221258805.png" alt="image-20201019221258805"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019221626649.png" alt="image-20201019221626649"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019221813089.png" alt="image-20201019221813089"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019222113347.png" alt="image-20201019222113347"> </p>
+<h4 id="根据id查询对应的用户信息"><a href="#根据id查询对应的用户信息" class="headerlink" title="根据id查询对应的用户信息"></a>根据id查询对应的用户信息</h4><p><img src="/2020/10/20/vue-shop/image-20201019222822508.png" alt="image-20201019222822508"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019223011257.png" alt="image-20201019223011257"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019223941713.png" alt="image-20201019223941713"> </p>
+<h4 id="渲染修改用户的表单"><a href="#渲染修改用户的表单" class="headerlink" title="渲染修改用户的表单"></a>渲染修改用户的表单</h4><p><img src="/2020/10/20/vue-shop/image-20201019225137461.png" alt="image-20201019225137461"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019225603445.png" alt="image-20201019225603445"> </p>
+<h4 id="实现修改用户表单的重置操作"><a href="#实现修改用户表单的重置操作" class="headerlink" title="实现修改用户表单的重置操作"></a>实现修改用户表单的重置操作</h4><p><img src="/2020/10/20/vue-shop/image-20201019230012680.png" alt="image-20201019230012680"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019230323948.png" alt="image-20201019230323948"> </p>
+<h4 id="完成提交修改之前的表单预验证"><a href="#完成提交修改之前的表单预验证" class="headerlink" title="完成提交修改之前的表单预验证"></a>完成提交修改之前的表单预验证</h4><p><img src="/2020/10/20/vue-shop/image-20201019230738694.png" alt="image-20201019230738694"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201019231136762.png" alt="image-20201019231136762"> </p>
+<h4 id="提交表单完成用户信息的修改"><a href="#提交表单完成用户信息的修改" class="headerlink" title="提交表单完成用户信息的修改"></a>提交表单完成用户信息的修改</h4><p><img src="/2020/10/20/vue-shop/image-20201019232224594.png" alt="image-20201019232224594"> </p>
+<h3 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h3><h4 id="弹窗询问用户是否确认删除数据"><a href="#弹窗询问用户是否确认删除数据" class="headerlink" title="弹窗询问用户是否确认删除数据"></a>弹窗询问用户是否确认删除数据</h4><p><img src="/2020/10/20/vue-shop/image-20201020083134523.png" alt="image-20201020083134523"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201020083513602.png" alt="image-20201020083513602"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201020085948290.png" alt="image-20201020085948290"> </p>
+<h4 id="调用API完成删除用户的操作"><a href="#调用API完成删除用户的操作" class="headerlink" title="调用API完成删除用户的操作"></a>调用API完成删除用户的操作</h4><p><img src="/2020/10/20/vue-shop/image-20201020090720548.png" alt="image-20201020090720548"> </p>
+<h2 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h2><h3 id="权限列表"><a href="#权限列表" class="headerlink" title="权限列表"></a>权限列表</h3><h4 id="创建rights子分支"><a href="#创建rights子分支" class="headerlink" title="创建rights子分支"></a>创建rights子分支</h4><ol>
+<li><code>git branch</code> 查看当前分支</li>
+<li><code>git checkout -b rights</code> 创建rights分支</li>
+<li><code>git branch</code> 查看当前分支</li>
+<li><code>git push -u origin rights</code></li>
+</ol>
+<h4 id="通过路由展示权限列表组件"><a href="#通过路由展示权限列表组件" class="headerlink" title="通过路由展示权限列表组件"></a>通过路由展示权限列表组件</h4><p><img src="/2020/10/20/vue-shop/image-20201020093949758.png" alt="image-20201020093949758"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201020094036442.png" alt="image-20201020094036442"> </p>
+<h4 id="绘制面包屑导航和卡片视图"><a href="#绘制面包屑导航和卡片视图" class="headerlink" title="绘制面包屑导航和卡片视图"></a>绘制面包屑导航和卡片视图</h4><p><img src="/2020/10/20/vue-shop/image-20201020094533681.png" alt="image-20201020094533681"> </p>
+<h4 id="调用API获取权限列表数据"><a href="#调用API获取权限列表数据" class="headerlink" title="调用API获取权限列表数据"></a>调用API获取权限列表数据</h4><p><img src="/2020/10/20/vue-shop/image-20201020095606994.png" alt="image-20201020095606994"> </p>
+<h4 id="渲染权限列表UI结构"><a href="#渲染权限列表UI结构" class="headerlink" title="渲染权限列表UI结构"></a>渲染权限列表UI结构</h4><p><img src="/2020/10/20/vue-shop/image-20201020100100883.png" alt="image-20201020100100883"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201020100833367.png" alt="image-20201020100833367">  </p>
+<h3 id="角色列表"><a href="#角色列表" class="headerlink" title="角色列表"></a>角色列表</h3><h4 id="通过路由展示角色列表组件"><a href="#通过路由展示角色列表组件" class="headerlink" title="通过路由展示角色列表组件"></a>通过路由展示角色列表组件</h4><p> <img src="/2020/10/20/vue-shop/image-20201020102530069.png" alt="image-20201020102530069"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201020102646119.png" alt="image-20201020102646119"> </p>
+<h4 id="绘制基本布局结构并获取列表数据"><a href="#绘制基本布局结构并获取列表数据" class="headerlink" title="绘制基本布局结构并获取列表数据"></a>绘制基本布局结构并获取列表数据</h4><p><img src="/2020/10/20/vue-shop/image-20201020103646178.png" alt="image-20201020103646178"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201020233046477.png" alt="image-20201020233046477"></p>
+<h4 id="渲染角色列表数据"><a href="#渲染角色列表数据" class="headerlink" title="渲染角色列表数据"></a>渲染角色列表数据</h4><p><img src="/2020/10/20/vue-shop/image-20201020105619631.png" alt="image-20201020105619631"> </p>
+<h4 id="通过第一层for循环渲染一级权限"><a href="#通过第一层for循环渲染一级权限" class="headerlink" title="通过第一层for循环渲染一级权限"></a>通过第一层for循环渲染一级权限</h4><p><img src="/2020/10/20/vue-shop/image-20201020223200425.png" alt="image-20201020223200425"> </p>
+<h4 id="美化一级权限的UI结构"><a href="#美化一级权限的UI结构" class="headerlink" title="美化一级权限的UI结构"></a>美化一级权限的UI结构</h4><p><img src="/2020/10/20/vue-shop/image-20201020223729637.png" alt="image-20201020223729637"> </p>
+<p> <img src="/2020/10/20/vue-shop/image-20201021092953084.png" alt="image-20201021092953084">  </p>
+<h4 id="通过二层for循环渲染二级权限"><a href="#通过二层for循环渲染二级权限" class="headerlink" title="通过二层for循环渲染二级权限"></a>通过二层for循环渲染二级权限</h4><p><img src="/2020/10/20/vue-shop/image-20201021100112426.png" alt="image-20201021100112426"> </p>
+<h4 id="通过第三层for循环渲染三级权限"><a href="#通过第三层for循环渲染三级权限" class="headerlink" title="通过第三层for循环渲染三级权限"></a>通过第三层for循环渲染三级权限</h4><p><img src="/2020/10/20/vue-shop/image-20201021100004332.png" alt="image-20201021100004332"> </p>
+<h4 id="美化角色下权限的UI结构"><a href="#美化角色下权限的UI结构" class="headerlink" title="美化角色下权限的UI结构"></a>美化角色下权限的UI结构</h4><p><img src="/2020/10/20/vue-shop/image-20201021100736922.png" alt="image-20201021100736922"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201021100924625.png" alt="image-20201021100924625"> </p>
+<h4 id="点击删除权限按钮弹出确认框提示"><a href="#点击删除权限按钮弹出确认框提示" class="headerlink" title="点击删除权限按钮弹出确认框提示"></a>点击删除权限按钮弹出确认框提示</h4><p> <img src="/2020/10/20/vue-shop/image-20201021113116688.png" alt="image-20201021113116688"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201021114700375.png" alt="image-20201021114700375"> </p>
+<h4 id="完成删除角色下指定的权限功能"><a href="#完成删除角色下指定的权限功能" class="headerlink" title="完成删除角色下指定的权限功能"></a>完成删除角色下指定的权限功能</h4><p><img src="/2020/10/20/vue-shop/image-20201021120300233.png" alt="image-20201021120300233"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201021120342645.png" alt="image-20201021120342645"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201021120502393.png" alt="image-20201021120502393"> </p>
+<h3 id="分配权限"><a href="#分配权限" class="headerlink" title="分配权限"></a>分配权限</h3><h4 id="弹出分配权限对话框并请求权限数据"><a href="#弹出分配权限对话框并请求权限数据" class="headerlink" title="弹出分配权限对话框并请求权限数据"></a>弹出分配权限对话框并请求权限数据</h4><p><img src="/2020/10/20/vue-shop/image-20201022180005146.png" alt="image-20201022180005146"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201022180448308.png" alt="image-20201022180448308"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201022180643100.png" alt="image-20201022180643100"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201022181102380.png" alt="image-20201022181102380"> </p>
+<h4 id="初步配置并使用el-tree树形控件"><a href="#初步配置并使用el-tree树形控件" class="headerlink" title="初步配置并使用el-tree树形控件"></a>初步配置并使用el-tree树形控件</h4><p><img src="/2020/10/20/vue-shop/image-20201022181654361.png" alt="image-20201022181654361"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201022181857416.png" alt="image-20201022181857416"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201022182123401.png" alt="image-20201022182123401"> </p>
+<h4 id="优化树形控件的展示效果"><a href="#优化树形控件的展示效果" class="headerlink" title="优化树形控件的展示效果"></a>优化树形控件的展示效果</h4><p><img src="/2020/10/20/vue-shop/image-20201022182521481.png" alt="image-20201022182521481"> </p>
+<h4 id="分析已有权限默认勾选的实现思路"><a href="#分析已有权限默认勾选的实现思路" class="headerlink" title="分析已有权限默认勾选的实现思路"></a>分析已有权限默认勾选的实现思路</h4><p><img src="/2020/10/20/vue-shop/image-20201022183302563.png" alt="image-20201022183302563"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201022183328730.png" alt="image-20201022183328730"> </p>
+<h4 id="加载当前角色已有的权限"><a href="#加载当前角色已有的权限" class="headerlink" title="加载当前角色已有的权限"></a>加载当前角色已有的权限</h4><p><img src="/2020/10/20/vue-shop/image-20201022185237708.png" alt="image-20201022185237708"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201022184900725.png" alt="image-20201022184900725">  </p>
+<p><img src="/2020/10/20/vue-shop/image-20201022185141402.png" alt="image-20201022185141402"> </p>
+<h4 id="在关闭对话框时重置defKeys数组"><a href="#在关闭对话框时重置defKeys数组" class="headerlink" title="在关闭对话框时重置defKeys数组"></a>在关闭对话框时重置defKeys数组</h4><p><img src="/2020/10/20/vue-shop/image-20201022185831749.png" alt="image-20201022185831749"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201022185911205.png" alt="image-20201022185911205"> </p>
+<h4 id="调用API完成分配权限功能"><a href="#调用API完成分配权限功能" class="headerlink" title="调用API完成分配权限功能"></a>调用API完成分配权限功能</h4><p><img src="/2020/10/20/vue-shop/image-20201022190850070.png" alt="image-20201022190850070"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201022190959240.png" alt="image-20201022190959240"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201022191113662.png" alt="image-20201022191113662"> </p>
+<p> <img src="/2020/10/20/vue-shop/image-20201022220710473.png" alt="image-20201022220710473"> </p>
+<h4 id="渲染分配角色的对话框并请求角色列表数据"><a href="#渲染分配角色的对话框并请求角色列表数据" class="headerlink" title="渲染分配角色的对话框并请求角色列表数据"></a>渲染分配角色的对话框并请求角色列表数据</h4><p><img src="/2020/10/20/vue-shop/image-20201022221614330.png" alt="image-20201022221614330"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201022223306647.png" alt="image-20201022223306647">   </p>
+<p><img src="/2020/10/20/vue-shop/image-20201022222641495.png" alt="image-20201022222641495"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201022223126401.png" alt="image-20201022223126401"> </p>
+<h4 id="渲染角色列表的select下拉菜单"><a href="#渲染角色列表的select下拉菜单" class="headerlink" title="渲染角色列表的select下拉菜单"></a>渲染角色列表的select下拉菜单</h4><p><img src="/2020/10/20/vue-shop/image-20201022223902731.png" alt="image-20201022223902731"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201022224133787.png" alt="image-20201022224133787"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201022224237566.png" alt="image-20201022224237566"> </p>
+<h4 id="完成分配角色的功能"><a href="#完成分配角色的功能" class="headerlink" title="完成分配角色的功能"></a>完成分配角色的功能</h4><p><img src="/2020/10/20/vue-shop/image-20201022224737170.png" alt="image-20201022224737170"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201022225331879.png" alt="image-20201022225331879"> </p>
+<p> <img src="/2020/10/20/vue-shop/image-20201022230542032.png" alt="image-20201022230542032"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201022230448832.png" alt="image-20201022230448832"> </p>
+<h4 id="提交本地代码到Git仓库"><a href="#提交本地代码到Git仓库" class="headerlink" title="提交本地代码到Git仓库"></a>提交本地代码到Git仓库</h4><ol>
+<li><code>git branch</code></li>
+<li><code>git add .</code></li>
+<li><code>git commit -m &quot;完成了权限功能的开发&quot;</code></li>
+<li><code>git push</code></li>
+<li><code>git checkout master</code></li>
+<li><code>git merge rights</code></li>
+<li><code>git branch</code></li>
+<li><code>git push</code> </li>
+</ol>
+<h2 id="分类管理"><a href="#分类管理" class="headerlink" title="分类管理"></a>分类管理</h2><h3 id="商品分类"><a href="#商品分类" class="headerlink" title="商品分类"></a>商品分类</h3><h4 id="创建good-cate子分支"><a href="#创建good-cate子分支" class="headerlink" title="创建good_cate子分支"></a>创建good_cate子分支</h4><ol>
+<li><code>git branch</code></li>
+<li><code>git checkout -b goods_cate</code></li>
+<li><code>git push -u origin goods_cate</code></li>
+</ol>
+<h4 id="通过路由加载商品分类组件"><a href="#通过路由加载商品分类组件" class="headerlink" title="通过路由加载商品分类组件"></a>通过路由加载商品分类组件</h4><p> <img src="/2020/10/20/vue-shop/image-20201023092113691.png" alt="image-20201023092113691"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023092221116.png" alt="image-20201023092221116"> </p>
+<h4 id="绘制商品分类组件的基本页面布局"><a href="#绘制商品分类组件的基本页面布局" class="headerlink" title="绘制商品分类组件的基本页面布局"></a>绘制商品分类组件的基本页面布局</h4><p><img src="/2020/10/20/vue-shop/image-20201023092759804.png" alt="image-20201023092759804"> </p>
+<h4 id="调用API获取商品分类的列表数据"><a href="#调用API获取商品分类的列表数据" class="headerlink" title="调用API获取商品分类的列表数据"></a>调用API获取商品分类的列表数据</h4><p><img src="/2020/10/20/vue-shop/image-20201023094104530.png" alt="image-20201023094104530"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023094142024.png" alt="image-20201023094142024"> </p>
+<h4 id="初步使用vue-table-with-tree-grid树形表格组件"><a href="#初步使用vue-table-with-tree-grid树形表格组件" class="headerlink" title="初步使用vue-table-with-tree-grid树形表格组件"></a>初步使用vue-table-with-tree-grid树形表格组件</h4><p>安装vue-table-with-tree-grid树形表格组件</p>
+<ol>
+<li><p>使用命令行<code>npm i vue-table-with-tree-grid -S</code></p>
+</li>
+<li><p><code>vue ui</code> 在运行依赖中搜索并安装</p>
+<p><img src="/2020/10/20/vue-shop/image-20201023102156822.png" alt="image-20201023102156822"> </p>
+</li>
+</ol>
+<p><img src="/2020/10/20/vue-shop/image-20201023102657196.png" alt="image-20201023102657196"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023102731130.png" alt="image-20201023102731130"> </p>
+<h4 id="使用自定义模板列渲染表格数据"><a href="#使用自定义模板列渲染表格数据" class="headerlink" title="使用自定义模板列渲染表格数据"></a>使用自定义模板列渲染表格数据</h4><p><img src="/2020/10/20/vue-shop/image-20201023103821453.png" alt="image-20201023103821453"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023103910274.png" alt="image-20201023103910274"> </p>
+<h4 id="渲染排序和操作对应-的UI结构"><a href="#渲染排序和操作对应-的UI结构" class="headerlink" title="渲染排序和操作对应 的UI结构"></a>渲染排序和操作对应 的UI结构</h4><p><img src="/2020/10/20/vue-shop/image-20201023110209047.png" alt="image-20201023110209047"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023110254820.png" alt="image-20201023110254820"> </p>
+<h4 id="实现分页功能"><a href="#实现分页功能" class="headerlink" title="实现分页功能"></a>实现分页功能</h4><p><img src="/2020/10/20/vue-shop/image-20201023111707944.png" alt="image-20201023111707944">  </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023111754417.png" alt="image-20201023111754417"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023111201833.png" alt="image-20201023111201833"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023111851627.png" alt="image-20201023111851627"> </p>
+<h4 id="渲染添加分类的对话框和表单"><a href="#渲染添加分类的对话框和表单" class="headerlink" title="渲染添加分类的对话框和表单"></a>渲染添加分类的对话框和表单</h4><p><img src="/2020/10/20/vue-shop/image-20201023133144076.png" alt="image-20201023133144076"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023134023101.png" alt="image-20201023134023101">  </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023134643418.png" alt="image-20201023134643418">  </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023134946242.png" alt="image-20201023134946242"> </p>
+<h4 id="获取父级分类数据列表"><a href="#获取父级分类数据列表" class="headerlink" title="获取父级分类数据列表"></a>获取父级分类数据列表</h4><p><img src="/2020/10/20/vue-shop/image-20201023135515490.png" alt="image-20201023135515490"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023140523099.png" alt="image-20201023140523099"> </p>
+<h4 id="渲染级联选择器"><a href="#渲染级联选择器" class="headerlink" title="渲染级联选择器"></a>渲染级联选择器</h4><p><img src="/2020/10/20/vue-shop/image-20201023141455625.png" alt="image-20201023141455625"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023142114809.png" alt="image-20201023142114809"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023142632742.png" alt="image-20201023142632742"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023142929859.png" alt="image-20201023142929859"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023143206562.png" alt="image-20201023143206562"> </p>
+<h4 id="根据父分类的变化处理表单中的数据"><a href="#根据父分类的变化处理表单中的数据" class="headerlink" title="根据父分类的变化处理表单中的数据"></a>根据父分类的变化处理表单中的数据</h4><p><img src="/2020/10/20/vue-shop/image-20201023145341274.png" alt="image-20201023145341274"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023145544630.png" alt="image-20201023145544630"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023145458137.png" alt="image-20201023145458137"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023150105181.png" alt="image-20201023150105181"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023150007991.png" alt="image-20201023150007991"> </p>
+<h4 id="在对话框的close事件中重置表单数据"><a href="#在对话框的close事件中重置表单数据" class="headerlink" title="在对话框的close事件中重置表单数据"></a>在对话框的close事件中重置表单数据</h4><p><img src="/2020/10/20/vue-shop/image-20201023151640682.png" alt="image-20201023151640682">  </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023150942829.png" alt="image-20201023150942829"> </p>
+<h3 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h3><h4 id="完成添加分类的操作"><a href="#完成添加分类的操作" class="headerlink" title="完成添加分类的操作"></a>完成添加分类的操作</h4><p><img src="/2020/10/20/vue-shop/image-20201023152450624.png" alt="image-20201023152450624"> </p>
+<h4 id="将good-cate分支上的代码提交到Git仓库中"><a href="#将good-cate分支上的代码提交到Git仓库中" class="headerlink" title="将good_cate分支上的代码提交到Git仓库中"></a>将good_cate分支上的代码提交到Git仓库中</h4><ol>
+<li><code>git branch</code></li>
+<li><code>git add .</code></li>
+<li><code>git commit -m &quot;完成了分类功能的开发&quot;</code></li>
+<li><code>git push</code></li>
+<li><code>git checkout master</code></li>
+<li><code>git merge good_cate</code></li>
+<li><code>git branch</code></li>
+<li><code>git push</code> </li>
+</ol>
+<h2 id="参数管理"><a href="#参数管理" class="headerlink" title="参数管理"></a>参数管理</h2><h3 id="分类参数"><a href="#分类参数" class="headerlink" title="分类参数"></a>分类参数</h3><h4 id="创建goods-params分支"><a href="#创建goods-params分支" class="headerlink" title="创建goods_params分支"></a>创建goods_params分支</h4><ol>
+<li><code>git branch</code></li>
+<li><code>git checkout -b goods_params</code></li>
+<li><code>git push -u origin goods_params</code></li>
+</ol>
+<h4 id="通过路由加载分类参数组件页面"><a href="#通过路由加载分类参数组件页面" class="headerlink" title="通过路由加载分类参数组件页面"></a>通过路由加载分类参数组件页面</h4><p><img src="/2020/10/20/vue-shop/image-20201023173503072.png" alt="image-20201023173503072">  </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023173538295.png" alt="image-20201023173538295"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023172310992.png" alt="image-20201023172310992">  </p>
+<h4 id="渲染分类参数页面的基本UI结构"><a href="#渲染分类参数页面的基本UI结构" class="headerlink" title="渲染分类参数页面的基本UI结构"></a>渲染分类参数页面的基本UI结构</h4><p><img src="/2020/10/20/vue-shop/image-20201023174107832.png" alt="image-20201023174107832"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023174614425.png" alt="image-20201023174614425"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023174647426.png" alt="image-20201023174647426"> </p>
+<h4 id="调用API获取商品分类列表数据"><a href="#调用API获取商品分类列表数据" class="headerlink" title="调用API获取商品分类列表数据"></a>调用API获取商品分类列表数据</h4><p><img src="/2020/10/20/vue-shop/image-20201023175414857.png" alt="image-20201023175414857"> </p>
+<h4 id="渲染商品分类的级联选择框"><a href="#渲染商品分类的级联选择框" class="headerlink" title="渲染商品分类的级联选择框"></a>渲染商品分类的级联选择框</h4><p><img src="/2020/10/20/vue-shop/image-20201023180500422.png" alt="image-20201023180500422"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023180555601.png" alt="image-20201023180555601"> </p>
+<h4 id="element的级联选择器Cascader无滚动条样式全部显示超出屏幕解决办法"><a href="#element的级联选择器Cascader无滚动条样式全部显示超出屏幕解决办法" class="headerlink" title="element的级联选择器Cascader无滚动条样式全部显示超出屏幕解决办法"></a>element的级联选择器Cascader无滚动条样式全部显示超出屏幕解决办法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F; 在全局的global.css样式中给el-cascader-panel添加高度</span><br><span class="line">.el-cascader-panel&#123;</span><br><span class="line">    height: 200px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/10/20/vue-shop/image-20201023202513715.png" alt="image-20201023202513715"> </p>
+<h4 id="控制级联选择框的选中范围"><a href="#控制级联选择框的选中范围" class="headerlink" title="控制级联选择框的选中范围"></a>控制级联选择框的选中范围</h4><p><img src="/2020/10/20/vue-shop/image-20201023203056468.png" alt="image-20201023203056468"> </p>
+<h4 id="渲染分类参数的Tabs页签"><a href="#渲染分类参数的Tabs页签" class="headerlink" title="渲染分类参数的Tabs页签"></a>渲染分类参数的Tabs页签</h4><p><img src="/2020/10/20/vue-shop/image-20201023203741015.png" alt="image-20201023203741015"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023204324954.png" alt="image-20201023204324954">  </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023204414140.png" alt="image-20201023204414140"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023204453456.png" alt="image-20201023204453456"> </p>
+<h4 id="渲染添加参数按钮并控制按钮的禁用状态"><a href="#渲染添加参数按钮并控制按钮的禁用状态" class="headerlink" title="渲染添加参数按钮并控制按钮的禁用状态"></a>渲染添加参数按钮并控制按钮的禁用状态</h4><p><img src="/2020/10/20/vue-shop/image-20201023205429619.png" alt="image-20201023205429619"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023205547456.png" alt="image-20201023205547456"> </p>
+<h4 id="获取参数列表数据"><a href="#获取参数列表数据" class="headerlink" title="获取参数列表数据"></a>获取参数列表数据</h4><p><img src="/2020/10/20/vue-shop/image-20201023210208651.png" alt="image-20201023210208651"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023210914829.png" alt="image-20201023210914829"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023212104525.png" alt="image-20201023212104525">  </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023211050058.png" alt="image-20201023211050058"> </p>
+<h4 id="切换Tabs面板后重新获取参数列表数据"><a href="#切换Tabs面板后重新获取参数列表数据" class="headerlink" title="切换Tabs面板后重新获取参数列表数据"></a>切换Tabs面板后重新获取参数列表数据</h4><p><img src="/2020/10/20/vue-shop/image-20201023212845582.png" alt="image-20201023212845582"> </p>
+<h4 id="将获取到的参数数据挂载到不同的数据源上"><a href="#将获取到的参数数据挂载到不同的数据源上" class="headerlink" title="将获取到的参数数据挂载到不同的数据源上"></a>将获取到的参数数据挂载到不同的数据源上</h4><p><img src="/2020/10/20/vue-shop/image-20201023215350198.png" alt="image-20201023215350198"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023215532059.png" alt="image-20201023215532059">  </p>
+<h4 id="渲染动态参数和静态属性的Table表格"><a href="#渲染动态参数和静态属性的Table表格" class="headerlink" title="渲染动态参数和静态属性的Table表格"></a>渲染动态参数和静态属性的Table表格</h4><p><img src="/2020/10/20/vue-shop/image-20201023222306045.png" alt="image-20201023222306045"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023222937462.png" alt="image-20201023222937462"> </p>
+<h3 id="添加参数"><a href="#添加参数" class="headerlink" title="添加参数"></a>添加参数</h3><h4 id="渲染添加参数的对话框"><a href="#渲染添加参数的对话框" class="headerlink" title="渲染添加参数的对话框"></a>渲染添加参数的对话框</h4><p><img src="/2020/10/20/vue-shop/image-20201023224434985.png" alt="image-20201023224434985"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023224741127.png" alt="image-20201023224741127"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023225102971.png" alt="image-20201023225102971"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023225451783.png" alt="image-20201023225451783"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201023225733611.png" alt="image-20201023225733611"> </p>
+<h4 id="完成动态参数和静态属性的添加操作"><a href="#完成动态参数和静态属性的添加操作" class="headerlink" title="完成动态参数和静态属性的添加操作"></a>完成动态参数和静态属性的添加操作</h4><p><img src="/2020/10/20/vue-shop/image-20201023230238030.png" alt="image-20201023230238030"> </p>
+<p> <img src="/2020/10/20/vue-shop/image-20201023231156650.png" alt="image-20201023231156650"> </p>
+<h3 id="修改参数"><a href="#修改参数" class="headerlink" title="修改参数"></a>修改参数</h3><h4 id="渲染修改参数的对话框"><a href="#渲染修改参数的对话框" class="headerlink" title="渲染修改参数的对话框"></a>渲染修改参数的对话框</h4><p><img src="/2020/10/20/vue-shop/image-20201024170118728.png" alt="image-20201024170118728"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201024170207849.png" alt="image-20201024170207849"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201024170709890.png" alt="image-20201024170709890"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201024171156038.png" alt="image-20201024171156038">  </p>
+<p><img src="/2020/10/20/vue-shop/image-20201024171500902.png" alt="image-20201024171500902"> </p>
+<h4 id="完成修改参数的操作"><a href="#完成修改参数的操作" class="headerlink" title="完成修改参数的操作"></a>完成修改参数的操作</h4><p><img src="/2020/10/20/vue-shop/image-20201024212636875.png" alt="image-20201024212636875">  </p>
+<p><img src="/2020/10/20/vue-shop/image-20201024212737907.png" alt="image-20201024212737907">  </p>
+<p><img src="/2020/10/20/vue-shop/image-20201024211543414.png" alt="image-20201024211543414">  </p>
+<p><img src="/2020/10/20/vue-shop/image-20201024212329886.png" alt="image-20201024212329886"> </p>
+<h3 id="删除参数"><a href="#删除参数" class="headerlink" title="删除参数"></a>删除参数</h3><h4 id="完成删除参数的业务逻辑"><a href="#完成删除参数的业务逻辑" class="headerlink" title="完成删除参数的业务逻辑"></a>完成删除参数的业务逻辑</h4><p><img src="/2020/10/20/vue-shop/image-20201024215939601.png" alt="image-20201024215939601"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201024220038895.png" alt="image-20201024220038895"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201024221628164.png" alt="image-20201024221628164"> </p>
+<h3 id="分类参数-1"><a href="#分类参数-1" class="headerlink" title="分类参数"></a>分类参数</h3><h4 id="渲染参数下的可选项"><a href="#渲染参数下的可选项" class="headerlink" title="渲染参数下的可选项"></a>渲染参数下的可选项</h4><p> <img src="/2020/10/20/vue-shop/image-20201025121959802.png" alt="image-20201025121959802"></p>
+<p><img src="/2020/10/20/vue-shop/image-20201025122309828.png" alt="image-20201025122309828"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201025122405513.png" alt="image-20201025122405513"> </p>
+<h4 id="解决attr-vals为空字符串时候的小问题"><a href="#解决attr-vals为空字符串时候的小问题" class="headerlink" title="解决attr_vals为空字符串时候的小问题"></a>解决attr_vals为空字符串时候的小问题</h4><p><img src="/2020/10/20/vue-shop/image-20201025123013646.png" alt="image-20201025123013646"> </p>
+<h4 id="控制按钮与文本框的切换显示"><a href="#控制按钮与文本框的切换显示" class="headerlink" title="控制按钮与文本框的切换显示"></a>控制按钮与文本框的切换显示</h4><p><img src="/2020/10/20/vue-shop/image-20201025123801456.png" alt="image-20201025123801456"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201025124116279.png" alt="image-20201025124116279"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201025124358947.png" alt="image-20201025124358947"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201025124446933.png" alt="image-20201025124446933"> </p>
+<h4 id="为每一行数据提供单独的inputVisible和inputValue"><a href="#为每一行数据提供单独的inputVisible和inputValue" class="headerlink" title="为每一行数据提供单独的inputVisible和inputValue"></a>为每一行数据提供单独的inputVisible和inputValue</h4><p><img src="/2020/10/20/vue-shop/image-20201025130746057.png" alt="image-20201025130746057"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201025131212911.png" alt="image-20201025131212911">  </p>
+<p><img src="/2020/10/20/vue-shop/image-20201025131308271.png" alt="image-20201025131308271"> </p>
+<h4 id="让文本框自动获得焦点"><a href="#让文本框自动获得焦点" class="headerlink" title="让文本框自动获得焦点"></a>让文本框自动获得焦点</h4><p><img src="/2020/10/20/vue-shop/image-20201025132234746.png" alt="image-20201025132234746"> </p>
+<h4 id="实现文本框与按钮的切换显示"><a href="#实现文本框与按钮的切换显示" class="headerlink" title="实现文本框与按钮的切换显示"></a>实现文本框与按钮的切换显示</h4><p><img src="/2020/10/20/vue-shop/image-20201025132636374.png" alt="image-20201025132636374"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201025132904668.png" alt="image-20201025132904668"> </p>
+<h4 id="完成参数可选项的添加操作"><a href="#完成参数可选项的添加操作" class="headerlink" title="完成参数可选项的添加操作"></a>完成参数可选项的添加操作</h4><p><img src="/2020/10/20/vue-shop/image-20201025134044325.png" alt="image-20201025134044325"> </p>
+<h4 id="删除参数下的可选项"><a href="#删除参数下的可选项" class="headerlink" title="删除参数下的可选项"></a>删除参数下的可选项</h4><p><img src="/2020/10/20/vue-shop/image-20201025134543457.png" alt="image-20201025134543457"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201025140027539.png" alt="image-20201025140027539"> </p>
+<h4 id="清空表格数据"><a href="#清空表格数据" class="headerlink" title="清空表格数据"></a>清空表格数据</h4><p><img src="/2020/10/20/vue-shop/image-20201025140346009.png" alt="image-20201025140346009"> </p>
+<h4 id="完成静态属性表格中的展开行效果"><a href="#完成静态属性表格中的展开行效果" class="headerlink" title="完成静态属性表格中的展开行效果"></a>完成静态属性表格中的展开行效果</h4><p><img src="/2020/10/20/vue-shop/image-20201025140951345.png" alt="image-20201025140951345">  </p>
+<h4 id="将本地good-params分支代码提交并推送"><a href="#将本地good-params分支代码提交并推送" class="headerlink" title="将本地good_params分支代码提交并推送"></a>将本地good_params分支代码提交并推送</h4><ol>
+<li><code>git branch</code></li>
+<li><code>git add .</code></li>
+<li><code>git commit -m &quot;完成了分类参数的开发&quot;</code></li>
+<li><code>git push</code></li>
+<li><code>git checkout master</code></li>
+<li><code>git merge good_params</code> </li>
+<li><code>git branch</code></li>
+<li><code>git push</code> </li>
+</ol>
+<h2 id="商品管理"><a href="#商品管理" class="headerlink" title="商品管理"></a>商品管理</h2><h3 id="商品列表"><a href="#商品列表" class="headerlink" title="商品列表"></a>商品列表</h3><h4 id="创建goods-list子分支并推送"><a href="#创建goods-list子分支并推送" class="headerlink" title="创建goods_list子分支并推送"></a>创建goods_list子分支并推送</h4><ol>
+<li><code>git branch</code></li>
+<li><code>git checkout -b goods_list</code></li>
+<li><code>git push -u origin goods_list</code></li>
+</ol>
+<h4 id="通过路由加载商品列表组件"><a href="#通过路由加载商品列表组件" class="headerlink" title="通过路由加载商品列表组件"></a>通过路由加载商品列表组件</h4><p><img src="/2020/10/20/vue-shop/image-20201025142746741.png" alt="image-20201025142746741"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201025164445598.png" alt="image-20201025164445598">  </p>
+<p><img src="/2020/10/20/vue-shop/image-20201025143714335.png" alt="image-20201025143714335"></p>
+<h4 id="获取商品列表数据"><a href="#获取商品列表数据" class="headerlink" title="获取商品列表数据"></a>获取商品列表数据</h4><p><img src="/2020/10/20/vue-shop/image-20201025150821210.png" alt="image-20201025150821210">  </p>
+<p><img src="/2020/10/20/vue-shop/image-20201025153523186.png" alt="image-20201025153523186">  </p>
+<h4 id="渲染商品表格数据"><a href="#渲染商品表格数据" class="headerlink" title="渲染商品表格数据"></a>渲染商品表格数据</h4><p><img src="/2020/10/20/vue-shop/image-20201025153741832.png" alt="image-20201025153741832"> </p>
+<h4 id="自定义格式化时间的全局过滤器"><a href="#自定义格式化时间的全局过滤器" class="headerlink" title="自定义格式化时间的全局过滤器"></a>自定义格式化时间的全局过滤器</h4><p><img src="/2020/10/20/vue-shop/image-20201025155846076.png" alt="image-20201025155846076">  </p>
+<p><img src="/2020/10/20/vue-shop/image-20201025155943341.png" alt="image-20201025155943341"> </p>
+<h4 id="实现商品列表的分页功能"><a href="#实现商品列表的分页功能" class="headerlink" title="实现商品列表的分页功能"></a>实现商品列表的分页功能</h4><p><img src="/2020/10/20/vue-shop/image-20201025160426204.png" alt="image-20201025160426204"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201025160638676.png" alt="image-20201025160638676"> </p>
+<h4 id="实现搜索与清空的功能"><a href="#实现搜索与清空的功能" class="headerlink" title="实现搜索与清空的功能"></a>实现搜索与清空的功能</h4><p><img src="/2020/10/20/vue-shop/image-20201025161904284.png" alt="image-20201025161904284"> </p>
+<h4 id="根据Id删除商品数据"><a href="#根据Id删除商品数据" class="headerlink" title="根据Id删除商品数据"></a>根据Id删除商品数据</h4><p><img src="/2020/10/20/vue-shop/image-20201025162425335.png" alt="image-20201025162425335"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201025162906770.png" alt="image-20201025162906770"> </p>
+<h4 id="通过编程式导航跳转到商品添加页面"><a href="#通过编程式导航跳转到商品添加页面" class="headerlink" title="通过编程式导航跳转到商品添加页面"></a>通过编程式导航跳转到商品添加页面</h4><p><img src="/2020/10/20/vue-shop/image-20201025163416282.png" alt="image-20201025163416282"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201025163628576.png" alt="image-20201025163628576">  </p>
+<p><img src="/2020/10/20/vue-shop/image-20201025163924911.png" alt="image-20201025163924911"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201025164227138.png" alt="image-20201025164227138"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201025164546396.png" alt="image-20201025164546396"> </p>
+<h3 id="商品添加"><a href="#商品添加" class="headerlink" title="商品添加"></a>商品添加</h3><h4 id="渲染添加页面的基本结构"><a href="#渲染添加页面的基本结构" class="headerlink" title="渲染添加页面的基本结构"></a>渲染添加页面的基本结构</h4><p> <img src="/2020/10/20/vue-shop/image-20201025171444729.png" alt="image-20201025171444729"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201025171522962.png" alt="image-20201025171522962"> </p>
+<h4 id="美化步骤条组件"><a href="#美化步骤条组件" class="headerlink" title="美化步骤条组件"></a>美化步骤条组件</h4><p><img src="/2020/10/20/vue-shop/image-20201025172043433.png" alt="image-20201025172043433"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201025172120531.png" alt="image-20201025172120531"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201025172335827.png" alt="image-20201025172335827"> </p>
+<h4 id="渲染tab栏区域"><a href="#渲染tab栏区域" class="headerlink" title="渲染tab栏区域"></a>渲染tab栏区域</h4><p><img src="/2020/10/20/vue-shop/image-20201025172907888.png" alt="image-20201025172907888"> </p>
+<h4 id="实现步骤条和tab栏数据的联动效果"><a href="#实现步骤条和tab栏数据的联动效果" class="headerlink" title="实现步骤条和tab栏数据的联动效果"></a>实现步骤条和tab栏数据的联动效果</h4><p><img src="/2020/10/20/vue-shop/image-20201025173557262.png" alt="image-20201025173557262"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201025173250527.png" alt="image-20201025173250527"> </p>
+<h4 id="分析表单的组成部分"><a href="#分析表单的组成部分" class="headerlink" title="分析表单的组成部分"></a>分析表单的组成部分</h4><p><img src="/2020/10/20/vue-shop/image-20201026131317370.png" alt="image-20201026131317370">  </p>
+<p><img src="/2020/10/20/vue-shop/image-20201025174006591.png" alt="image-20201025174006591"> </p>
+<h4 id="绘制基本信息面板的UI结构"><a href="#绘制基本信息面板的UI结构" class="headerlink" title="绘制基本信息面板的UI结构"></a>绘制基本信息面板的UI结构</h4><p><img src="/2020/10/20/vue-shop/image-20201025180642183.png" alt="image-20201025180642183"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201025180841012.png" alt="image-20201025180841012"> </p>
+<h4 id="获取商品分类数据"><a href="#获取商品分类数据" class="headerlink" title="获取商品分类数据"></a>获取商品分类数据</h4><p><img src="/2020/10/20/vue-shop/image-20201025181547719.png" alt="image-20201025181547719"> </p>
+<h4 id="绘制商品分类的级联选择器"><a href="#绘制商品分类的级联选择器" class="headerlink" title="绘制商品分类的级联选择器"></a>绘制商品分类的级联选择器</h4><p><img src="/2020/10/20/vue-shop/image-20201025182559686.png" alt="image-20201025182559686"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201025182852021.png" alt="image-20201025182852021"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201025183003890.png" alt="image-20201025183003890"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201025183226491.png" alt="image-20201025183226491"> </p>
+<h4 id="只允许选中三级商品分类"><a href="#只允许选中三级商品分类" class="headerlink" title="只允许选中三级商品分类"></a>只允许选中三级商品分类</h4><p><img src="/2020/10/20/vue-shop/image-20201026105638433.png" alt="image-20201026105638433"> </p>
+<h4 id="阻止页签切换"><a href="#阻止页签切换" class="headerlink" title="阻止页签切换"></a>阻止页签切换</h4><p><img src="/2020/10/20/vue-shop/image-20201026111820333.png" alt="image-20201026111820333"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201026112402919.png" alt="image-20201026112402919"> </p>
+<h4 id="获取动态参数列表数据"><a href="#获取动态参数列表数据" class="headerlink" title="获取动态参数列表数据"></a>获取动态参数列表数据</h4><p><img src="/2020/10/20/vue-shop/image-20201026113013993.png" alt="image-20201026113013993"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201026113949990.png" alt="image-20201026113949990"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201026123728292.png" alt="image-20201026123728292">  </p>
+<p><img src="/2020/10/20/vue-shop/image-20201026113338729.png" alt="image-20201026113338729"> </p>
+<h4 id="绘制商品参数面板中的复选框组"><a href="#绘制商品参数面板中的复选框组" class="headerlink" title="绘制商品参数面板中的复选框组"></a>绘制商品参数面板中的复选框组</h4><p><img src="/2020/10/20/vue-shop/image-20201026120007876.png" alt="image-20201026120007876"><img src="/2020/10/20/vue-shop/image-20201026120648527.png" alt="image-20201026120648527">  </p>
+<p><img src="/2020/10/20/vue-shop/image-20201026123556071.png" alt="image-20201026123556071">  </p>
+<h4 id="优化复选框的样式"><a href="#优化复选框的样式" class="headerlink" title="优化复选框的样式"></a>优化复选框的样式</h4><p><img src="/2020/10/20/vue-shop/image-20201026124126547.png" alt="image-20201026124126547"> </p>
+<h4 id="获取静态属性列表数据"><a href="#获取静态属性列表数据" class="headerlink" title="获取静态属性列表数据"></a>获取静态属性列表数据</h4><p><img src="/2020/10/20/vue-shop/image-20201026124801335.png" alt="image-20201026124801335"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201026125520458.png" alt="image-20201026125520458"> </p>
+<h4 id="渲染商品属性面板的UI结构"><a href="#渲染商品属性面板的UI结构" class="headerlink" title="渲染商品属性面板的UI结构"></a>渲染商品属性面板的UI结构</h4><p><img src="/2020/10/20/vue-shop/image-20201026130204211.png" alt="image-20201026130204211"> </p>
+<h4 id="初步使用upload上传组件"><a href="#初步使用upload上传组件" class="headerlink" title="初步使用upload上传组件"></a>初步使用upload上传组件</h4><p><img src="/2020/10/20/vue-shop/image-20201026145618098.png" alt="image-20201026145618098"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201026152658884.png" alt="image-20201026152658884">  </p>
+<p><img src="/2020/10/20/vue-shop/image-20201026150033620.png" alt="image-20201026150033620"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201026150349503.png" alt="image-20201026150349503"> </p>
+<h4 id="手动为upload组件绑定headers请求头"><a href="#手动为upload组件绑定headers请求头" class="headerlink" title="手动为upload组件绑定headers请求头"></a>手动为upload组件绑定headers请求头</h4><p><img src="/2020/10/20/vue-shop/image-20201026151206578.png" alt="image-20201026151206578"><img src="/2020/10/20/vue-shop/image-20201026152738786.png" alt="image-20201026152738786">  </p>
+<p><img src="/2020/10/20/vue-shop/image-20201026151705156.png" alt="image-20201026151705156"> </p>
+<h4 id="监听upload组件的on-success事件"><a href="#监听upload组件的on-success事件" class="headerlink" title="监听upload组件的on-success事件"></a>监听upload组件的on-success事件</h4><p><img src="/2020/10/20/vue-shop/image-20201026153217506.png" alt="image-20201026153217506"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201026153710972.png" alt="image-20201026153710972"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201026153603483.png" alt="image-20201026153603483"> </p>
+<h4 id="监听upload组件的on-remove事件"><a href="#监听upload组件的on-remove事件" class="headerlink" title="监听upload组件的on-remove事件"></a>监听upload组件的on-remove事件</h4><p><img src="/2020/10/20/vue-shop/image-20201026154808727.png" alt="image-20201026154808727"> </p>
+<h4 id="实现图片的预览效果"><a href="#实现图片的预览效果" class="headerlink" title="实现图片的预览效果"></a>实现图片的预览效果</h4><p><img src="/2020/10/20/vue-shop/image-20201026160500516.png" alt="image-20201026160500516"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201026161036747.png" alt="image-20201026161036747"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201026160721924.png" alt="image-20201026160721924"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201026160741079.png" alt="image-20201026160741079"> </p>
+<h4 id="安装并配置vue-quill-editor"><a href="#安装并配置vue-quill-editor" class="headerlink" title="安装并配置vue-quill-editor"></a>安装并配置vue-quill-editor</h4><p><code>npm install vue-quill-editor --save </code> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201026162618134.png" alt="image-20201026162618134"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201026162945679.png" alt="image-20201026162945679"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201026163320300.png" alt="image-20201026163320300"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201026163057749.png" alt="image-20201026163057749"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201026163416492.png" alt="image-20201026163416492"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201026163525193.png" alt="image-20201026163525193"> </p>
+<h4 id="实现表单数据的预验证"><a href="#实现表单数据的预验证" class="headerlink" title="实现表单数据的预验证"></a>实现表单数据的预验证</h4><p><img src="/2020/10/20/vue-shop/image-20201026164346601.png" alt="image-20201026164346601"> </p>
+<h4 id="把goods-cat从数组转化为字符串"><a href="#把goods-cat从数组转化为字符串" class="headerlink" title="把goods_cat从数组转化为字符串"></a>把goods_cat从数组转化为字符串</h4><p><img src="/2020/10/20/vue-shop/image-20201026172153184.png" alt="image-20201026172153184"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201026172231914.png" alt="image-20201026172231914"> </p>
+<h4 id="处理attrs数组"><a href="#处理attrs数组" class="headerlink" title="处理attrs数组"></a>处理attrs数组</h4><p><img src="/2020/10/20/vue-shop/image-20201026172841971.png" alt="image-20201026172841971"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201026173508980.png" alt="image-20201026173508980"> </p>
+<h4 id="完成商品添加操作"><a href="#完成商品添加操作" class="headerlink" title="完成商品添加操作"></a>完成商品添加操作</h4><p><img src="/2020/10/20/vue-shop/image-20201026174155951.png" alt="image-20201026174155951"> </p>
+<h4 id="将goods-list分支的代码合并并推送"><a href="#将goods-list分支的代码合并并推送" class="headerlink" title="将goods_list分支的代码合并并推送"></a>将goods_list分支的代码合并并推送</h4><ol>
+<li><code>git branch</code></li>
+<li><code>git add .</code></li>
+<li><code>git commit -m &quot;完成了商品功能的开发&quot;</code></li>
+<li><code>git push</code></li>
+<li><code>git checkout master</code></li>
+<li><code>git merge goods_list</code> </li>
+<li><code>git branch</code></li>
+<li><code>git push</code> </li>
+</ol>
+<h2 id="订单管理"><a href="#订单管理" class="headerlink" title="订单管理"></a>订单管理</h2><h3 id="订单列表"><a href="#订单列表" class="headerlink" title="订单列表"></a>订单列表</h3><h4 id="创建order分支"><a href="#创建order分支" class="headerlink" title="创建order分支"></a>创建order分支</h4><ol>
+<li><code>git branch</code></li>
+<li><code>git checkout -b order</code></li>
+<li><code>git push -u origin order</code></li>
+</ol>
+<h4 id="通过路由渲染订单列表页面"><a href="#通过路由渲染订单列表页面" class="headerlink" title="通过路由渲染订单列表页面"></a>通过路由渲染订单列表页面</h4><p><img src="/2020/10/20/vue-shop/image-20201026181914688.png" alt="image-20201026181914688"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201026182122921.png" alt="image-20201026182122921"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201026182553712.png" alt="image-20201026182553712"> </p>
+<h4 id="根据分页获取订单数据列表"><a href="#根据分页获取订单数据列表" class="headerlink" title="根据分页获取订单数据列表"></a>根据分页获取订单数据列表</h4><p><img src="/2020/10/20/vue-shop/image-20201026183415073.png" alt="image-20201026183415073"> </p>
+<h4 id="渲染订单table表格"><a href="#渲染订单table表格" class="headerlink" title="渲染订单table表格"></a>渲染订单table表格</h4><p><img src="/2020/10/20/vue-shop/image-20201026194648643.png" alt="image-20201026194648643"> </p>
+<h4 id="实现分页功能-1"><a href="#实现分页功能-1" class="headerlink" title="实现分页功能"></a>实现分页功能</h4><p><img src="/2020/10/20/vue-shop/image-20201026190144999.png" alt="image-20201026190144999"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201026190318895.png" alt="image-20201026190318895"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201027103112405.png" alt="image-20201027103112405"> </p>
+<h4 id="实现省市区县数据联动效果"><a href="#实现省市区县数据联动效果" class="headerlink" title="实现省市区县数据联动效果"></a>实现省市区县数据联动效果</h4><p><img src="/2020/10/20/vue-shop/image-20201026194400459.png" alt="image-20201026194400459">   </p>
+<p><img src="/2020/10/20/vue-shop/image-20201026194037293.png" alt="image-20201026194037293"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201026192930554.png" alt="image-20201026192930554">  </p>
+<p><img src="/2020/10/20/vue-shop/image-20201026193129569.png" alt="image-20201026193129569"> </p>
+<h4 id="展示物流进度对话框并获取物流信息"><a href="#展示物流进度对话框并获取物流信息" class="headerlink" title="展示物流进度对话框并获取物流信息"></a>展示物流进度对话框并获取物流信息</h4><p><img src="/2020/10/20/vue-shop/image-20201026194907473.png" alt="image-20201026194907473"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201026195229213.png" alt="image-20201026195229213"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201026195323595.png" alt="image-20201026195323595"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201026195944912.png" alt="image-20201026195944912"> </p>
+<p>后台服务器存在问题，没有返回数据</p>
+<h4 id="手动导入并使用Timeline组件"><a href="#手动导入并使用Timeline组件" class="headerlink" title="手动导入并使用Timeline组件"></a>手动导入并使用Timeline组件</h4><p><img src="/2020/10/20/vue-shop/image-20201027102154985.png" alt="image-20201027102154985"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201027102404903.png" alt="image-20201027102404903"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201027103041175.png" alt="image-20201027103041175">  </p>
+<h4 id="将本地order分支的代码合并且推送"><a href="#将本地order分支的代码合并且推送" class="headerlink" title="将本地order分支的代码合并且推送"></a>将本地order分支的代码合并且推送</h4><ol>
+<li><code>git branch</code></li>
+<li><code>git add .</code></li>
+<li><code>git commit -m &quot;完成了订单功能的开发&quot;</code> </li>
+<li><code>git push</code></li>
+<li><code>git checkout master</code></li>
+<li><code>git merge order</code> </li>
+<li><code>git branch</code></li>
+<li><code>git push</code> </li>
+</ol>
+<h2 id="数据统计"><a href="#数据统计" class="headerlink" title="数据统计"></a>数据统计</h2><h3 id="数据概述"><a href="#数据概述" class="headerlink" title="数据概述"></a>数据概述</h3><h4 id="创建report分支"><a href="#创建report分支" class="headerlink" title="创建report分支"></a>创建report分支</h4><ol>
+<li><code>git branch</code></li>
+<li><code>git checkout -b report</code></li>
+<li><code>git push -u origin report</code></li>
+</ol>
+<h4 id="通过路由加载数据报表组件"><a href="#通过路由加载数据报表组件" class="headerlink" title="通过路由加载数据报表组件"></a>通过路由加载数据报表组件</h4><p><img src="/2020/10/20/vue-shop/image-20201027115710237.png" alt="image-20201027115710237"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201027115952086.png" alt="image-20201027115952086"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201027120120171.png" alt="image-20201027120120171"> </p>
+<h4 id="安装Echarts并渲染Demo图表"><a href="#安装Echarts并渲染Demo图表" class="headerlink" title="安装Echarts并渲染Demo图表"></a>安装Echarts并渲染Demo图表</h4><p><code>npm install echarts --save</code> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201027121528544.png" alt="image-20201027121528544"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201027121630641.png" alt="image-20201027121630641"> </p>
+<h4 id="获取折线图数据并渲染图表"><a href="#获取折线图数据并渲染图表" class="headerlink" title="获取折线图数据并渲染图表"></a>获取折线图数据并渲染图表</h4><p><img src="/2020/10/20/vue-shop/image-20201027122214736.png" alt="image-20201027122214736">  </p>
+<p><img src="/2020/10/20/vue-shop/image-20201027122511334.png" alt="image-20201027122511334"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201027123122992.png" alt="image-20201027123122992"> </p>
+<h4 id="将本地的report分支合并且推送"><a href="#将本地的report分支合并且推送" class="headerlink" title="将本地的report分支合并且推送"></a>将本地的report分支合并且推送</h4><ol>
+<li><code>git branch</code></li>
+<li><code>git add .</code></li>
+<li><code>git commit -m &quot;完成了报表功能的开发&quot;</code> </li>
+<li><code>git push</code></li>
+<li><code>git checkout master</code></li>
+<li><code>git merge report</code> </li>
+<li><code>git branch</code> </li>
+<li><code>git push</code> </li>
+</ol>
+<h2 id="项目优化"><a href="#项目优化" class="headerlink" title="项目优化"></a>项目优化</h2><h4 id="通过nprogress添加进度条效果"><a href="#通过nprogress添加进度条效果" class="headerlink" title="通过nprogress添加进度条效果"></a>通过nprogress添加进度条效果</h4><p><code>npm install --save nprogress</code></p>
+<p><img src="/2020/10/20/vue-shop/image-20201027130905283.png" alt="image-20201027130905283"> </p>
+<h4 id="只在发布阶段移除所有的console"><a href="#只在发布阶段移除所有的console" class="headerlink" title="只在发布阶段移除所有的console"></a>只在发布阶段移除所有的console</h4><p><code>npm install babel-plugin-transform-remove-console --save-dev</code></p>
+<p><img src="/2020/10/20/vue-shop/image-20201030212147198.png" alt="image-20201030212147198"> </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这是项目发布阶段需要用到的babel插件</span></span><br><span class="line"><span class="keyword">const</span> prodPlugins=[]</span><br><span class="line"><span class="function"><span class="title">if</span>(<span class="params">process.env.NODE_ENV===<span class="string">&#x27;production&#x27;</span></span>)</span>&#123;</span><br><span class="line">  prodPlugins.push(<span class="string">&#x27;transform-remove-console&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="string">&quot;presets&quot;</span>: [</span><br><span class="line">    <span class="string">&quot;@vue/cli-plugin-babel/preset&quot;</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="string">&quot;plugins&quot;</span>: [</span><br><span class="line">    [</span><br><span class="line">      <span class="string">&quot;component&quot;</span>,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">&quot;libraryName&quot;</span>: <span class="string">&quot;element-ui&quot;</span>,</span><br><span class="line">        <span class="string">&quot;styleLibraryName&quot;</span>: <span class="string">&quot;theme-chalk&quot;</span></span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="comment">// 发布 产品时候的插件数组</span></span><br><span class="line">    ...prodPlugins</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="生成打包报告"><a href="#生成打包报告" class="headerlink" title="生成打包报告"></a>生成打包报告</h4><p><img src="/2020/10/20/vue-shop/image-20201027134040757.png" alt="image-20201027134040757">    </p>
+<p><code>vue-cli-service build --report</code></p>
+<h4 id="通过vue-config-js修改webpack的默认配置"><a href="#通过vue-config-js修改webpack的默认配置" class="headerlink" title="通过vue.config.js修改webpack的默认配置"></a>通过vue.config.js修改webpack的默认配置</h4><p><a target="_blank" rel="noopener" href="https://cli.vuejs.org/zh/config/#vue-config-js">https://cli.vuejs.org/zh/config/#vue-config-js</a></p>
+<p><img src="/2020/10/20/vue-shop/image-20201027134113601.png" alt="image-20201027134113601">  </p>
+<h4 id="介绍configureWebpack与chainWebpack"><a href="#介绍configureWebpack与chainWebpack" class="headerlink" title="介绍configureWebpack与chainWebpack"></a>介绍configureWebpack与chainWebpack</h4><p><img src="/2020/10/20/vue-shop/image-20201027134243762.png" alt="image-20201027134243762">  </p>
+<p><img src="/2020/10/20/vue-shop/image-20201027134317993.png" alt="image-20201027134317993"> </p>
+<p><a target="_blank" rel="noopener" href="https://cli.vuejs.org/zh/guide/webpack.html#webpack-%E7%9B%B8%E5%85%B3">https://cli.vuejs.org/zh/guide/webpack.html#webpack-%E7%9B%B8%E5%85%B3</a></p>
+<h4 id="通过chainWebpack自定义打包入口"><a href="#通过chainWebpack自定义打包入口" class="headerlink" title="通过chainWebpack自定义打包入口"></a>通过chainWebpack自定义打包入口</h4><p><img src="/2020/10/20/vue-shop/image-20201027134424769.png" alt="image-20201027134424769"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201030220349705.png" alt="image-20201030220349705"> </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; config &#125; = <span class="built_in">require</span>(<span class="string">&quot;vue/types/umd&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    chainWebpack: <span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">        config.when(process.env.NODE_ENV === <span class="string">&#x27;production&#x27;</span>, <span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">            config.entry(<span class="string">&#x27;app&#x27;</span>).clear().add(<span class="string">&#x27;./src/main-prod.js&#x27;</span>)</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        config.when(process.env.NODE_ENV === <span class="string">&#x27;development&#x27;</span>, <span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">            config.entry(<span class="string">&#x27;app&#x27;</span>).clear().add(<span class="string">&#x27;./src/main-dev.js&#x27;</span>)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="通过externals加载外部CDN资源"><a href="#通过externals加载外部CDN资源" class="headerlink" title="通过externals加载外部CDN资源"></a>通过externals加载外部CDN资源</h4><p><img src="/2020/10/20/vue-shop/image-20201031122606650.png" alt="image-20201031122606650"> </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">config.set(<span class="string">&#x27;externals&#x27;</span>, &#123; </span><br><span class="line">  vue: <span class="string">&#x27;Vue&#x27;</span>, </span><br><span class="line">  <span class="string">&#x27;vue-router&#x27;</span>: <span class="string">&#x27;VueRouter&#x27;</span>, </span><br><span class="line">  axios: <span class="string">&#x27;axios&#x27;</span>, </span><br><span class="line">  lodash: <span class="string">&#x27;_&#x27;</span>, </span><br><span class="line">  echarts: <span class="string">&#x27;echarts&#x27;</span>, </span><br><span class="line">  nprogress: <span class="string">&#x27;NProgress&#x27;</span>, </span><br><span class="line">  <span class="string">&#x27;vue-quill-editor&#x27;</span>: <span class="string">&#x27;VueQuillEditor&#x27;</span> </span><br><span class="line">&#125;) </span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/10/20/vue-shop/image-20201031122918522.png" alt="image-20201031122918522"> </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- nprogress 的样式表文件 --&gt;</span><br><span class="line">&lt;link rel=<span class="string">&quot;stylesheet&quot;</span> href=<span class="string">&quot;https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css&quot;</span> /&gt;</span><br><span class="line">&lt;!-- 富 文本编辑器的样式表文件 --&gt;</span><br><span class="line">&lt;link rel=<span class="string">&quot;stylesheet&quot;</span> href=<span class="string">&quot;https://cdn.staticfile.org/quill/1.3.4/quill.core.min.css&quot;</span> /&gt;</span><br><span class="line">&lt;link rel=<span class="string">&quot;stylesheet&quot;</span> href=<span class="string">&quot;https://cdn.staticfile.org/quill/1.3.4/quill.snow.min.css&quot;</span> /&gt;</span><br><span class="line">&lt;link rel=<span class="string">&quot;stylesheet&quot;</span> href=<span class="string">&quot;https://cdn.staticfile.org/quill/1.3.4/quill.bubble.min.css&quot;</span> /&gt;</span><br><span class="line"></span><br><span class="line">&lt;script src=<span class="string">&quot;https://cdn.staticfile.org/vue/2.5.22/vue.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=<span class="string">&quot;https://cdn.staticfile.org/vue-router/3.0.1/vue-router.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=<span class="string">&quot;https://cdn.staticfile.org/axios/0.18.0/axios.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=<span class="string">&quot;https://cdn.staticfile.org/lodash.js/4.17.11/lodash.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=<span class="string">&quot;https://cdn.staticfile.org/echarts/4.1.0/echarts.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=<span class="string">&quot;https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;!-- 富 文本编辑器的 js 文件 --&gt;</span><br><span class="line">&lt;script src=<span class="string">&quot;https://cdn.staticfile.org/quill/1.3.4/quill.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vue-quill-editor@3.0.4/dist/vue-quill-editor.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>若报错</p>
+<p><img src="/2020/10/20/vue-shop/image-20201031162539875.png" alt="image-20201031162539875"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201031162510160.png" alt="image-20201031162510160"> </p>
+<h4 id="通过CDN优化ElementUI的打包"><a href="#通过CDN优化ElementUI的打包" class="headerlink" title="通过CDN优化ElementUI的打包"></a>通过CDN优化ElementUI的打包</h4><p><img src="/2020/10/20/vue-shop/image-20201031164124464.png" alt="image-20201031164124464"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201031164232122.png" alt="image-20201031164232122"> </p>
+<h4 id="自定制首页内容"><a href="#自定制首页内容" class="headerlink" title="自定制首页内容"></a>自定制首页内容</h4><p><img src="/2020/10/20/vue-shop/image-20201031171814779.png" alt="image-20201031171814779"> </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    chainWebpack: <span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// 发布模式</span></span><br><span class="line">        config.when(process.env.NODE_ENV === <span class="string">&#x27;production&#x27;</span>, <span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">            config.entry(<span class="string">&#x27;app&#x27;</span>).clear().add(<span class="string">&#x27;./src/main-prod.js&#x27;</span>)</span><br><span class="line"></span><br><span class="line">            config.set(<span class="string">&#x27;externals&#x27;</span>, &#123;</span><br><span class="line">                vue: <span class="string">&#x27;Vue&#x27;</span>,</span><br><span class="line">                <span class="string">&#x27;vue-router&#x27;</span>: <span class="string">&#x27;VueRouter&#x27;</span>,</span><br><span class="line">                axios: <span class="string">&#x27;axios&#x27;</span>,</span><br><span class="line">                lodash: <span class="string">&#x27;_&#x27;</span>,</span><br><span class="line">                echarts: <span class="string">&#x27;echarts&#x27;</span>,</span><br><span class="line">                nprogress: <span class="string">&#x27;NProgress&#x27;</span>,</span><br><span class="line">                <span class="string">&#x27;vue-quill-editor&#x27;</span>: <span class="string">&#x27;VueQuillEditor&#x27;</span></span><br><span class="line">            &#125;)</span><br><span class="line"></span><br><span class="line">            config.plugin(<span class="string">&#x27;html&#x27;</span>).tap(<span class="function"><span class="params">args</span> =&gt;</span> &#123;</span><br><span class="line">                args[<span class="number">0</span>].isProd = <span class="literal">true</span></span><br><span class="line">                <span class="keyword">return</span> args</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 开发模式</span></span><br><span class="line">        config.when(process.env.NODE_ENV === <span class="string">&#x27;development&#x27;</span>, <span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">            config.entry(<span class="string">&#x27;app&#x27;</span>).clear().add(<span class="string">&#x27;./src/main-dev.js&#x27;</span>)</span><br><span class="line"></span><br><span class="line">            config.plugin(<span class="string">&#x27;html&#x27;</span>).tap(<span class="function"><span class="params">args</span> =&gt;</span> &#123;</span><br><span class="line">                args[<span class="number">0</span>].isProd = <span class="literal">false</span></span><br><span class="line">                <span class="keyword">return</span> args</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="/2020/10/20/vue-shop/image-20201031174051108.png" alt="image-20201031174051108"> </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">&quot;en&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">&quot;utf-8&quot;</span>&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">&quot;X-UA-Compatible&quot;</span> content=<span class="string">&quot;IE=edge&quot;</span>&gt;</span><br><span class="line">    &lt;meta name=<span class="string">&quot;viewport&quot;</span> content=<span class="string">&quot;width=device-width,initial-scale=1.0&quot;</span>&gt;</span><br><span class="line">    &lt;link rel=<span class="string">&quot;icon&quot;</span> href=<span class="string">&quot;&lt;%= BASE_URL %&gt;favicon.ico&quot;</span>&gt;</span><br><span class="line">    &lt;title&gt;</span><br><span class="line">        &lt;%= htmlWebpackPlugin.options.isProd ? <span class="string">&#x27;&#x27;</span> : <span class="string">&#x27;dev - &#x27;</span> %&gt;电商后台管理系统&lt;/title&gt;</span><br><span class="line">    &lt;% <span class="function"><span class="title">if</span>(<span class="params">htmlWebpackPlugin.options.isProd</span>)</span> &#123; %&gt;</span><br><span class="line">        &lt;!-- nprogress 的样式表文件 --&gt;</span><br><span class="line">        &lt;link rel=<span class="string">&quot;stylesheet&quot;</span> href=<span class="string">&quot;https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css&quot;</span> /&gt;</span><br><span class="line">        &lt;!-- 富 文本编辑器的样式表文件 --&gt;</span><br><span class="line">        &lt;link rel=<span class="string">&quot;stylesheet&quot;</span> href=<span class="string">&quot;https://cdn.staticfile.org/quill/1.3.4/quill.core.min.css&quot;</span> /&gt;</span><br><span class="line">        &lt;link rel=<span class="string">&quot;stylesheet&quot;</span> href=<span class="string">&quot;https://cdn.staticfile.org/quill/1.3.4/quill.snow.min.css&quot;</span> /&gt;</span><br><span class="line">        &lt;link rel=<span class="string">&quot;stylesheet&quot;</span> href=<span class="string">&quot;https://cdn.staticfile.org/quill/1.3.4/quill.bubble.min.css&quot;</span> /&gt;</span><br><span class="line">        &lt;!-- element-ui 的样式表文件 --&gt;</span><br><span class="line">        &lt;link rel=<span class="string">&quot;stylesheet&quot;</span> href=<span class="string">&quot;https://cdn.staticfile.org/element-ui/2.8.2/theme-chalk/index.css&quot;</span> /&gt;</span><br><span class="line"></span><br><span class="line">        &lt;script src=<span class="string">&quot;https://cdn.staticfile.org/vue/2.5.22/vue.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">        &lt;script src=<span class="string">&quot;https://cdn.staticfile.org/vue-router/3.0.1/vue-router.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">        &lt;script src=<span class="string">&quot;https://cdn.staticfile.org/axios/0.18.0/axios.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">        &lt;script src=<span class="string">&quot;https://cdn.staticfile.org/lodash.js/4.17.11/lodash.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">        &lt;script src=<span class="string">&quot;https://cdn.staticfile.org/echarts/4.1.0/echarts.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">        &lt;script src=<span class="string">&quot;https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">        &lt;!-- 富 文本编辑器的 js 文件 --&gt;</span><br><span class="line">        &lt;script src=<span class="string">&quot;https://cdn.staticfile.org/quill/1.3.4/quill.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">        &lt;script src=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vue-quill-editor@3.0.4/dist/vue-quill-editor.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- element-ui 的 js 文件 --&gt;</span><br><span class="line">        &lt;script src=<span class="string">&quot;https://cdn.staticfile.org/element-ui/2.8.2/index.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">        &lt;% &#125; %&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;noscript&gt;</span><br><span class="line">      &lt;strong&gt;We<span class="string">&#x27;re sorry but &lt;%= htmlWebpackPlugin.options.title %&gt; doesn&#x27;</span>t work properly without JavaScript enabled. Please enable it to <span class="keyword">continue</span>.&lt;/strong&gt;</span><br><span class="line">    &lt;/noscript&gt;</span><br><span class="line">    &lt;div id=<span class="string">&quot;app&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line">    &lt;!-- built files will be auto injected --&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/10/20/vue-shop/image-20201031173914901.png" alt="image-20201031173914901"> </p>
+<p>需要把刚刚删掉的加回来</p>
+<p><img src="/2020/10/20/vue-shop/image-20201031173949488.png" alt="image-20201031173949488"> </p>
+<h4 id="实现路由懒加载"><a href="#实现路由懒加载" class="headerlink" title="实现路由懒加载"></a>实现路由懒加载</h4><p><code>npm install --save-dev @babel/plugin-syntax-dynamic-import</code> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201031174743472.png" alt="image-20201031174743472"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201031180114354.png" alt="image-20201031180114354"> </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> VueRouter <span class="keyword">from</span> <span class="string">&#x27;vue-router&#x27;</span></span><br><span class="line"><span class="comment">// import Login from &#x27;../components/Login.vue&#x27;</span></span><br><span class="line"><span class="comment">// import Home from &#x27;../components/Home.vue&#x27;</span></span><br><span class="line"><span class="comment">// import Welcome from &#x27;../components/Welcome.vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 实现路由懒加载</span></span><br><span class="line"><span class="keyword">const</span> Login = <span class="function">() =&gt;</span></span><br><span class="line">    <span class="keyword">import</span> ( <span class="comment">/* webpackChunkName: &quot;login_home_welcome&quot; */</span> <span class="string">&#x27;../components/Login.vue&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> Home = <span class="function">() =&gt;</span></span><br><span class="line">    <span class="keyword">import</span> ( <span class="comment">/* webpackChunkName: &quot;login_home_welcome&quot; */</span> <span class="string">&#x27;../components/Home.vue&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> Welcome = <span class="function">() =&gt;</span></span><br><span class="line">    <span class="keyword">import</span> ( <span class="comment">/* webpackChunkName: &quot;login_home_welcome&quot; */</span> <span class="string">&#x27;../components/Welcome.vue&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// import Users from &#x27;../components/user/Users.vue&#x27;</span></span><br><span class="line"><span class="comment">// import Rights from &#x27;../components/power/Rights.vue&#x27;</span></span><br><span class="line"><span class="comment">// import Roles from &#x27;../components/power/Roles.vue&#x27;</span></span><br><span class="line"><span class="keyword">const</span> Users = <span class="function">() =&gt;</span></span><br><span class="line">    <span class="keyword">import</span> ( <span class="comment">/* webpackChunkName: &quot;users_rights_roles&quot; */</span> <span class="string">&#x27;../components/user/Users.vue&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> Rights = <span class="function">() =&gt;</span></span><br><span class="line">    <span class="keyword">import</span> ( <span class="comment">/* webpackChunkName: &quot;users_rights_roles&quot; */</span> <span class="string">&#x27;../components/power/Rights.vue&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> Roles = <span class="function">() =&gt;</span></span><br><span class="line">    <span class="keyword">import</span> ( <span class="comment">/* webpackChunkName: &quot;users_rights_roles&quot; */</span> <span class="string">&#x27;../components/power/Roles.vue&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// import Cate from &#x27;../components/goods/Cate.vue&#x27;</span></span><br><span class="line"><span class="comment">// import Params from &#x27;../components/goods/Params.vue&#x27;</span></span><br><span class="line"><span class="keyword">const</span> Cate = <span class="function">() =&gt;</span></span><br><span class="line">    <span class="keyword">import</span> ( <span class="comment">/* webpackChunkName: &quot;cate_params&quot; */</span> <span class="string">&#x27;../components/goods/Cate.vue&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> Params = <span class="function">() =&gt;</span></span><br><span class="line">    <span class="keyword">import</span> ( <span class="comment">/* webpackChunkName: &quot;cate_params&quot; */</span> <span class="string">&#x27;../components/goods/Params.vue&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// import GoodsList from &#x27;../components/goods/List.vue&#x27;</span></span><br><span class="line"><span class="comment">// import Add from &#x27;../components/goods/Add.vue&#x27;</span></span><br><span class="line"><span class="keyword">const</span> GoodsList = <span class="function">() =&gt;</span></span><br><span class="line">    <span class="keyword">import</span> ( <span class="comment">/* webpackChunkName: &quot;goodslist_add&quot; */</span> <span class="string">&#x27;../components/goods/List.vue&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> Add = <span class="function">() =&gt;</span></span><br><span class="line">    <span class="keyword">import</span> ( <span class="comment">/* webpackChunkName: &quot;goodslist_add&quot; */</span> <span class="string">&#x27;../components/goods/Add.vue&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// import Order from &#x27;../components/order/Order.vue&#x27;</span></span><br><span class="line"><span class="comment">// import Report from &#x27;../components/report/Report.vue&#x27;</span></span><br><span class="line"><span class="keyword">const</span> Order = <span class="function">() =&gt;</span></span><br><span class="line">    <span class="keyword">import</span> ( <span class="comment">/* webpackChunkName: &quot;order_report&quot; */</span> <span class="string">&#x27;../components/order/Order.vue&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> Report = <span class="function">() =&gt;</span></span><br><span class="line">    <span class="keyword">import</span> ( <span class="comment">/* webpackChunkName: &quot;order_report&quot; */</span> <span class="string">&#x27;../components/report/Report.vue&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Vue.use(VueRouter)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> routes = [</span><br><span class="line">    &#123; <span class="attr">path</span>: <span class="string">&#x27;/&#x27;</span>, <span class="attr">redirect</span>: <span class="string">&#x27;/login&#x27;</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">path</span>: <span class="string">&#x27;/login&#x27;</span>, <span class="attr">component</span>: Login &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        path: <span class="string">&#x27;/home&#x27;</span>,</span><br><span class="line">        component: Home,</span><br><span class="line">        redirect: <span class="string">&#x27;/welcome&#x27;</span>,</span><br><span class="line">        children: [&#123;</span><br><span class="line">                path: <span class="string">&#x27;/welcome&#x27;</span>,</span><br><span class="line">                component: Welcome</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                path: <span class="string">&#x27;/users&#x27;</span>,</span><br><span class="line">                component: Users</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                path: <span class="string">&#x27;/rights&#x27;</span>,</span><br><span class="line">                component: Rights</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                path: <span class="string">&#x27;/roles&#x27;</span>,</span><br><span class="line">                component: Roles</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                path: <span class="string">&#x27;/categories&#x27;</span>,</span><br><span class="line">                component: Cate</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                path: <span class="string">&#x27;/params&#x27;</span>,</span><br><span class="line">                component: Params</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                path: <span class="string">&#x27;/goods&#x27;</span>,</span><br><span class="line">                component: GoodsList</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                path: <span class="string">&#x27;/goods/add&#x27;</span>,</span><br><span class="line">                component: Add</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                path: <span class="string">&#x27;/orders&#x27;</span>,</span><br><span class="line">                component: Order</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                path: <span class="string">&#x27;/reports&#x27;</span>,</span><br><span class="line">                component: Report</span><br><span class="line">            &#125;,</span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">    routes</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//挂在路由导航守卫</span></span><br><span class="line">router.beforeEach(<span class="function">(<span class="params">to, <span class="keyword">from</span>, next</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// to将要访问的路径</span></span><br><span class="line">    <span class="comment">// from代表从哪个路径跳转来</span></span><br><span class="line">    <span class="comment">//next是一个函数,表示放行</span></span><br><span class="line">    <span class="comment">// next()方行  next(&#x27;/login&#x27;) 强制跳转</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (to.path === <span class="string">&#x27;/login&#x27;</span>) <span class="keyword">return</span> next()</span><br><span class="line">        <span class="comment">// 获取token</span></span><br><span class="line">    <span class="keyword">const</span> tokenStr = <span class="built_in">window</span>.sessionStorage.getItem(<span class="string">&#x27;token&#x27;</span>)</span><br><span class="line">    <span class="keyword">if</span> (!tokenStr) <span class="keyword">return</span> next(<span class="string">&#x27;/login&#x27;</span>)</span><br><span class="line">    next()</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> router</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="项目上线"><a href="#项目上线" class="headerlink" title="项目上线"></a>项目上线</h2><h3 id="通过node创建web服务器"><a href="#通过node创建web服务器" class="headerlink" title="通过node创建web服务器"></a>通过node创建web服务器</h3><p><img src="/2020/10/20/vue-shop/image-20201031182040403.png" alt="image-20201031182040403"> </p>
+<p>在vue_shop_server文件夹下执行</p>
+<p><code>npm init -y</code></p>
+<p><code>npm i express -S</code></p>
+<p><code>cd ..</code> 退出</p>
+<p><img src="/2020/10/20/vue-shop/image-20201031182055694.png" alt="image-20201031182055694"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201031182304764.png" alt="image-20201031182304764"> </p>
+<p><code>node .\app.js</code></p>
+<p><code>web server running at http://127.0.0.1</code></p>
+<h3 id="开启文件的Gzip网络传输压缩"><a href="#开启文件的Gzip网络传输压缩" class="headerlink" title="开启文件的Gzip网络传输压缩"></a>开启文件的Gzip网络传输压缩</h3><p><code> npm install compression -S</code> 安装相应的包</p>
+<p><img src="/2020/10/20/vue-shop/image-20201031182909327.png" alt="image-20201031182909327"> </p>
+<h3 id="配置HTTPS服务"><a href="#配置HTTPS服务" class="headerlink" title="配置HTTPS服务"></a>配置HTTPS服务</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> https = <span class="built_in">require</span>(<span class="string">&#x27;https&#x27;</span>); </span><br><span class="line"> <span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>); </span><br><span class="line"> <span class="keyword">const</span> options = &#123; </span><br><span class="line">     cert: fs.readFileSync(<span class="string">&#x27;./full_chain.pem&#x27;</span>), </span><br><span class="line">     key: fs.readFileSync(<span class="string">&#x27;./private.key&#x27;</span>) </span><br><span class="line"> &#125; </span><br><span class="line"> https.createServer(options, app).listen(<span class="number">443</span>); </span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="使用-pm2-管理应用"><a href="#使用-pm2-管理应用" class="headerlink" title="使用 pm2 管理应用"></a>使用 pm2 管理应用</h3><p>①在服务器中安装 pm2：npm i pm2 -g<br>② 启动项目：pm2 start 脚本 –name 自定义名称<br>③ 查看运行项目：pm2 ls<br>④ 重启项目：pm2 restart 自定义名称<br>⑤ 停止项目：pm2 stop 自定义名称<br>⑥ 删除项目：pm2 delete 自定义名称</p>
+<h3 id="Netlify-自动化部署"><a href="#Netlify-自动化部署" class="headerlink" title="Netlify 自动化部署"></a>Netlify 自动化部署</h3><h4 id="使用-github-或者-gitlab-登陆-netlify"><a href="#使用-github-或者-gitlab-登陆-netlify" class="headerlink" title="使用 github 或者 gitlab 登陆 netlify"></a>使用 github 或者 gitlab 登陆 netlify</h4><p>首先，打开 netlify 网站(<a target="_blank" rel="noopener" href="https://app.netlify.com/">https://app.netlify.com/</a>)<br>然后使用 github 或者 gitlab 账号登录</p>
+<h4 id="根据-github-gitlab-仓库创建网站"><a href="#根据-github-gitlab-仓库创建网站" class="headerlink" title="根据 github/gitlab 仓库创建网站"></a>根据 github/gitlab 仓库创建网站</h4><p>点击 New site from Git 按钮 然后选择仓库所在的平台已经需要部署的仓库</p>
+<p><strong>注意</strong></p>
+<ul>
+<li>部署分支，默认 master</li>
+<li>打包命令，诸如 npm run build，gulp build 之类</li>
+<li>打包后目录，静态资源文件夹，诸如 build dist，可不填</li>
+</ul>
+<p>完成之后点击途中 deploy site 按钮</p>
+<h4 id="设置域名，绑定域名"><a href="#设置域名，绑定域名" class="headerlink" title="设置域名，绑定域名"></a>设置域名，绑定域名</h4><p>部署完 netlify 会为我们随机生成一个 netlify 下的域名，我们可以更改其前缀名，然后绑定到自己的域名下。</p>
+<p>点击 Site settings 按钮，然后在下方点击 Change site name 按钮，然后在弹出框中输入自己需要更改的前缀名，点击保存即可。<br>点击 Domain settings 按钮，然后在下方点击 Add custom domain 按钮，然后在弹出框中输入自己需要绑定的完整域名<br>这个时候会显示 ！Check DNS configuration，因为我们还没有设置域名解析到 netlify 服务器，所以这个时候需要到你自己域名的相应服务商网站登录之后在需要绑定的域名下添加一条 CNAME 解析，解析的主机记录即对应的 netlify 域名值，这样就可以使用自己的域名访问自己的网站啦</p>
+<h4 id="生成-HTTPS-证书，实现-HTTPS-访问"><a href="#生成-HTTPS-证书，实现-HTTPS-访问" class="headerlink" title="生成 HTTPS 证书，实现 HTTPS 访问"></a>生成 HTTPS 证书，实现 HTTPS 访问</h4><p>点击 Verify DNS configuration 按钮，提示成功就可以用 https 访问域名了</p>
+<h2 id="抽离组件"><a href="#抽离组件" class="headerlink" title="抽离组件"></a>抽离组件</h2><h3 id="面包屑导航区域"><a href="#面包屑导航区域" class="headerlink" title="面包屑导航区域"></a>面包屑导航区域</h3><p><img src="/2020/10/20/vue-shop/image-20201028174254720.png" alt="image-20201028174254720"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201028174433767.png" alt="image-20201028174433767"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201028174627398.png" alt="image-20201028174627398"> </p>
+<p><img src="/2020/10/20/vue-shop/image-20201028174839756.png" alt="image-20201028174839756"> </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://derek-dong.github.io/2020/09/20/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Derek Dong">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="听阳光的猫">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/20/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/" class="post-title-link" itemprop="url">推荐软件</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-09-20 00:00:00" itemprop="dateCreated datePublished" datetime="2020-09-20T00:00:00+08:00">2020-09-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-14 23:08:16" itemprop="dateModified" datetime="2020-11-14T23:08:16+08:00">2020-11-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">工具</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>537</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="chrome浏览器推荐插件"><a href="#chrome浏览器推荐插件" class="headerlink" title="chrome浏览器推荐插件"></a>chrome浏览器推荐插件</h3><p><img src="/2020/09/20/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/image-20200915212530627.png" alt="image-20200915212530627"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/09/20/%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://derek-dong.github.io/2020/07/09/JavaScript/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -859,20 +1690,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -917,13 +1748,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">190k</span>
+    <span title="站点总字数">227k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">2:53</span>
+    <span title="站点阅读时长">3:26</span>
 </div>
 
 <!--
