@@ -28,7 +28,7 @@
 <meta property="og:description" content="vue是一个基于数据响应的构建ui的前端库data、method 、computed与watch的区别，指令和构造选项 vuex是vue提供的全局状态管理的库state, getters, mutations, actions, modules vue-router分两种模式hash和history分别怎么用，优缺点。路由守卫、嵌套路由、keep alive 如何封装axios，了解axios拦截">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-14T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-11-30T07:17:42.773Z">
+<meta property="article:modified_time" content="2020-12-04T04:41:56.905Z">
 <meta property="article:author" content="Derek Dong">
 <meta property="article:tag" content="综合">
 <meta name="twitter:card" content="summary">
@@ -220,7 +220,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-30 15:17:42" itemprop="dateModified" datetime="2020-11-30T15:17:42+08:00">2020-11-30</time>
+                <time title="修改时间：2020-12-04 12:41:56" itemprop="dateModified" datetime="2020-12-04T12:41:56+08:00">2020-12-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -245,7 +245,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2k</span>
+              <span>2.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -280,28 +280,13 @@
 <ol start="2">
 <li><p>箭头的旋转</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//箭头</span><br><span class="line"><span class="selector-class">.arrow</span> &#123;</span><br><span class="line">  <span class="attribute">transform-origin</span>: <span class="number">50%</span> <span class="number">25%</span>;</span><br><span class="line">  <span class="attribute">transition</span>: transform <span class="number">0.5s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.menu</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.arrow</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">180deg</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
 </li>
-</ol>
-<ol start="3">
 <li><p>响应式布局</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@meida</span> (<span class="attribute">max-width:</span> <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#00f</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
 </li>
-</ol>
-<ol start="4">
 <li><p>promise的封装</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 请将setTimeout封装成一个promise</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sleep</span>(<span class="params">time</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(resolve, time * <span class="number">1000</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sleep(<span class="number">5</span>).then(<span class="function">() =&gt;</span> <span class="built_in">console</span>.log(<span class="string">&#x27;hello&#x27;</span>))</span><br></pre></td></tr></table></figure>
-
-
-
 </li>
-</ol>
-<ol start="5">
 <li><p>简单实现一个深拷贝</p>
 <p><code>Object.assign</code> 浅拷贝</p>
 <p><code>lodsh</code> 深拷贝</p>
@@ -310,19 +295,12 @@
 <h2 id="part-2"><a href="#part-2" class="headerlink" title="part 2"></a>part 2</h2><ol>
 <li><p>左上右下的布局</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//父</span><br><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">flex</span>;</span><br><span class="line"><span class="selector-tag">justify-content</span>: <span class="selector-tag">space-between</span>;</span><br><span class="line"></span><br><span class="line">//第二个元素 :nth-0f-type(2)</span><br><span class="line"><span class="selector-tag">align-self</span>: <span class="selector-tag">flex-end</span>;</span><br></pre></td></tr></table></figure>
-
-
-
 </li>
-</ol>
-<ol start="2">
 <li><p>CSS中的BFC(Block Formatting Context)块级格式上下文</p>
 <p>看作是一个隔离功能的容器，里面的布局不会影响到外部的元素。</p>
 <p>浮动、绝对定位、固定定位可以触发BFC</p>
 <p>具体使用：阻止浮动元素的覆盖，左边定宽右边自适应</p>
 </li>
-</ol>
-<ol start="3">
 <li><p>js的数据类型有哪些</p>
 <p>基本类型主要是： <code>Undefined</code>、<code>Boolean</code>、<code>String</code>、<code>Number</code>、<code>Null</code>、<code>Symbol</code>、<code>BigInt</code> </p>
 <p>引用数据类型统称为 Object 对象，主要是：对象、数组、函数、日期和正则</p>
@@ -392,6 +370,24 @@
 <p>缓存（expire、cache-control）</p>
 <p>304（ETag、LastModified）</p>
 </li>
+</ol>
+<h2 id="part-7"><a href="#part-7" class="headerlink" title="part 7"></a>part 7</h2><ol>
+<li>如何理解html语义化</li>
+<li>CSS盒模型有哪些</li>
+<li>Promise的用法与缺点  </li>
+<li>resolve、reject，then、catch</li>
+<li>JSONP跨域与AJAX的区别及缺点</li>
+<li>http 请求</li>
+<li>深拷贝 递归/区别</li>
+<li>如何实现数组去重</li>
+</ol>
+<h2 id="part-8"><a href="#part-8" class="headerlink" title="part 8"></a>part 8</h2><ol>
+<li>函数防抖和节流分别是什么</li>
+<li>闭包是什么</li>
+<li>DOM事件委托是什么</li>
+<li>HTTP里面GET/POST的区别</li>
+<li>Vue Router是如何使用的</li>
+<li>快速排序的思路</li>
 </ol>
 
     </div>
@@ -477,7 +473,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#part-1"><span class="nav-number">1.</span> <span class="nav-text">part 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#part-2"><span class="nav-number">2.</span> <span class="nav-text">part 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#part-3"><span class="nav-number">3.</span> <span class="nav-text">part 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#part-4"><span class="nav-number">4.</span> <span class="nav-text">part 4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#part-5"><span class="nav-number">5.</span> <span class="nav-text">part 5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#part-6"><span class="nav-number">6.</span> <span class="nav-text">part 6</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#part-1"><span class="nav-number">1.</span> <span class="nav-text">part 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#part-2"><span class="nav-number">2.</span> <span class="nav-text">part 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#part-3"><span class="nav-number">3.</span> <span class="nav-text">part 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#part-4"><span class="nav-number">4.</span> <span class="nav-text">part 4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#part-5"><span class="nav-number">5.</span> <span class="nav-text">part 5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#part-6"><span class="nav-number">6.</span> <span class="nav-text">part 6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#part-7"><span class="nav-number">7.</span> <span class="nav-text">part 7</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#part-8"><span class="nav-number">8.</span> <span class="nav-text">part 8</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
