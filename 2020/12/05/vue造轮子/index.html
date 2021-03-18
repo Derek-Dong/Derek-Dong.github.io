@@ -17,105 +17,105 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"derek-dong.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"derek-dong.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="框架搭建项目初始化请使用git、Github和npm初始化一个仓库，要求：  在Github上有一个远程仓库 仓库在有一个package.json 仓库在有一个LICENSE文件 仓库在有一个README.md文件 仓库在有一个index.html文件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue造轮子">
-<meta property="og:url" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/index.html">
+<meta property="og:url" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/index.html">
 <meta property="og:site_name" content="听阳光的猫">
 <meta property="og:description" content="框架搭建项目初始化请使用git、Github和npm初始化一个仓库，要求：  在Github上有一个远程仓库 仓库在有一个package.json 仓库在有一个LICENSE文件 仓库在有一个README.md文件 仓库在有一个index.html文件">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201208163132532.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201208163638983.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201208163508671.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201208165111988.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201208171353501.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201208172922392.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201208184840490.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201208185054160.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201208184256126.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201208184613660.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201208185529705.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201208190605592.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201208190838502.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201208192715302.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201208192954867.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201209131900351.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201210124109704.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201210141447676.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201210174401047.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201210174809305.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201210183139377.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201210183214198.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201214103638757.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201216111037710.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201216104635844.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201216114131959.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201216124943360.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201216125048005.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201216152414758.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201216152446939.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201216155554213.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201216192014027.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201216220700351.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201216220743213.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201217164002253.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201217164034306.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201217180116498.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201217181049208.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201217190733119.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201217190834226.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201219180319827.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201219180520092.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201219180606004.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226163449882.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226164924028.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226164956205.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226165030884.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226165135550.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226171045050.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226170909180.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226171827021.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226184206225.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226172301095.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226172618628.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226172640819.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226184347654.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226185203845.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226190128311.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226185949495.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226190541364.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226190632634.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226191627938.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226191741208.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226192723973.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226193419947.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226193946505.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201227114610479.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201227114646792.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201227202233849.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201227202336241.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201227204441103.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201227205512126.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201227205539928.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201227205705979.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201227210212666.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201227210232479.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201227210418072.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201227210525503.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201227210823032.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201227210949409.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201227211249229.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201208163132532.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201208163638983.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201208163508671.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201208165111988.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201208171353501.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201208172922392.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201208184840490.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201208185054160.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201208184256126.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201208184613660.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201208185529705.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201208190605592.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201208190838502.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201208192715302.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201208192954867.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201209131900351.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201210124109704.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201210141447676.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201210174401047.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201210174809305.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201210183139377.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201210183214198.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201214103638757.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201216111037710.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201216104635844.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201216114131959.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201216124943360.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201216125048005.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201216152414758.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201216152446939.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201216155554213.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201216192014027.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201216220700351.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201216220743213.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201217164002253.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201217164034306.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201217180116498.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201217181049208.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201217190733119.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201217190834226.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201219180319827.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201219180520092.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201219180606004.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226163449882.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226164924028.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226164956205.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226165030884.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226165135550.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226171045050.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226170909180.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226171827021.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226184206225.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226172301095.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226172618628.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226172640819.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226184347654.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226185203845.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226190128311.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226185949495.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226190541364.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226190632634.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226191627938.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226191741208.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226192723973.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226193419947.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201226193946505.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201227114610479.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201227114646792.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201227202233849.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201227202336241.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201227204441103.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201227205512126.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201227205539928.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201227205705979.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201227210212666.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201227210232479.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201227210418072.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201227210525503.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201227210823032.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201227210949409.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201227211249229.png">
 <meta property="article:published_time" content="2020-12-04T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-12-31T03:25:04.918Z">
 <meta property="article:author" content="Derek Dong">
 <meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201208163132532.png">
+<meta name="twitter:image" content="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/image-20201208163132532.png">
 
-<link rel="canonical" href="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/">
+<link rel="canonical" href="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/">
 
 
 <script id="page-configurations">
@@ -272,7 +272,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://derek-dong.github.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/">
+    <link itemprop="mainEntityOfPage" href="https://derek-dong.gitee.io/2020/12/05/vue%E9%80%A0%E8%BD%AE%E5%AD%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">

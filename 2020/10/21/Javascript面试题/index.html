@@ -17,52 +17,52 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"derek-dong.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"derek-dong.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="【JavaScript】typeof和instanceof的区别   数据类型可以分为基本数据类型和引用数据类型 基本数据类型 ：String、Number、Boolean 、Null、Undefined、Symbol、BigInt ; 引用数据类型：Object; typeof 一般被用于判断一个变量的类型，我们可以利用 typeof 来判断number, string, object, boo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Javascript面试题">
-<meta property="og:url" content="https://derek-dong.github.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
+<meta property="og:url" content="https://derek-dong.gitee.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
 <meta property="og:site_name" content="听阳光的猫">
 <meta property="og:description" content="【JavaScript】typeof和instanceof的区别   数据类型可以分为基本数据类型和引用数据类型 基本数据类型 ：String、Number、Boolean 、Null、Undefined、Symbol、BigInt ; 引用数据类型：Object; typeof 一般被用于判断一个变量的类型，我们可以利用 typeof 来判断number, string, object, boo">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://derek-dong.github.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201002224535001.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003103146569.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003104428828.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003153250461.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003153928081.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161356373.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161430785.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161508961.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161550987.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161637385.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161729153.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161758967.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201004082942150.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201004085141784.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201004091418745.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201004095312070.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201004155345884.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201004155722209.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201004175311734.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006181930036.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006183311035.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006182306149.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006183421421.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006182452734.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006190436863.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006221425265.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006222209212.png">
-<meta property="og:image" content="https://derek-dong.github.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006224101456.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201002224535001.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003103146569.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003104428828.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003153250461.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003153928081.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161356373.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161430785.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161508961.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161550987.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161637385.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161729153.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201003161758967.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201004082942150.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201004085141784.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201004091418745.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201004095312070.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201004155345884.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201004155722209.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201004175311734.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006181930036.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006183311035.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006182306149.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006183421421.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006182452734.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006190436863.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006221425265.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006222209212.png">
+<meta property="og:image" content="https://derek-dong.gitee.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201006224101456.png">
 <meta property="article:published_time" content="2020-10-20T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-11-15T07:36:50.000Z">
 <meta property="article:author" content="Derek Dong">
 <meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://derek-dong.github.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201002224535001.png">
+<meta name="twitter:image" content="https://derek-dong.gitee.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/image-20201002224535001.png">
 
-<link rel="canonical" href="https://derek-dong.github.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/">
+<link rel="canonical" href="https://derek-dong.gitee.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/">
 
 
 <script id="page-configurations">
@@ -219,7 +219,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://derek-dong.github.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/">
+    <link itemprop="mainEntityOfPage" href="https://derek-dong.gitee.io/2020/10/21/Javascript%E9%9D%A2%E8%AF%95%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
