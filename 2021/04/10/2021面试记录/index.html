@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://derek-dong.gitee.io/2021/04/10/2021%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/1460000016084479.png">
 <meta property="og:image" content="https://derek-dong.gitee.io/2021/04/10/2021%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/image-20200915175517061.png">
 <meta property="article:published_time" content="2021-04-09T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-04-19T12:34:07.822Z">
+<meta property="article:modified_time" content="2021-04-19T15:34:13.811Z">
 <meta property="article:author" content="Derek Dong">
 <meta property="article:tag" content="系统">
 <meta name="twitter:card" content="summary">
@@ -224,7 +224,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-04-19 20:34:07" itemprop="dateModified" datetime="2021-04-19T20:34:07+08:00">2021-04-19</time>
+                <time title="修改时间：2021-04-19 23:34:13" itemprop="dateModified" datetime="2021-04-19T23:34:13+08:00">2021-04-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -249,14 +249,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>8.7k</span>
+              <span>25k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>8 分钟</span>
+              <span>22 分钟</span>
             </span>
 
         </div>
@@ -515,38 +515,272 @@
 <p>深拷贝、浅拷贝</p>
 <p>介绍一下vue轮子</p>
 <p>vue3.0的改变</p>
-<p>vuex刷新项目的时候数据如何</p>
+<p>vuex刷新项目的时候数据如何变化</p>
+<p> 一般在登录成功的时候需要把用户信息，菜单信息放置vuex中，作为全局的共享数据。 但是在页面刷新的时候vuex. 因为vuex里的数据是保存在运行内存中的，当页面刷新时，页面会重新加载vue实例，vuex里面的数据就会被重新赋值。</p>
 <p>从vuex中获取的数据能直接更改吗？</p>
 <p>从vuex中取的数据，不能直接更改，需要浅拷贝对象之后更改，否则报错；</p>
 <p>vuex中的数据在页面刷新后数据消失</p>
 <p>用sessionstorage 或者 localstorage 存储数据</p>
 <p>vuex的缺点</p>
-<p><strong>router和route的区别</strong></p>
+<p>Vuex优势：相比sessionStorage，存储数据更安全，sessionStorage可以在控制台被看到。</p>
+<p>Vuex劣势：在刷新页面后，vuex会重新更新state，所以，存储的数据会丢失。</p>
+<p>router和route的区别</p>
 <p>route为当前router跳转对象里面可以获取name、path、query、params等</p>
 <p>router为VueRouter实例，想要导航到不同URL，则使用router.push方法</p>
 <p>对promise的理解</p>
 <p>去重函数</p>
-<p>￼</p>
-<h2 id="4-16兆百特-9-30"><a href="#4-16兆百特-9-30" class="headerlink" title="4.16兆百特 9:30"></a>4.16兆百特 9:30</h2><p>￼</p>
-<p>￼</p>
-<p>￼</p>
-<p>flex的其他属性</p>
+<h2 id="4-16兆百特-9-30"><a href="#4-16兆百特-9-30" class="headerlink" title="4.16兆百特 9:30"></a>4.16兆百特 9:30</h2><p>flex的其他属性</p>
 <p>http状态码403</p>
 <p><img src="/2021/04/10/2021%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/image-20200915175517061.png" alt="image-20200915175517061"> </p>
 <p>class～</p>
+<p>这个~符号可以定位那些某属性值是空格分隔多值的标签。</p>
 <p>数组的方法有哪些</p>
+<ol>
+<li>Array.from() 方法从一个类似数组或可迭代对象中创建一个新的，浅拷贝的数组实例。</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.from(<span class="string">&#x27;foo&#x27;</span>));</span><br><span class="line"><span class="comment">// expected output: Array [&quot;f&quot;, &quot;o&quot;, &quot;o&quot;]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.from([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], <span class="function"><span class="params">x</span> =&gt;</span> x + x));</span><br><span class="line"><span class="comment">// expected output: Array [2, 4, 6]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> s = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="string">&#x27;foo&#x27;</span>, <span class="built_in">window</span>]); </span><br><span class="line"><span class="built_in">Array</span>.from(s); </span><br><span class="line"><span class="comment">// [&quot;foo&quot;, window]</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Array</span>.from(<span class="built_in">arguments</span>);</span><br><span class="line">&#125;</span><br><span class="line">f(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line"><span class="comment">// [1, 2, 3]</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">combine</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line">    <span class="keyword">let</span> arr = [].concat.apply([], <span class="built_in">arguments</span>);  <span class="comment">//没有去重复的新数组 </span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>(arr));</span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">var</span> m = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>], n = [<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>]; </span><br><span class="line"><span class="built_in">console</span>.log(combine(m,n));                     <span class="comment">// [1, 2, 3]</span></span><br></pre></td></tr></table></figure>
+
+<p>2.Array.isArray() 用于确定传递的值是否是一个Array。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.isArray([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);  </span><br><span class="line"><span class="comment">// true</span></span><br><span class="line"><span class="built_in">Array</span>.isArray(&#123;<span class="attr">foo</span>: <span class="number">123</span>&#125;); </span><br><span class="line"><span class="comment">// false</span></span><br><span class="line"><span class="built_in">Array</span>.isArray(<span class="string">&quot;foobar&quot;</span>);   </span><br><span class="line"><span class="comment">// false</span></span><br><span class="line"><span class="built_in">Array</span>.isArray(<span class="literal">undefined</span>);  </span><br><span class="line"><span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<p>3.Array.of() 方法创建一个具有可变数量参数的新数组实例，而不考虑参数的数量或类型。</p>
+<p>Array.of() 和 Array 构造函数之间的区别在于处理整数参数：Array.of(7) 创建一个具有单个元素 7 的数组，而 Array(7) 创建一个长度为7的空数组（注意：这是指一个有7个空位(empty)的数组，而不是由7个undefined组成的数组）。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.of(<span class="number">7</span>);       <span class="comment">// [7] </span></span><br><span class="line"><span class="built_in">Array</span>.of(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>); <span class="comment">// [1, 2, 3]</span></span><br><span class="line"><span class="built_in">Array</span>(<span class="number">7</span>);          <span class="comment">// [ , , , , , , ]</span></span><br><span class="line"><span class="built_in">Array</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);    <span class="comment">// [1, 2, 3]</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>concat() 方法用于合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组。</li>
+</ol>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var array1 = [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>];</span><br><span class="line">var array2 = [<span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;e&#x27;</span>, <span class="string">&#x27;f&#x27;</span>];</span><br><span class="line">console.log(array1.concat(array2));</span><br><span class="line">/<span class="regexp">/ expected output: Array [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;]</span></span><br></pre></td></tr></table></figure>
+
+<p>5.copyWithin() 方法浅复制数组的一部分到同一数组中的另一个位置，并返回它，不会改变原数组的长度。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var array1 = [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;e&#x27;</span>];</span><br><span class="line">// copy to index <span class="number">0</span> the element at index <span class="number">3</span></span><br><span class="line"></span><br><span class="line">console.log(array1.copyWithin(<span class="number">0</span>, <span class="number">3</span>, <span class="number">4</span>));</span><br><span class="line">// expected output: Array [<span class="string">&quot;d&quot;</span>, <span class="string">&quot;b&quot;</span>, <span class="string">&quot;c&quot;</span>, <span class="string">&quot;d&quot;</span>, <span class="string">&quot;e&quot;</span>]</span><br><span class="line"></span><br><span class="line">// copy to index <span class="number">1</span> <span class="built_in">all</span> elements <span class="keyword">from</span> index <span class="number">3</span> to the end</span><br><span class="line">console.log(array1.copyWithin(<span class="number">1</span>, <span class="number">3</span>));</span><br><span class="line">// expected output: Array [<span class="string">&quot;d&quot;</span>, <span class="string">&quot;d&quot;</span>, <span class="string">&quot;e&quot;</span>, <span class="string">&quot;d&quot;</span>, <span class="string">&quot;e&quot;</span>]</span><br></pre></td></tr></table></figure>
+
+<p>6.entries() 方法返回一个新的Array Iterator对象，该对象包含数组中每个索引的键/值对。</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array1 = [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> iterator1 = array1.entries();</span><br><span class="line"></span><br><span class="line">console.log(iterator1.next().<span class="keyword">value</span>);</span><br><span class="line"><span class="comment">// expected output: Array [0, &quot;a&quot;]</span></span><br><span class="line"></span><br><span class="line">console.log(iterator1.next().<span class="keyword">value</span>);</span><br><span class="line"><span class="comment">// expected output: Array [1, &quot;b&quot;]</span></span><br></pre></td></tr></table></figure>
+
+<p>7.every() 方法测试一个数组内的所有元素是否都能通过某个指定函数的测试。它返回一个布尔值。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isBelowThreshold</span>(<span class="params">currentValue</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> currentValue &lt; <span class="number">40</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> array1 = [<span class="number">1</span>, <span class="number">30</span>, <span class="number">39</span>, <span class="number">29</span>, <span class="number">10</span>, <span class="number">13</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(array1.every(isBelowThreshold));</span><br><span class="line"><span class="comment">// expected output: true</span></span><br></pre></td></tr></table></figure>
+
+<ol start="8">
+<li>fill() 方法用一个固定值填充一个数组中从起始索引到终止索引内的全部元素。不包括终止索引。</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// fill with 0 from position 2 until position 4</span></span><br><span class="line"><span class="built_in">console</span>.log(array1.fill(<span class="number">0</span>, <span class="number">2</span>, <span class="number">4</span>));</span><br><span class="line"><span class="comment">// expected output: [1, 2, 0, 0]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// fill with 5 from position 1</span></span><br><span class="line"><span class="built_in">console</span>.log(array1.fill(<span class="number">5</span>, <span class="number">1</span>));</span><br><span class="line"><span class="comment">// expected output: [1, 5, 5, 5]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(array1.fill(<span class="number">6</span>));</span><br><span class="line"><span class="comment">// expected output: [6, 6, 6, 6]</span></span><br></pre></td></tr></table></figure>
+
+<ol start="9">
+<li>filter() 方法创建一个新数组, 其包含通过所提供函数实现的测试的所有元素。</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isBigEnough</span>(<span class="params">element</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> element &gt;= <span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> filtered = [<span class="number">12</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">130</span>, <span class="number">44</span>].filter(isBigEnough);</span><br><span class="line"><span class="comment">// filtered is [12, 130, 44] </span></span><br></pre></td></tr></table></figure>
+
+<ol start="10">
+<li>find() 方法返回数组中满足提供的测试函数的第一个元素的值。否则返回 undefined。</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array1 = [<span class="number">5</span>, <span class="number">12</span>, <span class="number">8</span>, <span class="number">130</span>, <span class="number">44</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> found = array1.find(<span class="function"><span class="keyword">function</span>(<span class="params">element</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> element &gt; <span class="number">10</span>;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(found);</span><br><span class="line"><span class="comment">// expected output: 12</span></span><br></pre></td></tr></table></figure>
+
+<p>11.findIndex()方法返回数组中满足提供的测试函数的第一个元素的索引。否则返回-1。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array1 = [<span class="number">5</span>, <span class="number">12</span>, <span class="number">8</span>, <span class="number">130</span>, <span class="number">44</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isLargeNumber</span>(<span class="params">element</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> element &gt; <span class="number">13</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(array1.findIndex(isLargeNumber));</span><br><span class="line"><span class="comment">// expected output: 3</span></span><br></pre></td></tr></table></figure>
+
+<ol start="12">
+<li>flat() 方法会按照一个可指定的深度递归遍历数组，并将所有元素与遍历到的子数组中的元素合并为一个新数组返回 ,flat() 方法会移除数组中的空项。</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]];</span><br><span class="line">arr1.flat(); </span><br><span class="line"><span class="comment">// [1, 2, 3, 4]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr2 = [<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>, [<span class="number">5</span>, <span class="number">6</span>]]];</span><br><span class="line">arr2.flat();</span><br><span class="line"><span class="comment">// [1, 2, 3, 4, [5, 6]]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr3 = [<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>, [<span class="number">5</span>, <span class="number">6</span>]]];</span><br><span class="line">arr3.flat(<span class="number">2</span>);</span><br><span class="line"><span class="comment">// [1, 2, 3, 4, 5, 6]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//使用 Infinity 作为深度，展开任意深度的嵌套数组</span></span><br><span class="line">arr3.flat(<span class="literal">Infinity</span>); </span><br><span class="line"><span class="comment">// [1, 2, 3, 4, 5, 6]</span></span><br></pre></td></tr></table></figure>
+
+<ol start="13">
+<li>flatMap()方法首先使用映射函数映射每个元素，然后将结果压缩成一个新数组。它与 map和 深度值1的 flat几乎相同，但 flatMap 通常在合并成一种方法的效率稍微高一些。</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> arr = [<span class="string">&quot;今天天气不错&quot;</span>, <span class="string">&quot;&quot;</span>, <span class="string">&quot;早上好&quot;</span>]</span><br><span class="line"></span><br><span class="line">arr.map(s =&gt; s.split(<span class="string">&quot;&quot;</span>))</span><br><span class="line">// [[<span class="string">&quot;今&quot;</span>, <span class="string">&quot;天&quot;</span>, <span class="string">&quot;天&quot;</span>, <span class="string">&quot;气&quot;</span>, <span class="string">&quot;不&quot;</span>, <span class="string">&quot;错&quot;</span>],[],[<span class="string">&quot;早&quot;</span>, <span class="string">&quot;上&quot;</span>, <span class="string">&quot;好&quot;</span>]]</span><br><span class="line"></span><br><span class="line">arr.flatMap(s =&gt; s.split(<span class="string">&#x27;&#x27;</span>));</span><br><span class="line">// [<span class="string">&quot;今&quot;</span>, <span class="string">&quot;天&quot;</span>, <span class="string">&quot;天&quot;</span>, <span class="string">&quot;气&quot;</span>, <span class="string">&quot;不&quot;</span>, <span class="string">&quot;错&quot;</span>, <span class="string">&quot;早&quot;</span>, <span class="string">&quot;上&quot;</span>, <span class="string">&quot;好&quot;</span>]</span><br></pre></td></tr></table></figure>
+
+<p>14.forEach() 方法对数组的每个元素执行一次提供的函数。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> items = [<span class="string">&#x27;item1&#x27;</span>, <span class="string">&#x27;item2&#x27;</span>, <span class="string">&#x27;item3&#x27;</span>];</span><br><span class="line"><span class="keyword">const</span> copy = [];</span><br><span class="line"></span><br><span class="line"><span class="comment">// before</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;items.length; i++) &#123;</span><br><span class="line">  copy.push(items[i]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// after</span></span><br><span class="line">items.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;</span><br><span class="line">  copy.push(item);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<ol start="15">
+<li>includes() 方法用来判断一个数组是否包含一个指定的值，根据情况，如果包含则返回 true，否则返回false。</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(array1.includes(<span class="number">2</span>));</span><br><span class="line"><span class="comment">// expected output: true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> pets = [<span class="string">&#x27;cat&#x27;</span>, <span class="string">&#x27;dog&#x27;</span>, <span class="string">&#x27;bat&#x27;</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(pets.includes(<span class="string">&#x27;cat&#x27;</span>));</span><br><span class="line"><span class="comment">// expected output: true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(pets.includes(<span class="string">&#x27;at&#x27;</span>));</span><br><span class="line"><span class="comment">// expected output: false</span></span><br></pre></td></tr></table></figure>
+
+<ol start="16">
+<li>indexOf()方法返回在数组中可以找到一个给定元素的第一个索引，如果不存在，则返回-1。</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> beasts = [<span class="string">&#x27;ant&#x27;</span>, <span class="string">&#x27;bison&#x27;</span>, <span class="string">&#x27;camel&#x27;</span>, <span class="string">&#x27;duck&#x27;</span>, <span class="string">&#x27;bison&#x27;</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(beasts.indexOf(<span class="string">&#x27;bison&#x27;</span>));</span><br><span class="line"><span class="comment">// expected output: 1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// start from index 2</span></span><br><span class="line"><span class="built_in">console</span>.log(beasts.indexOf(<span class="string">&#x27;bison&#x27;</span>, <span class="number">2</span>));</span><br><span class="line"><span class="comment">// expected output: 4</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(beasts.indexOf(<span class="string">&#x27;giraffe&#x27;</span>));</span><br><span class="line"><span class="comment">// expected output: -1</span></span><br></pre></td></tr></table></figure>
+
+<ol start="17">
+<li>join()方法将一个数组（或一个<a target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https://developer.mozilla.org/zh-CN//docs/Web/JavaScript/Guide/Indexed_collections%23Working_with_array-like_objects">类数组对象</a>）的所有元素连接成一个字符串并返回这个字符串。如果数组只有一个项目，那么将返回该项目而不使用分隔符。</li>
+</ol>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> elements = [<span class="string">&#x27;Fire&#x27;</span>, <span class="string">&#x27;Air&#x27;</span>, <span class="string">&#x27;Water&#x27;</span>];</span><br><span class="line"></span><br><span class="line">console.log(elements.<span class="keyword">join</span>());</span><br><span class="line"><span class="comment">// expected output: &quot;Fire,Air,Water&quot;</span></span><br><span class="line"></span><br><span class="line">console.log(elements.<span class="keyword">join</span>(<span class="string">&#x27;&#x27;</span>));</span><br><span class="line"><span class="comment">// expected output: &quot;FireAirWater&quot;</span></span><br><span class="line"></span><br><span class="line">console.log(elements.<span class="keyword">join</span>(<span class="string">&#x27;-&#x27;</span>));</span><br><span class="line"><span class="comment">// expected output: &quot;Fire-Air-Water&quot;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="18">
+<li>keys() 方法返回一个包含数组中每个索引键的Array Iterator对象。</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array1 = [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>];</span><br><span class="line"><span class="keyword">var</span> iterator = array1.keys(); </span><br><span class="line">  </span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">of</span> iterator) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(key); <span class="comment">// expected output: 0 1 2</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="19">
+<li>lastIndexOf() 方法返回指定元素（也即有效的 JavaScript 值或变量）在数组中的最后一个的索引，如果不存在则返回 -1。从数组的后面向前查找，从 fromIndex 处开始。</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> animals = [<span class="string">&#x27;Dodo&#x27;</span>, <span class="string">&#x27;Tiger&#x27;</span>, <span class="string">&#x27;Penguin&#x27;</span>, <span class="string">&#x27;Dodo&#x27;</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(animals.lastIndexOf(<span class="string">&#x27;Dodo&#x27;</span>));</span><br><span class="line"><span class="comment">// expected output: 3</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(animals.lastIndexOf(<span class="string">&#x27;Tiger&#x27;</span>));</span><br><span class="line"><span class="comment">// expected output: 1</span></span><br></pre></td></tr></table></figure>
+
+<p>20.map() 方法创建一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array1 = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// pass a function to map</span></span><br><span class="line"><span class="keyword">const</span> map1 = array1.map(<span class="function"><span class="params">x</span> =&gt;</span> x * <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(map1);</span><br><span class="line"><span class="comment">// expected output: Array [2, 8, 18, 32]</span></span><br></pre></td></tr></table></figure>
+
+<ol start="21">
+<li>pop()方法从数组中删除最后一个元素，并返回该元素的值。此方法更改数组的长度。</li>
+</ol>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var plants = [<span class="string">&#x27;broccoli&#x27;</span>, <span class="string">&#x27;cauliflower&#x27;</span>, <span class="string">&#x27;cabbage&#x27;</span>, <span class="string">&#x27;kale&#x27;</span>, <span class="string">&#x27;tomato&#x27;</span>];</span><br><span class="line"></span><br><span class="line">console.log(plants.pop());</span><br><span class="line">/<span class="regexp">/ expected output: &quot;tomato&quot;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">console.log(plants);</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ expected output: Array [&quot;broccoli&quot;, &quot;cauliflower&quot;, &quot;cabbage&quot;, &quot;kale&quot;]</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">plants.pop();</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">console.log(plants);</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ expected output: Array [&quot;broccoli&quot;, &quot;cauliflower&quot;, &quot;cabbage&quot;]</span></span><br></pre></td></tr></table></figure>
+
+<ol start="22">
+<li>push() 方法将一个或多个元素添加到数组的末尾，并返回该数组的新长度。</li>
+</ol>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var animals = [<span class="string">&#x27;pigs&#x27;</span>, <span class="string">&#x27;goats&#x27;</span>, <span class="string">&#x27;sheep&#x27;</span>];</span><br><span class="line"></span><br><span class="line">console.log(animals.push(<span class="string">&#x27;cows&#x27;</span>));</span><br><span class="line">/<span class="regexp">/ expected output: 4</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">console.log(animals);</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ expected output: Array [&quot;pigs&quot;, &quot;goats&quot;, &quot;sheep&quot;, &quot;cows&quot;]</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">animals.push(&#x27;chickens&#x27;);</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">console.log(animals);</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ expected output: Array [&quot;pigs&quot;, &quot;goats&quot;, &quot;sheep&quot;, &quot;cows&quot;, &quot;chickens&quot;]</span></span><br></pre></td></tr></table></figure>
+
+<ol start="23">
+<li>reduce() 方法对数组中的每个元素执行一个由您提供的reducer函数(升序执行)，将其结果汇总为单个返回值。</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> array1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</span><br><span class="line"><span class="keyword">const</span> reducer = <span class="function">(<span class="params">accumulator, currentValue</span>) =&gt;</span> accumulator + currentValue;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1 + 2 + 3 + 4</span></span><br><span class="line"><span class="built_in">console</span>.log(array1.reduce(reducer));</span><br><span class="line"><span class="comment">// expected output: 10</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 5 + 1 + 2 + 3 + 4</span></span><br><span class="line"><span class="built_in">console</span>.log(array1.reduce(reducer, <span class="number">5</span>));</span><br><span class="line"><span class="comment">// expected output: 15</span></span><br></pre></td></tr></table></figure>
+
+<ol start="24">
+<li>reduceRight() 方法接受一个函数作为累加器（accumulator）和数组的每个值（从右到左）将其减少为单个值。</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> array1 = [[<span class="number">0</span>, <span class="number">1</span>], [<span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>]].reduceRight(</span><br><span class="line">  (accumulator, currentValue) =&gt; accumulator.concat(currentValue)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(array1);</span><br><span class="line"><span class="comment">// expected output: Array [4, 5, 2, 3, 0, 1]</span></span><br></pre></td></tr></table></figure>
+
+<ol start="25">
+<li>reverse() 方法将数组中元素的位置颠倒，并返回该数组。该方法会改变原数组。</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array1 = [<span class="string">&#x27;one&#x27;</span>, <span class="string">&#x27;two&#x27;</span>, <span class="string">&#x27;three&#x27;</span>];</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;array1: &#x27;</span>, array1);</span><br><span class="line"><span class="comment">// expected output: Array [&#x27;one&#x27;, &#x27;two&#x27;, &#x27;three&#x27;]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> reversed = array1.reverse(); </span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;reversed: &#x27;</span>, reversed);</span><br><span class="line"><span class="comment">// expected output: Array [&#x27;three&#x27;, &#x27;two&#x27;, &#x27;one&#x27;]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* Careful: reverse is destructive. It also changes</span></span><br><span class="line"><span class="comment">the original array */</span> </span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;array1: &#x27;</span>, array1);</span><br><span class="line"><span class="comment">// expected output: Array [&#x27;three&#x27;, &#x27;two&#x27;, &#x27;one&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<ol start="26">
+<li>shift() 方法从数组中删除第一个元素，并返回该元素的值。此方法更改数组的长度。</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> firstElement = array1.shift();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(array1);</span><br><span class="line"><span class="comment">// expected output: Array [2, 3]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(firstElement);</span><br><span class="line"><span class="comment">// expected output: 1</span></span><br></pre></td></tr></table></figure>
+
+<p>27.slice() 方法返回一个新的数组对象，这一对象是一个由 begin 和 end 决定的原数组的浅拷贝（包括 begin，不包括end）。原始数组不会被改变。</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var animals = [<span class="string">&#x27;ant&#x27;</span>, <span class="string">&#x27;bison&#x27;</span>, <span class="string">&#x27;camel&#x27;</span>, <span class="string">&#x27;duck&#x27;</span>, <span class="string">&#x27;elephant&#x27;</span>];</span><br><span class="line"></span><br><span class="line">console.log(animals.slice(<span class="number">2</span>));</span><br><span class="line">/<span class="regexp">/ expected output: Array [&quot;camel&quot;, &quot;duck&quot;, &quot;elephant&quot;]</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">console.log(animals.slice(2, 4));</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ expected output: Array [&quot;camel&quot;, &quot;duck&quot;]</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">console.log(animals.slice(1, 5));</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ expected output: Array [&quot;bison&quot;, &quot;camel&quot;, &quot;duck&quot;, &quot;elephant&quot;]</span></span><br></pre></td></tr></table></figure>
+
+<ol start="28">
+<li>some() 方法测试是否至少有一个元素可以通过被提供的函数方法。该方法返回一个Boolean类型的值。</li>
+</ol>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ar <span class="keyword">array</span> = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> even = <span class="function"><span class="keyword">function</span>(<span class="params">element</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// checks whether an element is even</span></span><br><span class="line">  <span class="keyword">return</span> element % <span class="number">2</span> === <span class="number">0</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">console.log(<span class="keyword">array</span>.some(even));</span><br><span class="line"><span class="comment">// expected output: true</span></span><br></pre></td></tr></table></figure>
+
+<p>29.sort()方法用<a target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https://en.wikipedia.org/wiki/In-place_algorithm">原地算法</a>对数组的元素进行排序，并返回数组。默认排序顺序是在将元素转换为字符串，然后比较它们的UTF-16代码单元值序列时构建的</p>
+<p>由于它取决于具体实现，因此无法保证排序的时间和空间复杂性</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numbers = [<span class="number">4</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">3</span>];</span><br><span class="line">numbers.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a - b;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(numbers);</span><br><span class="line"></span><br><span class="line">也可以写成：</span><br><span class="line"><span class="keyword">var</span> numbers = [<span class="number">4</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">3</span>]; </span><br><span class="line">numbers.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a - b); </span><br><span class="line"><span class="built_in">console</span>.log(numbers);</span><br><span class="line"></span><br><span class="line"><span class="comment">// [1, 2, 3, 4, 5]</span></span><br></pre></td></tr></table></figure>
+
+<ol start="30">
+<li>splice() 方法通过删除或替换现有元素或者原地添加新的元素来修改数组,并以数组形式返回被修改的内容。此方法会改变原数组。</li>
+</ol>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var months = [<span class="string">&#x27;Jan&#x27;</span>, <span class="string">&#x27;March&#x27;</span>, <span class="string">&#x27;April&#x27;</span>, <span class="string">&#x27;June&#x27;</span>];</span><br><span class="line">months.splice(<span class="number">1</span>, <span class="number">0</span>, <span class="string">&#x27;Feb&#x27;</span>);</span><br><span class="line">/<span class="regexp">/ inserts at index 1</span></span><br><span class="line"><span class="regexp">console.log(months);</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ expected output: Array [&#x27;Jan&#x27;, &#x27;Feb&#x27;, &#x27;March&#x27;, &#x27;April&#x27;, &#x27;June&#x27;]</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">months.splice(4, 1, &#x27;May&#x27;);</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ replaces 1 element at index 4</span></span><br><span class="line"><span class="regexp">console.log(months);</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ expected output: Array [&#x27;Jan&#x27;, &#x27;Feb&#x27;, &#x27;March&#x27;, &#x27;April&#x27;, &#x27;May&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<ol start="31">
+<li>toLocaleString() 返回一个字符串表示数组中的元素。数组中的元素将使用各自的 toLocaleString 方法转成字符串，这些字符串将使用一个特定语言环境的字符串（例如一个逗号 “,”）隔开。</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array1 = [<span class="number">1</span>, <span class="string">&#x27;a&#x27;</span>, <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">&#x27;21 Dec 1997 14:12:00 UTC&#x27;</span>)];</span><br><span class="line"><span class="keyword">var</span> localeString = array1.toLocaleString(<span class="string">&#x27;en&#x27;</span>, &#123;<span class="attr">timeZone</span>: <span class="string">&quot;UTC&quot;</span>&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(localeString);</span><br><span class="line"><span class="comment">// expected output: &quot;1,a,12/21/1997, 2:12:00 PM&quot;,</span></span><br><span class="line"><span class="comment">// This assumes &quot;en&quot; locale and UTC timezone - your results may vary</span></span><br></pre></td></tr></table></figure>
+
+<ol start="32">
+<li>toString() 返回一个字符串，表示指定的数组及其元素。</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;1a&#x27;</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(array1.toString());</span><br><span class="line"><span class="comment">// expected output: &quot;1,2,a,1a&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>33.unshift() 方法将一个或多个元素添加到数组的开头，并返回该数组的新长度(该方法修改原有数组)。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(array1.unshift(<span class="number">4</span>, <span class="number">5</span>));</span><br><span class="line"><span class="comment">// expected output: 5</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(array1);</span><br><span class="line"><span class="comment">// expected output: Array [4, 5, 1, 2, 3]</span></span><br></pre></td></tr></table></figure>
+
+<ol start="33">
+<li>values() 方法返回一个新的 Array Iterator 对象，该对象包含数组每个索引的值.</li>
+</ol>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> array1 = [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>];</span><br><span class="line"><span class="keyword">const</span> iterator = array1.values();</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> <span class="keyword">value</span> of iterator) &#123;</span><br><span class="line">  console.log(<span class="keyword">value</span>); <span class="comment">// expected output: &quot;a&quot; &quot;b&quot; &quot;c&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>splice有几个参数</p>
 <p>使用css隐藏元素</p>
+<ol>
+<li>visibility: hidden，设置元素隐藏</li>
+<li>opacity: 0，设置元素隐藏</li>
+<li>display:none，设置元素隐藏</li>
+<li>position: absolute，设置元素隐藏</li>
+</ol>
 <p>let、var和const的区别</p>
 <p>如何配置vue.config</p>
 <p>pc：jquery python+ django</p>
 <p>UI：react</p>
 <h2 id="4-16-Udesk沃丰科技14-00"><a href="#4-16-Udesk沃丰科技14-00" class="headerlink" title="4.16 Udesk沃丰科技14:00"></a>4.16 Udesk沃丰科技14:00</h2><p>虚拟dom</p>
 <p>keep-alive</p>
+<p>在平常开发中，有部分组件没有必要多次初始化，这时，我们需要将组件进行持久化，使组件的状态维持不变，在下一次展示时，也不会进行重新初始化组件。</p>
+<p>也就是说，keepalive 是 Vue 内置的一个组件，可以使被包含的组件保留状态，或避免重新渲染 。也就是所谓的*组件缓存</p>
+<p>keep-alive是Vue的内置组件，能在组件切换过程中将状态保留在内存中，防止重复渲染DOM</p>
 <p>重绘和回流</p>
+<p>在讨论回流与重绘之前，我们要知道：</p>
+<ol>
+<li>浏览器使用流式布局模型 (Flow Based Layout)。</li>
+<li>浏览器会把<code>HTML</code>解析成<code>DOM</code>，把<code>CSS</code>解析成<code>CSSOM</code>，<code>DOM</code>和<code>CSSOM</code>合并就产生了<code>Render Tree</code>。</li>
+<li>有了<code>RenderTree</code>，我们就知道了所有节点的样式，然后计算他们在页面上的大小和位置，最后把节点绘制到页面上。</li>
+<li>由于浏览器使用流式布局，对<code>Render Tree</code>的计算通常只需要遍历一次就可以完成，但<code>table</code>及其内部元素除外，他们可能需要多次计算，通常要花3倍于同等元素的时间，这也是为什么要避免使用<code>table</code>布局的原因之一。</li>
+</ol>
+<p>一句话：回流必将引起重绘，重绘不一定会引起回流。</p>
+<p>回流 (Reflow)</p>
+<p>当<code>Render Tree</code>中部分或全部元素的尺寸、结构、或某些属性发生改变时，浏览器重新渲染部分或全部文档的过程称为回流。</p>
+<p>会导致回流的操作：</p>
+<ul>
+<li>页面首次渲染</li>
+<li>浏览器窗口大小发生改变</li>
+<li>元素尺寸或位置发生改变</li>
+<li>元素内容变化（文字数量或图片大小等等）</li>
+<li>元素字体大小变化</li>
+<li>添加或者删除<strong>可见</strong>的<code>DOM</code>元素</li>
+<li>激活<code>CSS</code>伪类（例如：<code>:hover</code>）</li>
+<li>查询某些属性或调用某些方法</li>
+</ul>
+<p>一些常用且会导致回流的属性和方法：</p>
+<ul>
+<li><code>clientWidth</code>、<code>clientHeight</code>、<code>clientTop</code>、<code>clientLeft</code></li>
+<li><code>offsetWidth</code>、<code>offsetHeight</code>、<code>offsetTop</code>、<code>offsetLeft</code></li>
+<li><code>scrollWidth</code>、<code>scrollHeight</code>、<code>scrollTop</code>、<code>scrollLeft</code></li>
+<li><code>scrollIntoView()</code>、<code>scrollIntoViewIfNeeded()</code></li>
+<li><code>getComputedStyle()</code></li>
+<li><code>getBoundingClientRect()</code></li>
+<li><code>scrollTo()</code></li>
+</ul>
+<p>重绘 (Repaint)</p>
+<p>当页面中元素样式的改变并不影响它在文档流中的位置时（例如：<code>color</code>、<code>background-color</code>、<code>visibility</code>等），浏览器会将新样式赋予给元素并重新绘制它，这个过程称为重绘。</p>
+<p>性能影响</p>
+<p><strong>回流比重绘的代价要更高。</strong></p>
+<p>有时即使仅仅回流一个单一的元素，它的父元素以及任何跟随它的元素也会产生回流。</p>
+<p>现代浏览器会对频繁的回流或重绘操作进行优化：</p>
+<p>浏览器会维护一个队列，把所有引起回流和重绘的操作放入队列中，如果队列中的任务数量或者时间间隔达到一个阈值的，浏览器就会将队列清空，进行一次批处理，这样可以把多次回流和重绘变成一次。</p>
+<p>当你访问以下属性或方法时，浏览器会立刻清空队列：</p>
+<ul>
+<li><code>clientWidth</code>、<code>clientHeight</code>、<code>clientTop</code>、<code>clientLeft</code></li>
+<li><code>offsetWidth</code>、<code>offsetHeight</code>、<code>offsetTop</code>、<code>offsetLeft</code></li>
+<li><code>scrollWidth</code>、<code>scrollHeight</code>、<code>scrollTop</code>、<code>scrollLeft</code></li>
+<li><code>width</code>、<code>height</code></li>
+<li><code>getComputedStyle()</code></li>
+<li><code>getBoundingClientRect()</code></li>
+</ul>
+<p>因为队列中可能会有影响到这些属性或方法返回值的操作，即使你希望获取的信息与队列中操作引发的改变无关，浏览器也会强行清空队列，确保你拿到的值是最精确的。</p>
+<p>如何避免</p>
+<p>CSS</p>
+<ul>
+<li>避免使用<code>table</code>布局。</li>
+<li>尽可能在<code>DOM</code>树的最末端改变<code>class</code>。</li>
+<li>避免设置多层内联样式。</li>
+<li>将动画效果应用到<code>position</code>属性为<code>absolute</code>或<code>fixed</code>的元素上。</li>
+<li>避免使用<code>CSS</code>表达式（例如：<code>calc()</code>）。</li>
+</ul>
+<p>JavaScript</p>
+<ul>
+<li>避免频繁操作样式，最好一次性重写<code>style</code>属性，或者将样式列表定义为<code>class</code>并一次性更改<code>class</code>属性。</li>
+<li>避免频繁操作<code>DOM</code>，创建一个<code>documentFragment</code>，在它上面应用所有<code>DOM操作</code>，最后再把它添加到文档中。</li>
+<li>也可以先为元素设置<code>display: none</code>，操作结束后再把它显示出来。因为在<code>display</code>属性为<code>none</code>的元素上进行的<code>DOM</code>操作不会引发回流和重绘。</li>
+<li>避免频繁读取会引发回流/重绘的属性，如果确实需要多次使用，就用一个变量缓存起来。</li>
+<li>对具有复杂动画的元素使用绝对定位，使它脱离文档流，否则会引起父元素及后续元素频繁回流。</li>
+</ul>
 <p>拖拽排序</p>
 <p>图表</p>
 <p>loader里面plugin的区别</p>
+<p>作用不同：</p>
+<ul>
+<li>Loader直译为”加载器”。Webpack将一切文件视为模块，但是webpack原生是只能解析js文件，如果想将其他文件也打包的话，就会用到loader。 所以Loader的作用是让webpack拥有了加载和解析非JavaScript文件的能力。</li>
+<li>Plugin直译为”插件”。Plugin可以扩展webpack的功能，让webpack具有更多的灵活性。 在 Webpack 运行的生命周期中会广播出许多事件，Plugin 可以监听这些事件，在合适的时机通过 Webpack 提供的 API 改变输出结果。</li>
+</ul>
+<p>用法不同：</p>
+<ul>
+<li>Loader在module.rules中配置，也就是说作为模块的解析规则而存在。 类型为数组，每一项都是一个Object，里面描述了对于什么类型的文件（test），使用什么加载(loader)和使用的参数（options）</li>
+<li>Plugin在plugins中单独配置。 类型为数组，每一项是一个plugin的实例，参数都通过构造函数传入。</li>
+</ul>
 <p>webpack</p>
 <p>小程序</p>
 <p>TS</p>
@@ -590,6 +824,40 @@
 <p>传参方式有哪些</p>
 <p>父子组件通讯</p>
 <p>vue路由如何传参</p>
+<p>vue中路由中需要传递参数的话可以用query和param传递，两者类似于get和post。</p>
+<p>下面来说下vue自带的路由传参的三种基本方式</p>
+<p>先有如下场景 点击当前页的某个按钮跳转到另外一个页面去，并将某个值带过去</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="keyword">class</span>=<span class="string">&quot;examine&quot;</span> @click=<span class="string">&quot;insurance(2)&quot;</span>&gt;查看详情&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>第一种方法     页面刷新数据不会丢失</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">methods：&#123;</span><br><span class="line">  <span class="function"><span class="title">insurance</span>(<span class="params">id</span>)</span> &#123;</span><br><span class="line">       <span class="comment">//直接调用$router.push 实现携带参数的跳转</span></span><br><span class="line">        <span class="built_in">this</span>.$router.push(&#123;</span><br><span class="line">          path: <span class="string">`/particulars/<span class="subst">$&#123;id&#125;</span>`</span>,</span><br><span class="line">        &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>需要对应路由配置如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">     <span class="attribute">path</span>: <span class="string">&#x27;/particulars/:id&#x27;</span>,</span><br><span class="line">     name: <span class="string">&#x27;particulars&#x27;</span>,</span><br><span class="line">     component: particulars</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以看出需要在path中添加/:id来对应 $router.push 中path携带的参数。在子组件中可以使用来获取传递的参数值<br> 另外页面获取参数如下</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$route.<span class="keyword">params</span>.id</span><br></pre></td></tr></table></figure>
+
+<p>第二种方法  页面刷新数据会丢失</p>
+<p>通过路由属性中的name来确定匹配的路由，通过params来传递参数。</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">methods：&#123;</span><br><span class="line">  insurance(id) &#123;</span><br><span class="line">       <span class="keyword">this</span>.$router.push(&#123;</span><br><span class="line">          name: <span class="string">&#x27;particulars&#x27;</span>,</span><br><span class="line">          <span class="keyword">params</span>: &#123;</span><br><span class="line">            id: id</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>对应路由配置: 注意这里不能使用:/id来传递参数了，因为组件中，已经使用params来携带参数了。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attribute">path</span>: <span class="string">&#x27;/particulars&#x27;</span>,</span><br><span class="line">    name: <span class="string">&#x27;particulars&#x27;</span>,</span><br><span class="line">    component: particulars</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>子组件中: 这样来获取参数</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$route.<span class="keyword">params</span>.id</span><br></pre></td></tr></table></figure>
+
+<p>第三种方法<br> 使用path来匹配路由，然后通过query来传递参数<br> 这种情况下 query传递的参数会显示在url后面?id=？</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">methods：&#123;</span><br><span class="line">  insurance(id) &#123;</span><br><span class="line">        <span class="keyword">this</span>.$router.push(&#123;</span><br><span class="line">          path: <span class="string">&#x27;/particulars&#x27;</span>,</span><br><span class="line">          query: &#123;</span><br><span class="line">            id: id</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>对应路由配置：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">     <span class="attribute">path</span>: <span class="string">&#x27;/particulars&#x27;</span>,</span><br><span class="line">     name: <span class="string">&#x27;particulars&#x27;</span>,</span><br><span class="line">     component: particulars</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>对应子组件: 这样来获取参数</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$route.query.id</span><br></pre></td></tr></table></figure>
+
+<p>组件中 获取参数的时候是route.params</p>
 <p>用过哪些布局flex有什么特点</p>
 <p>es6知道哪些</p>
 <p>数组过滤</p>
@@ -597,7 +865,31 @@
 <p>如何根据元素class获取id，dom操作</p>
 <p>盒子模型</p>
 <p>定位方式有哪些，position相对于什么</p>
+<p>• position: relative 相对定位，相对定位不脱离文档流，参考其在原来文档流中的位置，通过 top,bottom,left,right 定位，并 且可以通过z-index进行层次分级。</p>
+<p>• position: absolute 绝对定位，绝对定位脱离文档流，依据最近的已经定位（绝对、相对或固定定位）的父元素，通过 top,bottom,left,right 定位。当父级 position 为 static 时，absolute元素将依据body根元素（浏览器窗口）进行定 位，可以通过z-index进行层次分级。</p>
+<p>• position: fixed 固定定位，固定定位与父元素无关（无论父元素是否定位），直接根据浏览器窗口定位，且不随滚动条拖动 页面而滚动，可通过z-index进行层次分级。</p>
+<p>• position: sticky 粘性定位，该定位基于用户滚动的位置。它的行为就像 position:relative; 而当页面滚动超出目标区域时，它的表现就像 position:fixed;，它会固定在目标位置。</p>
 <p>什么是跨域，有什么特征</p>
+<p>现代浏览器出于安全考虑，都会去遵守一个叫做“同源策略”的约定，同源的意思是两个地址的协议、域名、端口号都相同的情况下，才叫同源。这个时候两个地址才可以相互访问 cookie、localStorage、sessionStorage、发送 ajax 请求，如果三者有一个不同，就是不同源，这时再去访问这些资源就叫做跨域。</p>
+<p>跨域的解决方法</p>
+<p><strong>1、JSONP （JSON with padding）</strong></p>
+<p>就是与后端协商好，在请求数据返回数据的时候以字符串的格式返回。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">script src = &#x27;xxx.com&#x27;  callback = showDate</span><br><span class="line">function showDate (ret) &#123;</span><br><span class="line">  console.log(ret)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这个时候就跨域了，JSONP 可以在IE10以下的浏览器去获取数据。</p>
+<p><strong>2、CORS （跨资源共享）</strong></p>
+<p>在响应头里面写上</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">res.setHeader(&#x27; Access - Contorl - Allow - Origin&#x27; ,&#x27;http://localhost:8080&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>只要响应头里面的Origin里面本域（协议、域名、端口）一样，就可以接受到数据</p>
+<p><strong>3、降域和PostMessage</strong></p>
+<p><strong>3.1 降域</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.domain = &#x27;xxx.com&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>需要本域中的域名和端口一样</p>
+<p><strong>3.2 PostMessage</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">window.frames[0],PostMessage(this,value)</span><br><span class="line">window.addEventListener(&#x27;message&#x27;,function(e))&#123;&#125; //调用message，监听对方发送的消息</span><br></pre></td></tr></table></figure>
+
 <p>如何进行开发调试连接后端如何配置</p>
 <p>vuex用来做什么</p>
 <h2 id="4-20-博彦科技-9-30"><a href="#4-20-博彦科技-9-30" class="headerlink" title="4.20 博彦科技 9:30"></a>4.20 博彦科技 9:30</h2><h2 id="4-20力格软件10-30"><a href="#4-20力格软件10-30" class="headerlink" title="4.20力格软件10:30"></a>4.20力格软件10:30</h2><h2 id="4-20振翕科技15-00"><a href="#4-20振翕科技15-00" class="headerlink" title="4.20振翕科技15:00"></a>4.20振翕科技15:00</h2><h2 id="4-21二航院-10-30"><a href="#4-21二航院-10-30" class="headerlink" title="4.21二航院 10:30"></a>4.21二航院 10:30</h2><h2 id="4-21东天红数科-15-00"><a href="#4-21东天红数科-15-00" class="headerlink" title="4.21东天红数科 15:00"></a>4.21东天红数科 15:00</h2><h2 id="4-22-北京富基融通信息9-30"><a href="#4-22-北京富基融通信息9-30" class="headerlink" title="4.22 北京富基融通信息9:30"></a>4.22 北京富基融通信息9:30</h2>
@@ -755,13 +1047,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">433k</span>
+    <span title="站点总字数">449k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:34</span>
+    <span title="站点阅读时长">6:48</span>
 </div>
 
 <!--
