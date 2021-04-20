@@ -215,7 +215,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-04-19 23:34:13" itemprop="dateModified" datetime="2021-04-19T23:34:13+08:00">2021-04-19</time>
+                <time title="修改时间：2021-04-20 20:16:53" itemprop="dateModified" datetime="2021-04-20T20:16:53+08:00">2021-04-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -233,14 +233,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>25k</span>
+              <span>32k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>22 分钟</span>
+              <span>29 分钟</span>
             </span>
 
         </div>
@@ -259,7 +259,114 @@
 <p>$set</p>
 <p>$nextTick</p>
 <p>类数组如何变成数组</p>
-<p>传参的方式</p>
+<p>vue传参的方式</p>
+<p>1.Vuex</p>
+<blockquote>
+<p>Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，<br>并以相应的规则保证状态以一种可预测的方式发生变化。Vuex 也集成到 Vue 的官方调试工具 devtools extension，<br>提供了诸如零配置的 time-travel 调试、状态快照导入导出等高级调试功能。</p>
+</blockquote>
+<p>优缺点</p>
+<ul>
+<li>优点<ul>
+<li>解决了多层组件之间繁琐的事件传播。</li>
+<li>解决了多组件依赖统同一状态的问题。</li>
+<li>单向数据流</li>
+<li>为Vue量身定做，学习成本不高</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>不能做数据持久化，刷新页面就要重制，要做数据持久化可以考虑使用localstorage。</li>
+<li>增加额外的代码体积，简单的业务场景不建议使用。</li>
+</ul>
+</li>
+</ul>
+<p>2.EventBus 通过共享一个vue实例，使用该实例的$on以及$emit实现数据传递。</p>
+<p>使用方法</p>
+<p>下面是简单的使用方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bus.js</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vue(&#123;&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// component-a.js</span></span><br><span class="line"><span class="keyword">import</span> bus <span class="keyword">from</span> <span class="string">&#x27;./bus.js&#x27;</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  created () &#123;</span><br><span class="line">    bus.$on(<span class="string">&#x27;event-name&#x27;</span>, <span class="function">(<span class="params">preload</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// ...</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// component-b.js</span></span><br><span class="line"><span class="keyword">import</span> bus <span class="keyword">from</span> <span class="string">&#x27;./bus.js&#x27;</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  created () &#123;</span><br><span class="line">    bus.$emit(<span class="string">&#x27;event-name&#x27;</span>, preload)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>优缺点</p>
+<ul>
+<li>优点<ul>
+<li>解决了多层组件之间繁琐的事件传播。</li>
+<li>使用原理十分简单，代码量少。</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>由于是都使用一个Vue实例，所以容易出现重复触发的情景，例如：<ol>
+<li>多人开发时，A、B两个人定义了同一个事件名。</li>
+<li>两个页面都定义了同一个事件名，并且没有用$off销毁（常出现在路由切换时）。</li>
+<li>在for出来的组件里注册。</li>
+</ol>
+</li>
+<li>项目一大用这种方式管理事件会十分混乱，这时候建议用vuex。</li>
+</ul>
+</li>
+</ul>
+<p>3.props和$emit/$on </p>
+<p>最基本的父组件给子组件传递数据方式，将我们自定义的属性传给子组件,子组件通过$emit方法，触发父组件v-on的事件，从而实现子组件触发父组件方法</p>
+<p>优缺点</p>
+<ul>
+<li>优点<ul>
+<li>使用最为简单，也是父子组件传递最常见的方法。</li>
+<li>Vue为给props提供了类型检查支持。</li>
+<li>$emit不会修改到别的组件的同名事件，因为他只能触发父级的事件，这里和event-bus不同</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>单一组件层级一深需要逐层传递，会有很多不必要的代码量。</li>
+<li>不能解决了多组件依赖统同一状态的问题。</li>
+</ul>
+</li>
+</ul>
+<p>$attrs/$listeners可以将父组件的props和事件监听器继承给子元素，在子组件可以调用到父组件的事件和props</p>
+<p>4.provide/inject</p>
+<p>在父组件上通过provide提供给后代组件的数据/方法，在后代组件上通过inject来接收被注入的数据/方法。</p>
+<p>优缺点</p>
+<ul>
+<li>优点<ul>
+<li>不用像props一层层传递，可以跨层级传递。</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>用这种方式传递的属性是非响应式的，所以尽可能来传递一些静态属性。</li>
+<li>引用官网的话是<code>它将你的应用以目前的组件组织方式耦合了起来，使重构变得更加困难。</code>，我对这句话的理解是用了provide/inject你就要遵循它的组件组织方式，在项目的重构时如果要破坏这个组织方式会有额外的开发成本，其实event-bus也有这个问题。</li>
+</ul>
+</li>
+</ul>
+<p>5.slot</p>
+<p>你可以在组件的html模版里添加自定义内容，这个内容可以是任何代码模版，就像：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">navigation-link</span> <span class="attr">url</span>=<span class="string">&quot;/profile&quot;</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 添加一个 Font Awesome 图标 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;fa fa-user&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  Your Profile</span><br><span class="line"><span class="tag">&lt;/<span class="name">navigation-link</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>父组件模板的所有东西都会在父级作用域内编译；子组件模板的所有东西都会在子级作用域内编译。</p>
+</blockquote>
+<p>你也可以通过<code>slot-scope</code>属性来实现从子组件将一些信息传递给父组件，注意这个属性是vue2.1.0+新增的。</p>
+<p>优缺点</p>
+<ul>
+<li>优点<ul>
+<li>可以在父组件里自定义插入到子组件里的内容，虽然其他属性也可以，但是我觉得slot更倾向于自定义的条件是来自于父容器中。</li>
+<li>复用性好,适合做组件开发。</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>和props一样不支持跨层级传递。</li>
+</ul>
+</li>
+</ul>
+<p>6.$parent/$children</p>
+<p>通过$parent/$children可以拿到父子组件的实例，从而调用实例里的方法，实现父子组件通信。</p>
+<p>优缺点</p>
+<ul>
+<li>优点<ul>
+<li>可以拿到父子组件实例，从而拥有实例里的所有属性。</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>用这种方法写出来的组件十分难维护，因为你并不知道数据的来源是哪里，有悖于单向数据流的原则</li>
+<li><code>this.$children</code>拿到的是一个数组，你并不能很准确的找到你要找的子组件的位置，尤其是子组件多的时候。</li>
+</ul>
+</li>
+</ul>
 <p>push </p>
 <p>let、var</p>
 <p>cherry-pick</p>
@@ -268,6 +375,14 @@
 <p>实际过程中快速解决问题</p>
 <p>uni-app</p>
 <p>cookie和session的区别</p>
+<p><img src="/2021/04/10/2021%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/20190530212538979.png" alt="在这里插入图片描述"> </p>
+<p>本地储存localStorage与cookie的区别<br>1）cookie在浏览器与服务器之间来回传递<br>sessionStorage和localStorage不会把数据发给服务器，仅在本地保存<br>2）数据有效期不同<br>cookie只在设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭<br>sessionStorage：仅在当前浏览器窗口关闭前有效<br>localStorage 始终有效，长期保存<br>3）cookie数据还有路径的概念，可以限制cookie只属于某个路径下<br>存储大小也不同，cookie数据不能超过4k，sessionStorage和localStorage 虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大<br>4）作用域不用<br>sessionStorage不在不同的浏览器窗口中共享<br>localStorage在所有同源窗口中都是共享的<br>cookie也是在所有同源窗口中都是共享的<br>WebStorage 支持事件通知机制，可以将数据更新的通知发送给监听者。Web Storage 的 api 接口使用更方便</p>
+<p>cookie、session和localStorage的区别<br>1）cookie的内容主要包括：名字、值、过期时间、路径和域，路径与域一起构成cookie的作用范围。若不设置时间，则表示这个cookie的生命期为浏览器会话期间，关闭浏览器窗口，cookie就会消失，这种生命期为浏览器会话期的cookie被称为会话cookie<br>2）会话cookie一般不存储在硬盘而是保存在内存里，当然这个行为并不是规范规定的。若设置了过期时间，浏览器就会把cookie保存到硬盘上，关闭后再打开浏览器这些cookie仍然有效直到超过设定的过期时间。对于保存在内存里的cookie，不同的浏览器有不同的处理方式session机制。<br>3）当程序需要为某个客户端的请求创建一个session时，服务器首先检查这个客户端的请求里是否已包含了一个session标识（称为session id），如果已包含则说明以前已经为此客户端创建过session，服务器就按照session id把这个session检索出来使用（检索不到，会新建一个），如果客户端请求不包含session id，则为客户端创建一个session并且生成一个与此session相关联的session id，session id的值应该是一个既不会重复，又不容易被找到规律以仿造的字符串，这个session id将被在本次响应中返回给客户端保存。保存这个session id的方式可以采用cookie，这样在交互过程中浏览器可以自动的按照规则把这个标识发送给服务器。</p>
+<p>cookie和session的区别<br>1）cookie数据存放在客户的浏览器上，session数据放在服务器上<br>2）cookie不是很安全，别人可以分析存放在本地的cookie并进行cookie欺骗，考虑到安全应当使用session<br>3）session会在一定时间内保存在服务器上，当访问增多，会比较占用你服务器的性能，考虑到减轻服务器性能方面，应当使用cookie<br>4）单个cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个cookie<br>5）建议将登录信息等重要信息存放为session，其他信息如果需要保留，可以放在cookie中<br>6）session保存在服务器，客户端不知道其中的信心；cookie保存在客户端，服务器能够知道其中的信息<br>7）session中保存的是对象，cookie中保存的是字符串<br>8）session不能区分路径，同一个用户在访问一个网站期间，所有的session在任何一个地方都可以访问到，而cookie中如果设置了路径参数，那么同一个网站中不同路径下的cookie互相是访问不到的</p>
+<p>web Storage和cookie的区别<br>1）Web Storage的概念和cookie相似，区别是它是为了更大容量存储设计的，cookie的大小是受限的，并且每次请求一个新的页面的时候cookie都会被发送过去，这样无形中浪费了带宽，另外cookie还需要指定作用域，不可跨域调用<br>2）web storage拥有setItem,getItem,removeItem,clear等方法，不像cookie需要前端开发者自己封装setCookie，getCookie<br>3）但是cookie也是不可或缺的，cookie的作用是与服务器进行交互，作为http规范的一部分而存在的，而web Storage仅仅是为了在本地“存储”数据而生<br>sessionStorage、localStorage、cookie都是在浏览器端存储的数据，其中sessionStorage的概念很特别，引入了一个“浏览器窗口”的概念，sessionStorage是在同源的同窗口中，始终存在的数据，也就是说只要这个浏览器窗口没有关闭，即使刷新页面或进入同源另一个页面，数据仍然存在，关闭窗口后，sessionStorage就会被销毁，同时“独立”打开的不同窗口，即使是同一页面，sessionStorage对象也是不同的<br>4）Web Storage的好处<br>减少网络流量：一旦数据保存在本地之后，就可以避免再向服务器请求数据，因此减少不必要的数据请求，减少数据在浏览器和服务器间不必要的来回传递<br>快速显示数据：性能好，从本地读数据比通过网络从服务器上获得数据快得多，本地数据可以及时获得，再加上网页本身也可以有缓存，因此整个页面和数据都在本地的话，可以立即显示<br>临时存储：很多时候数据只需要在用户浏览一组页面期间使用，关闭窗口后数据就可以丢弃了，这种情况使用sessionStorage非常方便</p>
+<p>浏览器本地存储与服务器端存储的区别<br>1）数据既可以在浏览器本地存储，也可以在服务器端存储<br>2）浏览器可以保存一些数据，需要的时候直接从本地存取，sessionStorage、localStorage和cookie都是由浏览器存储在本地的数据<br>3）服务器端也可以保存所有用户的所有数据，但需要的时候浏览器要向服务器请求数据<br>4）服务器端可以保存用户的持久数据，如数据库和云存储将用户的大量数据保存在服务器端 ，服务器端也可以保存用户的临时会话数据，服务器端的session机制，如jsp的session对象，数据保存在服务器上<br>5）服务器和浏览器之间仅需传递session id即可，服务器根据session id找到对应用户的session对象，会话数据仅在一段时间内有效，这个时间就是server端设置的session有效期<br>6）服务器端保存所有的用户的数据，所以服务器端的开销较大，而浏览器端保存则把不同用户需要的数据分别保存在用户各自的浏览器中，浏览器端一般只用来存储小数据，而非服务可以存储大数据或小数据服务器存储数据安全一些，浏览器只适合存储一般数据</p>
+<p>sessionStorage、localStorage和cookie的区别<br>1）相同点是都是保存在浏览器端、且同源的<br>2）cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递，而sessionStorage和localStorage不会自动把数据发送给服务器，仅在本地保存。cookie数据还有路径（path）的概念，可以限制cookie只属于某个路径下<br>3）存储大小限制也不同，cookie数据不能超过4K，同时因为每次http请求都会携带cookie、所以cookie只适合保存很小的数据，如会话标识。sessionStorage和localStorage虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大<br>4）数据有效期不同，sessionStorage：仅在当前浏览器窗口关闭之前有效；localStorage：始终有效，窗口或浏览器关闭也一直保存，因此用作持久数据；cookie：只在设置的cookie过期时间之前有效，即使窗口关闭或浏览器关闭<br>5）作用域不同，sessionStorage不在不同的浏览器窗口中共享，即使是同一个页面；localstorage在所有同源窗口中都是共享的；cookie也是在所有同源窗口中都是共享的<br>6）web Storage支持事件通知机制，可以将数据更新的通知发送给监听者<br>7）web Storage的api接口使用更方便</p>
+<p>sessionStorage与页面js数据对象的区别<br>1）页面中一般的js对象的生存期仅在当前页面有效，因此刷新页面或转到另一页面这样的重新加载页面的情况，数据就不存在了<br>2）sessionStorage只要同源的同窗口中，刷新页面或进入同源的不同页面，数据始终存在，也就是说只要浏览器不关闭，数据仍然存在</p>
 <h2 id="4-9-华为外包"><a href="#4-9-华为外包" class="headerlink" title="4.9  华为外包"></a>4.9  华为外包</h2><p>盒模型</p>
 <p>CSS盒模型和IE盒模型的区别： 在标准盒子模型中，width 和height 指的是内容区域的宽度和高度。 增加内边距、边框和外边距不会影响内容区域的尺寸，但是会增加元素框的总尺寸。 IE盒子模型中，width 和height 指的是内容区域+border+padding的宽度和高度。</p>
 <p>清除浮动</p>
@@ -786,9 +901,42 @@
 <p>vue的生命周期用过哪些</p>
 <p>小程序有没有了解</p>
 <h2 id="4-17慧禹科技-11-00"><a href="#4-17慧禹科技-11-00" class="headerlink" title="4.17慧禹科技 11:00"></a>4.17慧禹科技 11:00</h2><p>rem、em、vh、px</p>
-<p>Javascript创建对象的方式</p>
+<ol>
+<li><p>px就是pixel（像素）的缩写，相对长度单位，相对于屏幕分辨率。</p>
+</li>
+<li><p>em参考物是父元素的font-size，具有继承的特点。浏览器默认字体是16px，整个页面内1em不是一个固定的值。字体大小同样都是1.5em，但是效果却截然不同，按照W3C提供的公式，我们可以计算下： class为id1的div字体大小继承自父元素body：16px<em>1.5em = 24px class为id2的div字体大小继承自父元素id1：24px</em>1.5em = 36px class为id3的div字体大小继承自父元素id2：36px*1.5em = 54px</p>
+</li>
+<li><p>rem是CSS3新增的一个相对单位，但相对的只是HTML根元素。通过它既可以做到只修改根元素就成比例地调整所有字体大小，又可以避免字体大小逐层复合的连锁反应。</p>
+</li>
+<li><p>% 百分比，相对长度单位，相对于父元素的百分比值</p>
+<p>元素宽高与字体大小使用区别：</p>
+<p>（1）尽量使用相对尺寸单位</p>
+<p>使用相对尺寸单位计量，则在调整页面的布局的时候，不需要遍历所有的内部DOM结构，重新设置内部子元素的尺寸大小。如果是随着父容器或者是整体页面布局而改变尺寸，则使用%更好，如元素的高度和宽度设置。</p>
+<p>（2）字体尺寸尽量使用em、rem</p>
+<p>为了字体大小的可维护性和伸缩性，推荐使用em，如果存在3层以及3层以上的字体相对尺寸的设置，可以考虑使用rem。</p>
+</li>
+<li><p>vm、vh、vmin、vmax是一种视窗单位，也是相对单位。它相对的不是父节点或者页面的根节点。而是由视窗（Viewport）大小来决定的，单位 1，代表类似于 1%。 视窗(Viewport)是你的浏览器实际显示内容的区域—，换句话说是你的不包括工具栏和按钮的网页浏览器。</p>
+<p>具体描述如下：</p>
+<p>vw：视窗宽度的百分比（1vw 代表视窗的宽度为 1%）<br>vh：视窗高度的百分比<br>vmin：取当前Vw和Vh中较小的那一个值<br>vmax：取当前Vw和Vh中较大的那一个值</p>
+<p>vh和vw相对于视口的高度和宽度， 1vh 等于1/100的视口高度，1vw 等于1/100的视口宽度 比如：浏览器高度900px，宽度为750px, 1 vh = 900px/100 = 9 px，1vw = 750px/100 = 7.5 px， 很容易实现与同屏幕等高的框。</p>
+</li>
+</ol>
+<p>Javascript常用的几种创建对象的方式</p>
+<ol>
+<li><code>&#123;&#125;</code></li>
+<li><code>new Ｏbject()</code></li>
+<li>使用字面量</li>
+<li>工厂模式</li>
+<li>构造函数模式（constructor）</li>
+<li>原型模式（prototype）</li>
+<li>构造函数+原型模式</li>
+</ol>
 <p>前端向后端发送请求遇到500</p>
 <p>503错误是什么原因</p>
+<p>1、站点遭到攻击，在超过限制时报503错误，待攻击停止就可以恢复了；</p>
+<p>2、站点规模较大，并发请求过多，这种建议修改优化程序或需要升级更高类型主机； </p>
+<p>3、程序有错误，在短时间内产生多次工作进程崩溃，会因IIS7的快速故障防护功能而关闭程序池；</p>
+<p>4、站点提供下载，当带宽超过限制时会报错，需停止下载功能，或者升级主机解决。</p>
 <p>在vue的基础上封装的UI</p>
 <p>python了解吗</p>
 <p>技术栈：</p>
@@ -876,7 +1024,27 @@
 
 <p>如何进行开发调试连接后端如何配置</p>
 <p>vuex用来做什么</p>
-<h2 id="4-20-博彦科技-9-30"><a href="#4-20-博彦科技-9-30" class="headerlink" title="4.20 博彦科技 9:30"></a>4.20 博彦科技 9:30</h2><h2 id="4-20力格软件10-30"><a href="#4-20力格软件10-30" class="headerlink" title="4.20力格软件10:30"></a>4.20力格软件10:30</h2><h2 id="4-20振翕科技15-00"><a href="#4-20振翕科技15-00" class="headerlink" title="4.20振翕科技15:00"></a>4.20振翕科技15:00</h2><h2 id="4-21二航院-10-30"><a href="#4-21二航院-10-30" class="headerlink" title="4.21二航院 10:30"></a>4.21二航院 10:30</h2><h2 id="4-21东天红数科-15-00"><a href="#4-21东天红数科-15-00" class="headerlink" title="4.21东天红数科 15:00"></a>4.21东天红数科 15:00</h2><h2 id="4-22-北京富基融通信息9-30"><a href="#4-22-北京富基融通信息9-30" class="headerlink" title="4.22 北京富基融通信息9:30"></a>4.22 北京富基融通信息9:30</h2>
+<h2 id="4-20-博彦科技-9-30"><a href="#4-20-博彦科技-9-30" class="headerlink" title="4.20 博彦科技 9:30"></a>4.20 博彦科技 9:30</h2><p>vue的生命周期的具体含义</p>
+<p>vuex的用法</p>
+<p>es6的新特性</p>
+<h2 id="4-20力格软件10-30"><a href="#4-20力格软件10-30" class="headerlink" title="4.20力格软件10:30"></a>4.20力格软件10:30</h2><p>小程序有涉及吗</p>
+<p>cookie、session storage、localstroage</p>
+<p>有没有处理过数据量大的页面速度方面</p>
+<p>技术栈：用react-native开发app</p>
+<h2 id="4-20振翕科技15-00"><a href="#4-20振翕科技15-00" class="headerlink" title="4.20振翕科技15:00"></a>4.20振翕科技15:00</h2><p>浏览器是如何运行的</p>
+<p>前端的开发环境有自己搭建吗</p>
+<p>对es6了解吗</p>
+<p>为什么要用箭头函数</p>
+<p>用echart做了什么</p>
+<p>vue的路由用哪些</p>
+<p>兄弟组件之间传参方式</p>
+<p>父子组件之间</p>
+<p>vuex有哪些属性</p>
+<p>跨域怎么实现</p>
+<p>布局、定位、伪类熟悉吗</p>
+<p>响应式布局</p>
+<p>对微信小程序了解吗</p>
+<h2 id="4-21二航院-10-30"><a href="#4-21二航院-10-30" class="headerlink" title="4.21二航院 10:30"></a>4.21二航院 10:30</h2><h2 id="4-21东天红数科-15-00"><a href="#4-21东天红数科-15-00" class="headerlink" title="4.21东天红数科 15:00"></a>4.21东天红数科 15:00</h2><h2 id="4-22-北京富基融通信息9-30"><a href="#4-22-北京富基融通信息9-30" class="headerlink" title="4.22 北京富基融通信息9:30"></a>4.22 北京富基融通信息9:30</h2><h2 id="4-22群光广场14-00"><a href="#4-22群光广场14-00" class="headerlink" title="4.22群光广场14:00"></a>4.22群光广场14:00</h2>
       
     </div>
 
@@ -1908,13 +2076,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">449k</span>
+    <span title="站点总字数">456k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:48</span>
+    <span title="站点阅读时长">6:54</span>
 </div>
 
 <!--
